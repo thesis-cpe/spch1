@@ -121,7 +121,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <thead><!--หัวตาราง-->
                                                                 <tr>
 
-                                                                    <td rowspan="2" align="center"><p>&nbsp;</p>
+                                                                    <td width="20" rowspan="2" align="center"><p>&nbsp;</p>
                                                                         <p>เลือก</p>
                                                                     </td>
 
@@ -129,19 +129,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                         <p>รหัสบริษัท</p></td>
                                                                     <td width="200"  rowspan="2" align="center"><p>cusname</p>
                                                                         <p>ชื่อบริษัท</p></td>
-                                                                    <td  rowspan="2" align="center"><p>trndate</p>
+                                                                    <td width="50"  rowspan="2" align="center"><p>trndate</p>
                                                                         <p>วันที่</p></td>
-                                                                    <td  rowspan="2" align="center"><p>trntime</p>
+                                                                    <td  width="139" rowspan="2" align="center"><p>trntime</p>
                                                                         <p>ช่วงเวลา</p></td>
                                                                     <td colspan="3" align="center">เวลา</td>
                                                                     <td colspan="3" align="center">รายการบันทึก</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td  align="center">เวลาใช้ไป</td>
+                                                                    <td width="20"  align="center">เวลาใช้ไป</td>
                                                                     <td  align="center">ยกมา</td>
                                                                     <td  align="center">คงเหลือ</td>
                                                                     <td  align="center">ยกมา</td>
-                                                                    <td  align="center">คีย์เข้า</td>
+                                                                    <td width="20"  align="center">คีย์เข้า</td>
                                                                     <td  align="center">ยกไป</td>
                                                                 </tr>
                                                             </thead>
@@ -155,11 +155,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                             <input size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
                                                                             <input size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
                                                                         </div></td>
-                                                                    <td><input  class="form-control input-sm" type="text" placeholder="(นาที)" size="7"/></td>
+                                                                    <td><input class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
-                                                                    <td><input class="form-control input-sm" type="text" placeholder="จำนวน" size="7"/></td>
+                                                                    <td><input class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
                                                                     <td>&nbsp;</td>
                                                                 </tr>
                                                             </tbody>
