@@ -20,6 +20,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- <link rel="stylesheet" href="dist/css/ionicons.min.css"> -->
         <!-- DataTables -->
         <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+
         <!-- Theme style -->
         <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
         <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -34,6 +35,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+        <!--TimePicker-->
+        <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
+        <!--datePicker-->
+        <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+        <!--imePicker-->
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -110,15 +116,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </div>  
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
-                                                 <div class="table-responsive">  
+                                                    <div class="table-responsive">  
                                                         <table id="example1" class="table table-bordered table-striped" width="1205">
                                                             <thead><!--หัวตาราง-->
                                                                 <tr>
-                                                                   
+
                                                                     <td rowspan="2" align="center"><p>&nbsp;</p>
                                                                         <p>เลือก</p>
                                                                     </td>
-                                                                    
+
                                                                     <td rowspan="2" align="center"><p>cuscode</p>
                                                                         <p>รหัสบริษัท</p></td>
                                                                     <td width="200"  rowspan="2" align="center"><p>cusname</p>
@@ -145,7 +151,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td>55022789865</td>
                                                                     <td>absolute inovative inc.</td>
                                                                     <td>9/12/2558</td>
-                                                                    <td>&nbsp;</td>
+                                                                    <td><p id="basicExample">
+    <input type="text" class="date start" />
+    <input type="text" class="time start" /> to
+    <input type="text" class="time end" />
+    <input type="text" class="date end" />
+</p></td>
                                                                     <td><input class="form-control input-sm" type="number" placeholder="เวลาที่ใช้ไป(นาที)"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
@@ -155,8 +166,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                 </tr>
                                                             </tbody>
                                                             <tfoot><!--ท้ายตาราง-->
-                                                                 <tr>
-                                                                     <td rowspan="2" align="center"><p>&nbsp;</p>
+                                                                <tr>
+                                                                    <td rowspan="2" align="center"><p>&nbsp;</p>
                                                                         <p>เลือก</p>
                                                                     </td>
                                                                     <td rowspan="2" align="center"><p>cuscode</p>
@@ -236,6 +247,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
         <!-- FastClick -->
         <script src="plugins/fastclick/fastclick.js"></script>
+        <!--DatePicker-->
+        <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+        <script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
+        <!--DatePair-->
+        <script src="plugins/datePare/datepair.js"></script>
 
         <!--Data 1  -->
         <script>
@@ -252,6 +268,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
             });
 
         </script>
+<!--DatePair-->
+        <script>
+            // initialize input widgets first
+            $('#basicExample .time').timepicker({
+                'showDuration': true,
+                'timeFormat': 'g:ia'
+            });
+
+            $('#basicExample .date').datepicker({
+                'format': 'm/d/yyyy',
+                'autoclose': true
+            });
+
+            // initialize datepair
+            var basicExampleEl = document.getElementById('basicExample');
+            var datepair = new Datepair(basicExampleEl);
+        </script>
+
 
     </body>
 </html>
