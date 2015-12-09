@@ -122,13 +122,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <tbody>
                                                             <tr>
                                                                 <!--เลขประจำตัวผู้เสียภาษีอากร-->
-                                                                <td></td>
+                                                                <td>112233458</td>
                                                                 <!--ชื่อกิจการ-->
-                                                                <td></td>
+                                                                <td>absolute</td>
                                                                 <!--โทรศัพท์-->
-                                                                <td></td>
+                                                                <td>0855387928</td>
                                                                 <!--อีเมล์-->
-                                                                <td></td>
+                                                                <td>admin@absolute.com</td>
                                                                 <!--เพิ่มเติม-->
                                                                 <td></td>
                                                             </tr>
@@ -181,7 +181,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-
+                                                            <tr>
+                                                                <!--รหัสพนักงาน-->
+                                                                <td>55022857</td>
+                                                                <!--ชื่อ - นามสกุล-->
+                                                                <td>วิทยานิพนธ์ แท่นทอง</td>
+                                                                <!--โทรศัพท์-->
+                                                                <td>0855387928</td>
+                                                                <!--อีเมล์-->
+                                                                <td>witthayaniphon@hotmail.com</td>
+                                                                <!--เพิ่มเติม-->
+                                                                <td></td>
+                                                            </tr>
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
