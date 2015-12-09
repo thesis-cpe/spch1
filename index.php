@@ -98,12 +98,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="tab-pane active" id="tab_1">
                                 <!--Conten Tab1-->
                                 <section class="content">
+                                  <!--  <div class="row">
+                                        <div class="col-sm-offset-10 col-xs-2"> <a href="#"><i class="fa   fa-user-plus"></i> เพิ่มลูกค้า</a></div>
+                                    </div>   -->
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="box">
-                                                <div class="box-header">
-                                                    <h3 class="box-title">Data Table With Full Features</h3>
-                                                </div>
+                                                  <div class="box-header">
+                                                     <!-- <h3 class="box-title">รายการข้อมูลลูกค้า</h3> -->
+                                                     <a  href="#" title="เพิ่มข้อมูลลูกค้า"><i class="fa fa-user-plus"></i> เพิ่มลูกค้า</a>
+                                                  </div>  
+
+
+
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
                                                     <table id="example1" class="table table-bordered table-striped">
@@ -163,7 +170,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                             <div class="box">
                                                 <div class="box-header">
-                                                    <h3 class="box-title">Data Table With Full Features</h3>
+                                                   <!-- <h3 class="box-title">Data Table With Full Features</h3>  -->
+                                                    <a  href="#" title="เพิ่มข้อมูลลูกพนักงาน"><i class="fa fa-user-plus"></i>เพิ่มพนักงาน</a>
                                                 </div>
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
@@ -187,6 +195,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                 <td>0855387928</td>
                                                                 <!--อีเมล์-->
                                                                 <td>witthayaniphon@hotmail.com</td>
+                                                                <!--เพิ่มเติม-->
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <!--รหัสพนักงาน-->
+                                                                <td>55022888</td>
+                                                                <!--ชื่อ - นามสกุล-->
+                                                                <td>มงคล ทองอ่อน</td>
+                                                                <!--โทรศัพท์-->
+                                                                <td>085555555</td>
+                                                                <!--อีเมล์-->
+                                                                <td>mongkol@hotmail.com</td>
                                                                 <!--เพิ่มเติม-->
                                                                 <td></td>
                                                             </tr>
