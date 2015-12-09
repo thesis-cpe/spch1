@@ -151,17 +151,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td>55022789865</td>
                                                                     <td>absolute inovative inc.</td>
                                                                     <td>9/12/2558</td>
-                                                                    <td> <p id="basicExample">
-
-                                                                            <input placeholder="เวลาเริ่ม"  type="text" class="time start form-control input-sm" />
-                                                                            <input placeholder="เวลาสิ้นสุด" type="text" class="time end form-control input-sm" />
-
-                                                                        </p></td>
-                                                                    <td><input class="form-control input-sm" type="number" placeholder="เวลาที่ใช้ไป(นาที)"/></td>
+                                                                    <td> <div id="basicExample">
+                                                                            <input size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
+                                                                            <input size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
+                                                                        </div></td>
+                                                                    <td><input  class="form-control input-sm" type="text" placeholder="(นาที)" size="7"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
-                                                                    <td><input class="form-control input-sm" type="number" placeholder="จำนวนรายการ"/></td>
+                                                                    <td><input class="form-control input-sm" type="text" placeholder="จำนวน" size="7"/></td>
                                                                     <td>&nbsp;</td>
                                                                 </tr>
                                                             </tbody>
