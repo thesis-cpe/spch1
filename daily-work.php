@@ -110,13 +110,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </div>  
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
-                                                  <!--  <div class="table-responsive">  -->
-                                                        <table id="example1" class="table table-bordered table-striped">
+                                                 <div class="table-responsive">  
+                                                        <table id="example1" class="table table-bordered table-striped" width="1205">
                                                             <thead><!--หัวตาราง-->
                                                                 <tr>
+                                                                   
+                                                                    <td rowspan="2" align="center"><p>&nbsp;</p>
+                                                                        <p>เลือก</p>
+                                                                    </td>
+                                                                    
                                                                     <td rowspan="2" align="center"><p>cuscode</p>
                                                                         <p>รหัสบริษัท</p></td>
-                                                                    <td  rowspan="2" align="center"><p>cusname</p>
+                                                                    <td width="200"  rowspan="2" align="center"><p>cusname</p>
                                                                         <p>ชื่อบริษัท</p></td>
                                                                     <td  rowspan="2" align="center"><p>trndate</p>
                                                                         <p>วันที่</p></td>
@@ -136,20 +141,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </thead>
                                                             <tbody><!--ตัวตาราง-->
                                                                 <tr>
+                                                                    <td><input type="checkbox"/></td>
+                                                                    <td>55022789865</td>
+                                                                    <td>absolute inovative inc.</td>
+                                                                    <td>9/12/2558</td>
+                                                                    <td>&nbsp;</td>
+                                                                    <td><input class="form-control input-sm" type="number" placeholder="เวลาที่ใช้ไป(นาที)"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
-                                                                    <td>&nbsp;</td>
-                                                                    <td>&nbsp;</td>
-                                                                    <td>&nbsp;</td>
-                                                                    <td>&nbsp;</td>
-                                                                    <td>&nbsp;</td>
-                                                                    <td>&nbsp;</td>
+                                                                    <td><input class="form-control input-sm" type="number" placeholder="จำนวนรายการ"/></td>
                                                                     <td>&nbsp;</td>
                                                                 </tr>
                                                             </tbody>
                                                             <tfoot><!--ท้ายตาราง-->
                                                                  <tr>
+                                                                     <td rowspan="2" align="center"><p>&nbsp;</p>
+                                                                        <p>เลือก</p>
+                                                                    </td>
                                                                     <td rowspan="2" align="center"><p>cuscode</p>
                                                                         <p>รหัสบริษัท</p></td>
                                                                     <td  rowspan="2" align="center"><p>cusname</p>
@@ -171,7 +180,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                 </tr>
                                                             </tfoot>
                                                         </table>
-                                                   <!--  </div>/.table-responsive -->
+                                                    </div><!-- .table-responsive -->
                                                 </div>
                                                 <!-- /.box-body -->
                                             </div>
