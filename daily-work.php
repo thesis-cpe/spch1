@@ -110,40 +110,68 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </div>  
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
-                                                    <table id="example1" class="table table-bordered table-striped">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                                <th>ชื่อกิจการ</th>
-                                                                <th>โทรศัพท์</th>
-                                                                <th>อีเมล์</th>
-                                                                <th>เพิ่มเติม</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <!--เลขประจำตัวผู้เสียภาษีอากร-->
-                                                                <td>112233458</td>
-                                                                <!--ชื่อกิจการ-->
-                                                                <td>absolute</td>
-                                                                <!--โทรศัพท์-->
-                                                                <td>0855387928</td>
-                                                                <!--อีเมล์-->
-                                                                <td>admin@absolute.com</td>
-                                                                <!--เพิ่มเติม-->
-                                                                <td></td>
-                                                            </tr>
-                                                        </tbody>
-                                                        <tfoot>
-                                                            <tr>
-                                                                <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                                <th>ชื่อกิจการ</th>
-                                                                <th>โทรศัพท์</th>
-                                                                <th>อีเมล์</th>
-                                                                <th>เพิ่มเติม</th>
-                                                            </tr>
-                                                        </tfoot>
-                                                    </table>
+                                                  <!--  <div class="table-responsive">  -->
+                                                        <table id="example1" class="table table-bordered table-striped">
+                                                            <thead><!--หัวตาราง-->
+                                                                <tr>
+                                                                    <td rowspan="2" align="center"><p>cuscode</p>
+                                                                        <p>รหัสบริษัท</p></td>
+                                                                    <td  rowspan="2" align="center"><p>cusname</p>
+                                                                        <p>ชื่อบริษัท</p></td>
+                                                                    <td  rowspan="2" align="center"><p>trndate</p>
+                                                                        <p>วันที่</p></td>
+                                                                    <td  rowspan="2" align="center"><p>trntime</p>
+                                                                        <p>ช่วงเวลา</p></td>
+                                                                    <td colspan="3" align="center">เวลา</td>
+                                                                    <td colspan="3" align="center">รายการบันทึก</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td  align="center">เวลาใช้ไป</td>
+                                                                    <td  align="center">ยกมา</td>
+                                                                    <td  align="center">คงเหลือ</td>
+                                                                    <td  align="center">ยกมา</td>
+                                                                    <td  align="center">คีย์เข้า</td>
+                                                                    <td  align="center">ยกไป</td>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody><!--ตัวตาราง-->
+                                                                <tr>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>&nbsp;</td>
+                                                                    <td>&nbsp;</td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot><!--ท้ายตาราง-->
+                                                                 <tr>
+                                                                    <td rowspan="2" align="center"><p>cuscode</p>
+                                                                        <p>รหัสบริษัท</p></td>
+                                                                    <td  rowspan="2" align="center"><p>cusname</p>
+                                                                        <p>ชื่อบริษัท</p></td>
+                                                                    <td  rowspan="2" align="center"><p>trndate</p>
+                                                                        <p>วันที่</p></td>
+                                                                    <td  rowspan="2" align="center"><p>trntime</p>
+                                                                        <p>ช่วงเวลา</p></td>
+                                                                    <td colspan="3" align="center">เวลา</td>
+                                                                    <td colspan="3" align="center">รายการบันทึก</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td  align="center">เวลาใช้ไป</td>
+                                                                    <td  align="center">ยกมา</td>
+                                                                    <td  align="center">คงเหลือ</td>
+                                                                    <td  align="center">ยกมา</td>
+                                                                    <td  align="center">คีย์เข้า</td>
+                                                                    <td  align="center">ยกไป</td>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                   <!--  </div>/.table-responsive -->
                                                 </div>
                                                 <!-- /.box-body -->
                                             </div>
