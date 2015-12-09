@@ -35,7 +35,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
-        
+
+
+        <!--css timepicker for timepiar-->
+        <link rel="stylesheet" type="text/css" href="plugins/datepair-this/jquery.timepicker.css" /> 
+
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -147,7 +151,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td>55022789865</td>
                                                                     <td>absolute inovative inc.</td>
                                                                     <td>9/12/2558</td>
-                                                                    <td>&nbsp;</td>
+                                                                    <td> <p id="basicExample">
+
+                                                                            <input  type="text" class="time start form-control input-sm" /> to
+                                                                            <input type="text" class="time end form-control input-sm" />
+
+                                                                        </p></td>
                                                                     <td><input class="form-control input-sm" type="number" placeholder="เวลาที่ใช้ไป(นาที)"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
@@ -242,9 +251,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
         <script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
         <!--DatePair-->
-        
-
-        <!--Data 1  -->
+        <script src="plugins/datepair-this/jquery.timepicker.js"></script>
+        <script src="plugins/datepair-this/bootstrap-datepicker.js"></script>
+        <script src="plugins/datepair-this/datepair.js"></script>
+        <script src="plugins/datepair-this/jquery.datepair.js"></script>
+        <!--Data Table1-->
         <script>
             $(function () {
                 $("#example1").DataTable();
@@ -260,6 +271,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         </script>
 
+        <!--timePair-->
+        <script>
+            $('#basicExample .time').timepicker({
+                'showDuration': true,
+                'timeFormat': 'g:ia'
+            });
+
+            $('#basicExample .date').datepicker({
+                'format': 'm/d/yyyy',
+                'autoclose': true
+            });
+
+            var basicExampleEl = document.getElementById('basicExample');
+            var datepair = new Datepair(basicExampleEl);
+        </script>
 
 
     </body>
