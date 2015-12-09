@@ -92,25 +92,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab">ข้อมูลงาน</a></li>
-                            
+
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
                                 <!--Conten Tab1-->
                                 <section class="content">
-                                  <!--  <div class="row">
-                                        <div class="col-sm-offset-10 col-xs-2"> <a href="#"><i class="fa   fa-user-plus"></i> เพิ่มลูกค้า</a></div>
-                                    </div>   -->
+                                    <!--  <div class="row">
+                                          <div class="col-sm-offset-10 col-xs-2"> <a href="#"><i class="fa   fa-user-plus"></i> เพิ่มลูกค้า</a></div>
+                                      </div>   -->
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="box">
-                                                  <div class="box-header">
-                                                     <!-- <h3 class="box-title">รายการข้อมูลลูกค้า</h3> -->
-                                                     <a  href="#" title="เพิ่มข้อมูลลูกค้า"><i class="fa fa-user-plus"></i> เพิ่มลูกค้า</a>
-                                                  </div>  
-
-
-
+                                                <div class="box-header">
+                                                    <!-- <h3 class="box-title">รายการข้อมูลลูกค้า</h3> -->
+                                                  <!--  <a  href="#" title="เพิ่มข้อมูลลูกค้า"><i class="fa fa-save"></i> บันทึกงาน</a>  -->
+                                                </div>  
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
                                                     <table id="example1" class="table table-bordered table-striped">
@@ -159,7 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <!--.Conten Tab1-->
                             </div>
-                           
+
 
                         </div>
                         <!-- /.tab-content -->
@@ -174,7 +171,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <?php include_once './include-page/footer.php'; ?>
             <!-- .Main Footer -->
 
-           
+
             <!-- Add the sidebar's background. This div must be placed
                  immediately after the control sidebar -->
             <div class="control-sidebar-bg"></div>
@@ -216,7 +213,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     "autoWidth": false
                 });
             });
-            
+
         </script>
 
     </body>
