@@ -153,8 +153,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td>9/12/2558</td>
                                                                     <td> <p id="basicExample">
 
-                                                                            <input  type="text" class="time start form-control input-sm" /> to
-                                                                            <input type="text" class="time end form-control input-sm" />
+                                                                            <input placeholder="เวลาเริ่ม"  type="text" class="time start form-control input-sm" />
+                                                                            <input placeholder="เวลาสิ้นสุด" type="text" class="time end form-control input-sm" />
 
                                                                         </p></td>
                                                                     <td><input class="form-control input-sm" type="number" placeholder="เวลาที่ใช้ไป(นาที)"/></td>
