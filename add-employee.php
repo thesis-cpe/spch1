@@ -32,6 +32,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
+        <!--Datpicker-->
+        <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -265,8 +268,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="col-sm-3">
                                     <label>เริ่มปฏิบัติงาน:</label>
 
-                                    <input name="datInWork" type="text" class="form-control" placeholder="">
-
+                                   <!-- <input  data-provide="datepicker" name="datInWork" type="text" class="form-control datepicker" placeholder="" data-date-format="dd/mm/yyyy">-->
+                                    <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                        <input name="datInWork" type="text" class="form-control" placeholder="01/01/2016">
+                                        
+                                    </div>
                                 </div>
                                 <div class="col-sm-3">
                                     <label>&nbsp;</label>
@@ -354,5 +363,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
              Both of these plugins are recommended to enhance the
              user experience. Slimscroll is required when using the
              fixed layout. -->
+        <!--Datpicker-->
+        <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
     </body>
 </html>

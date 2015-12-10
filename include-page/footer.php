@@ -4,5 +4,5 @@
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2015 <a href="#">ศุถโชค ออดิเตอร์ จำกัด</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2015 <a href="#">ศุภโชค ออดิเตอร์ จำกัด</a>.</strong> All rights reserved.
   </footer>
