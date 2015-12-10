@@ -236,8 +236,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <option value="ปริญญาเอก">ปริญญาเอก</option>
                                     </select>
                                 </div>
-                                
-                                 <div class="col-sm-3">
+
+                                <div class="col-sm-3">
                                     <label>สาขาที่จบ:</label>
 
                                     <input name="txtMajor" type="text" class="form-control" placeholder="บัญชี">
@@ -256,9 +256,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 </div>
                             </div>
-                            
+
                             <!--.ข้อมูลการศึกษา-->
-                            
+
                             <!--ข้อมูลเกี่ยวกับการทำงาน-->
                             <br>
                             <div class="row">
@@ -274,43 +274,51 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <input name="txtCoast" type="text" class="form-control" placeholder="อัตราเงินเดือน">
 
                                 </div>
-                                 <div class="col-sm-3">
+                                <div class="col-sm-3">
                                     <label>ค่าแรงต่อวัน:</label>
 
-                                    <input name="txtRateCoast" type="text" class="form-control" placeholder="บาท/วัน">
+                                    <input name="txtRateCoast" type="text" class="form-control" placeholder="จำนวนบาทต่อวัน">
 
                                 </div>
                                 <div class="col-sm-3">
                                     <label>จำวนวนวันทำงาน:</label>
 
-                                    <input name="txtWorkDay" type="text" class="form-control" placeholder="วัน/เดือน">
+                                    <input name="txtWorkDay" type="text" class="form-control" placeholder="จำนวนวันต่อเดือน">
 
                                 </div>
                             </div>
                             <!--.ข้อมูลเกี่ยวกับการทำงาน-->
-                            
+
                             <!--เงื่อนไขวันหยุดและสวัสดิการ+หมายเหตุ-->
-                           
+
                             <div class="row">
                                 <div class="col-sm-6">
-                                     <label>&nbsp;</label>
-                                     <textarea name="txtareaCondition" rows="3" cols="30" class="form-control" placeholder="เงื่อนไขวันหยุดและสวัสดิการ"></textarea>
+                                    <label>&nbsp;</label>
+                                    <textarea name="txtareaCondition" rows="3" cols="30" class="form-control" placeholder="เงื่อนไขวันหยุดและสวัสดิการ"></textarea>
                                 </div>
-                                
+
                                 <div class="col-sm-6">
-                                     <label>&nbsp;</label>
-                                     <textarea name="txtareaMark" rows="3" cols="30" class="form-control" placeholder="หมายเหตุ"></textarea>
+                                    <label>&nbsp;</label>
+                                    <textarea name="txtareaMark" rows="3" cols="30" class="form-control" placeholder="หมายเหตุ"></textarea>
                                 </div>
-                            
+
                             </div>
-                            
-                           
-                                
-                            
-                             <!--.เงื่อนไขวันหยุดและสวัสดิการ+หมายเหตุ-->
+
+
+
+
+                            <!--.เงื่อนไขวันหยุดและสวัสดิการ+หมายเหตุ-->
 
                         </div>
                         <!-- /.box-body -->
+
+                        <!--Div Footer-->
+                        <div class="box-footer">
+                            <button type="reset" class="btn btn-default">ล้างข้อมูล</button>
+                            <button type="submit" class="btn btn-success pull-right">บันทึก</button>
+                        </div>
+                        <!--.Div Footer-->
+
                     </div>
 
 
