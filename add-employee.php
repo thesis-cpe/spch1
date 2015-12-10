@@ -201,7 +201,63 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <input name="txtEmail" type="email" class="form-control" placeholder="example@exam.com">
                                     </div>
                                 </div>
+                                <div class="col-sm-3">
+                                    <label>บุคคลที่ติดต่อได้:</label>
+
+                                    <input name="txtNameFriend" type="text" class="form-control" placeholder="ชื่อบุคคลที่ติดต่อได้">
+
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <input name="txtEmailFriend" type="email" class="form-control" placeholder="หมายเลขโทรศัพท์">
+                                    </div>
+                                </div>
                             </div>
+
+                            <!--ข้อมูลการศึกษา-->
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label>ระดับการศึกษา:</label>
+                                    <select class="form-control" name="selGaduLevel">
+                                        <option value="ประถมต้น">ประถมต้น</option>
+                                        <option value="ประถมปลาย">ประถมปลาย</option>
+                                        <option value="มัธยมต้น">มัธยมต้น</option>
+                                        <option value="มัธยมปลาย">มัธยมปลาย</option>
+                                        <option value="ปวช">ปวช</option>
+                                        <option value="ปวส">ปวส</option>
+                                        <option value="ปริญญาตรี">ปริญญาตรี</option>
+                                        <option value="ปริญญาโท">ปริญญาโท</option>
+                                        <option value="ปริญญาเอก">ปริญญาเอก</option>
+                                    </select>
+                                </div>
+                                
+                                 <div class="col-sm-3">
+                                    <label>สาขาที่จบ:</label>
+
+                                    <input name="txtMajor" type="text" class="form-control" placeholder="บัญชี">
+
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>เกรดเฉลี่ยรวม:</label>
+
+                                    <input name="txtGpa" type="text" class="form-control" placeholder="4.00">
+
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>สถาบัน:</label>
+
+                                    <input name="txtInstitute" type="text" class="form-control" placeholder="มหาวิทยาลัยเกษตรศาสตร์">
+
+                                </div>
+                            </div>
+                            
+                            <!--.ข้อมูลการศึกษา-->
 
 
 
