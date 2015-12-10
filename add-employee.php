@@ -92,28 +92,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <div class="box-body">
                             <!--ชื่อ-นามสกุล-->
+                            <label>ชื่อ-นามสกุล:</label>
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <input type="checkbox">
-                                        </span>
-                                        <input name="txtEmName" type="text" class="form-control" placeholder="ชื่อ">
-                                    </div>
+                                
+                                <div class="col-sm-2">
+
+                                    <select class="form-control" name="selTitle">
+                                        <option value="นาย">นาย</option>
+                                        <option value="นาง">นาง</option>
+                                        <option value="นางสาว">นางสาว</option>
+                                    </select>
+
+                                    <!-- /input-group -->
+                                </div>
+
+                                <div class="col-sm-5">
+
+                                    <input name="txtEmName" type="text" class="form-control" placeholder="ชื่อ">
+
                                     <!-- /input-group -->
                                 </div>
                                 <!-- /.col-lg-6 -->
-                                <div class="col-lg-6">
-                                    
-                                        
-                                        <input name="txtEmLastName" type="text" class="form-control" placeholder="นามสกุล">
-                                    
+                                <div class="col-sm-5">
+                                    <input name="txtEmLastName" type="text" class="form-control " placeholder="นามสกุล">
                                     <!-- /input-group -->
                                 </div>
                                 <!-- /.col-lg-6 -->
                             </div>  
-
                             <!--.ชื่อ-นามสกุล-->
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3"><label>สถานะ:</label></div>
+                                <div class="col-sm-3 col-sm-offset-3"><label>เลขประจำบุคคล:</label></div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <select name="selStatus" class="form-control">
+                                        <option>คงอยู่</option>
+                                        <option>ลาออก</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3">
+                                        <select name="selRole" class="form-control">
+                                        <option>ผู้ดูแลระบบ</option>
+                                        <option>ผู้ใช้งาน</option>
+                                    </select>
+                                </div>
+                                
+                            </div> 
+                            
                         </div>
                         <!-- /.box-body -->
                     </div>

@@ -171,7 +171,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="box">
                                                 <div class="box-header">
                                                    <!-- <h3 class="box-title">Data Table With Full Features</h3>  -->
-                                                   <a  href="add-employee.php" title="เพิ่มข้อมูลลูกพนักงาน"><i class="fa fa-user-plus"></i>เพิ่มพนักงาน</a>
+                                                   <a  href="add-employee.php" title="เพิ่มข้อมูลพนักงาน"><i class="fa fa-user-plus"></i>เพิ่มพนักงาน</a>
                                                 </div>
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
