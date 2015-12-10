@@ -1,3 +1,8 @@
+<?php
+ /*ส่วนควบคุมการเชื่อมต่อ*/
+
+
+?>
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -86,20 +91,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                        <li class="active">Here</li>
+                        <li class="active">Here</li>  
+
+
+
                     </ol>
                 </section>
 
                 <!-- Main content -->
+                
+                <form action="<?php echo $_SESSION['PHP_SELF'];?>" method="POST">  <!--Form-->
                 <section class="content">
-
+                    
                     <!-- Your Page Content Here -->
                     <!-- TAB --->
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab">ข้อมูลงาน</a></li>
-
+                            <li><button name="btnSubmit" type="submit" class="btn btn-block btn-info btn-sm" title="บันทึก"><span class="fa fa-save"></button></li> 
                         </ul>
+                        
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
                                 <!--Conten Tab1-->
@@ -145,6 +156,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td  align="center">ยกไป</td>
                                                                 </tr>
                                                             </thead>
+
                                                             <tbody><!--ตัวตาราง-->
                                                                 <tr>
                                                                     <td><input id="chkBox1" name="chkBox1" type="checkbox"/></td>
@@ -162,48 +174,49 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td><input disabled id="txtCountRec" name="txtCountRec" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <!--CheckBox-->
-                                                                        <script>
-                                                                            document.getElementById('chkBox1').onchange = function () {
-                                                                                document.getElementById('txtStartTime').disabled = !this.checked;
-                                                                                document.getElementById('txtEndTime').disabled = !this.checked;
-                                                                                document.getElementById('txtUseTime').disabled = !this.checked;
-                                                                                document.getElementById('txtCountRec').disabled = !this.checked;
+                                                            <script>
+                                                                document.getElementById('chkBox1').onchange = function () {
+                                                                    document.getElementById('txtStartTime').disabled = !this.checked;
+                                                                    document.getElementById('txtEndTime').disabled = !this.checked;
+                                                                    document.getElementById('txtUseTime').disabled = !this.checked;
+                                                                    document.getElementById('txtCountRec').disabled = !this.checked;
 
-                                                                            };
-                                                                        </script>
+                                                                };
+                                                            </script>
                                                             <!--.CheckBox-->
-                                                                </tr>
-                                                                
-                                                                <tr>
-                                                                    <td><input id="chkBox2" name="chkBox1" type="checkbox"/></td>
-                                                                    <td>55022789866</td>
-                                                                    <td>app inovative inc.</td>
-                                                                    <td>10/12/2558</td>
-                                                                    <td> <div id="basicExample">
-                                                                            <input disabled id="txtStartTime2" name="txtStartTime2" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
-                                                                            <input disabled id="txtEndTime2" name="txtEndTime2" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
-                                                                        </div></td>
-                                                                    <td><input disabled id="txtUseTime2" name="txtUseTime2" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
-                                                                    <td>&nbsp;</td>
-                                                                    <td>&nbsp;</td>
-                                                                    <td>&nbsp;</td>
-                                                                    <td><input disabled id="txtCountRec2" name="txtCountRec2" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
-                                                                    <td>&nbsp;</td>
-                                                                    <!--CheckBox-->
-                                                                        <script>
-                                                                            document.getElementById('chkBox2').onchange = function () {
-                                                                                document.getElementById('txtStartTime2').disabled = !this.checked;
-                                                                                document.getElementById('txtEndTime2').disabled = !this.checked;
-                                                                                document.getElementById('txtUseTime2').disabled = !this.checked;
-                                                                                document.getElementById('txtCountRec2').disabled = !this.checked;
+                                                            </tr>
 
-                                                                            };
-                                                                        </script>
+                                                            <tr>
+                                                                <td><input id="chkBox2" name="chkBox1" type="checkbox"/></td>
+                                                                <td>55022789866</td>
+                                                                <td>app inovative inc.</td>
+                                                                <td>10/12/2558</td>
+                                                                <td> <div id="basicExample">
+                                                                        <input disabled id="txtStartTime2" name="txtStartTime2" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
+                                                                        <input disabled id="txtEndTime2" name="txtEndTime2" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
+                                                                    </div></td>
+                                                                <td><input disabled id="txtUseTime2" name="txtUseTime2" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td><input disabled id="txtCountRec2" name="txtCountRec2" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
+                                                                <td>&nbsp;</td>
+                                                                <!--CheckBox-->
+                                                            <script>
+                                                                document.getElementById('chkBox2').onchange = function () {
+                                                                    document.getElementById('txtStartTime2').disabled = !this.checked;
+                                                                    document.getElementById('txtEndTime2').disabled = !this.checked;
+                                                                    document.getElementById('txtUseTime2').disabled = !this.checked;
+                                                                    document.getElementById('txtCountRec2').disabled = !this.checked;
+
+                                                                };
+                                                            </script>
                                                             <!--.CheckBox-->
-                                                                </tr>
+                                                            </tr>
 
 
                                                             </tbody>
+
                                                             <tfoot><!--ท้ายตาราง-->
                                                                 <tr>
                                                                     <td rowspan="2" align="center"><p>&nbsp;</p>
@@ -251,6 +264,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- .TAB --->
                 </section>
                 <!-- /.content -->
+                </form> <!--.Form-->
             </div>
             <!-- /.content-wrapper -->
 
@@ -296,17 +310,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="plugins/datepair-this/jquery.datepair.js"></script>
         <!--Data Table1-->
         <script>
-                                                                        $(function () {
-                                                                            $("#example1").DataTable();
-                                                                            $('#example2').DataTable({
-                                                                                "paging": true,
-                                                                                "lengthChange": false,
-                                                                                "searching": false,
-                                                                                "ordering": true,
-                                                                                "info": true,
-                                                                                "autoWidth": false
-                                                                            });
-                                                                        });
+           $(function () {
+             $("#example1").DataTable();
+              $('#example2').DataTable({
+              "paging": true,
+              "lengthChange": false,
+              "searching": false,
+              "ordering": true,
+              "info": true,
+              "autoWidth": false
+               });
+              });
 
         </script>
 
@@ -331,3 +345,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     </body>
 </html>
+<?php  /*เอาข้อมูลลง DB*/
+if(isset($_POST['btnSubmit'])){
+    
+}
+
+

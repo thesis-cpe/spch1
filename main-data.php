@@ -79,8 +79,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <small>แสดงข้อมูลลูกค้าและพนักงาน</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                        <li class="active">Here</li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> ข้อมูลหลัก</a></li>
+                        <!--<li class="active">Here</li> -->
                     </ol>
                 </section>
 
@@ -171,7 +171,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="box">
                                                 <div class="box-header">
                                                    <!-- <h3 class="box-title">Data Table With Full Features</h3>  -->
-                                                    <a  href="#" title="เพิ่มข้อมูลลูกพนักงาน"><i class="fa fa-user-plus"></i>เพิ่มพนักงาน</a>
+                                                   <a  href="add-employee.php" title="เพิ่มข้อมูลลูกพนักงาน"><i class="fa fa-user-plus"></i>เพิ่มพนักงาน</a>
                                                 </div>
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
