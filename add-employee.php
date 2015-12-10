@@ -94,7 +94,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!--ชื่อ-นามสกุล-->
                             <label>ชื่อ-นามสกุล:</label>
                             <div class="row">
-                                
+
                                 <div class="col-sm-2">
 
                                     <select class="form-control" name="selTitle">
@@ -125,7 +125,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="col-sm-3"><label>สถานะ:</label></div>
                                 <div class="col-sm-3 col-sm-offset-3"><label>เลขประจำบุคคล:</label></div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <select name="selStatus" class="form-control">
@@ -134,18 +134,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </select>
                                 </div>
                                 <div class="col-sm-3">
-                                        <select name="selRole" class="form-control">
+                                    <select name="selRole" class="form-control">
                                         <option>ผู้ดูแลระบบ</option>
                                         <option>ผู้ใช้งาน</option>
                                     </select>
                                 </div>
-                                
+                                <div class="col-sm-3">
+                                    <input class="form-control" name="txtEmId" placeholder="หมายเลขพนักงาน">
+                                </div>
+                                <div class="col-sm-3">
+                                    <input class="form-control" name="txtAuditId" placeholder="หมายเลขผู้ทำบัญชี">
+                                </div>
+
                             </div> 
+
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+
+
+                    <!--ข้อมูลส่วนบุคคล-->
+                    <div class="box box-default">
+                        <div class="box-header">
+                            <h3 class="box-title">ข้อมูลส่วนบุคคล</h3>
+                        </div>
+                        <div class="box-body">
                             
                         </div>
                         <!-- /.box-body -->
                     </div>
 
+                    
+                    
+                    
                     <!-- .Your Page Content Here -->
                 </section>
                 <!-- /.content -->
