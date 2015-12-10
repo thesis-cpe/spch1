@@ -152,14 +152,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td>absolute inovative inc.</td>
                                                                     <td>9/12/2558</td>
                                                                     <td> <div id="basicExample">
-                                                                            <input id="txtStartTime" name="txtStartTime" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
-                                                                            <input id="txtEndTime" name="txtEndTime" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
+                                                                            <input disabled id="txtStartTime" name="txtStartTime" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
+                                                                            <input disabled id="txtEndTime" name="txtEndTime" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
                                                                         </div></td>
-                                                                    <td><input id="txtUseTime" name="txtUseTime" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
+                                                                    <td><input disabled id="txtUseTime" name="txtUseTime" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
-                                                                    <td><input id="txtCountRec" name="txtCountRec" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
+                                                                    <td><input disabled id="txtCountRec" name="txtCountRec" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
                                                                     <td>&nbsp;</td>
                                                                 </tr>
                                                             </tbody>
@@ -284,6 +284,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
             var basicExampleEl = document.getElementById('basicExample');
             var datepair = new Datepair(basicExampleEl);
         </script>
+
+        <!--CheckBox-->
+        <script>
+            document.getElementById('chkBox1').onchange = function () {
+                document.getElementById('txtStartTime').disabled = !this.checked;
+                document.getElementById('txtEndTime').disabled = !this.checked;
+                document.getElementById('txtUseTime').disabled = !this.checked;
+                document.getElementById('txtCountRec').disabled = !this.checked;
+               
+            };
+        </script>
+        <!--.CheckBox-->
 
 
     </body>
