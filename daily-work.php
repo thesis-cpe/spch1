@@ -161,7 +161,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td>&nbsp;</td>
                                                                     <td><input disabled id="txtCountRec" name="txtCountRec" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
                                                                     <td>&nbsp;</td>
-                                                                </tr>
+                                                                    <!--CheckBox-->
+                                                                    <script>
+                                                                        document.getElementById('chkBox1').onchange = function () {
+                                                                            document.getElementById('txtStartTime').disabled = !this.checked;
+                                                                            document.getElementById('txtEndTime').disabled = !this.checked;
+                                                                            document.getElementById('txtUseTime').disabled = !this.checked;
+                                                                            document.getElementById('txtCountRec').disabled = !this.checked;
+
+                                                                        };
+                                                                    </script>
+                                                                    <!--.CheckBox-->
+
+                                                            </tr>
+
+
                                                             </tbody>
                                                             <tfoot><!--ท้ายตาราง-->
                                                                 <tr>
@@ -285,17 +299,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             var datepair = new Datepair(basicExampleEl);
         </script>
 
-        <!--CheckBox-->
-        <script>
-            document.getElementById('chkBox1').onchange = function () {
-                document.getElementById('txtStartTime').disabled = !this.checked;
-                document.getElementById('txtEndTime').disabled = !this.checked;
-                document.getElementById('txtUseTime').disabled = !this.checked;
-                document.getElementById('txtCountRec').disabled = !this.checked;
-               
-            };
-        </script>
-        <!--.CheckBox-->
+
 
 
     </body>
