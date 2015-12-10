@@ -95,11 +95,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <div class="box-body">
                             <!--ชื่อ-นามสกุล-->
-                            <label>ชื่อ-นามสกุล:</label>
+                           
                             <div class="row">
 
                                 <div class="col-sm-2">
-
+                                     <label>ชื่อ-นามสกุล:</label>
                                     <select class="form-control" name="selTitle">
                                         <option value="นาย">นาย</option>
                                         <option value="นาง">นาง</option>
@@ -110,13 +110,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
 
                                 <div class="col-sm-5">
-
+                                    <label>&nbsp;</label>
                                     <input name="txtEmName" type="text" class="form-control" placeholder="ชื่อ">
 
                                     <!-- /input-group -->
                                 </div>
                                 <!-- /.col-lg-6 -->
                                 <div class="col-sm-5">
+                                    <label>&nbsp;</label>
                                     <input name="txtEmLastName" type="text" class="form-control " placeholder="นามสกุล">
                                     <!-- /input-group -->
                                 </div>
