@@ -137,7 +137,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </select>
                                 </div>
                                 <div class="col-sm-3">
-                                     <label>&nbsp;</label>
+                                    <label>&nbsp;</label>
                                     <input class="form-control" name="txtEmId" placeholder="หมายเลขพนักงาน">
                                 </div>
                                 <div class="col-sm-3">
@@ -158,16 +158,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <h3 class="box-title">ข้อมูลส่วนบุคคล</h3>
                         </div>
                         <div class="box-body">
-                            
-                           
-                            
+
                             <div class="row">
                                 <div class="col-sm-3">
                                     <label>เลขประจำตัวประชาชน:</label>
                                     <input class="form-control" name="txtNationId" placeholder="หมายเลข 13 หลัก" maxlength="13">
                                 </div>
                                 <div class="col-sm-3">
-                                     <label>สถานะสมรส :</label>
+                                    <label>สถานะสมรส :</label>
                                     <select name="selMarieStatus" class="form-control">
                                         <option>โสด</option>
                                         <option>สมรส</option>
@@ -183,14 +181,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <textarea name="txtareaAddr2" rows="1" cols="40" class="form-control" placeholder="ที่อยู่ปัจจุบัน"></textarea>
                                 </div>
                             </div>
-                            
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label>ข้อมูลการติดต่อ:</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-phone"></i>
+                                        </div>
+                                        <input name="txtTel" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <input name="txtEmail" type="email" class="form-control" placeholder="example@exam.com">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
                         </div>
                         <!-- /.box-body -->
                     </div>
 
-                    
-                    
-                    
+
+
+
                     <!-- .Your Page Content Here -->
                 </section>
                 <!-- /.content -->
