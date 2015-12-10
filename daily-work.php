@@ -147,19 +147,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </thead>
                                                             <tbody><!--ตัวตาราง-->
                                                                 <tr>
-                                                                    <td><input type="checkbox"/></td>
+                                                                    <td><input id="chkBox1" name="chkBox1" type="checkbox"/></td>
                                                                     <td>55022789865</td>
                                                                     <td>absolute inovative inc.</td>
                                                                     <td>9/12/2558</td>
                                                                     <td> <div id="basicExample">
-                                                                            <input size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
-                                                                            <input size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
+                                                                            <input id="txtStartTime" name="txtStartTime" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
+                                                                            <input id="txtEndTime" name="txtEndTime" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
                                                                         </div></td>
-                                                                    <td><input class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
+                                                                    <td><input id="txtUseTime" name="txtUseTime" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
-                                                                    <td><input class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
+                                                                    <td><input id="txtCountRec" name="txtCountRec" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
                                                                     <td>&nbsp;</td>
                                                                 </tr>
                                                             </tbody>
