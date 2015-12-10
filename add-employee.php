@@ -258,8 +258,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             
                             <!--.ข้อมูลการศึกษา-->
+                            
+                            <!--ข้อมูลเกี่ยวกับการทำงาน-->
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label>เริ่มปฏิบัติงาน:</label>
 
+                                    <input name="datInWork" type="text" class="form-control" placeholder="">
 
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+
+                                    <input name="txtCoast" type="text" class="form-control" placeholder="อัตราเงินเดือน">
+
+                                </div>
+                                 <div class="col-sm-3">
+                                    <label>ค่าแรงต่อวัน:</label>
+
+                                    <input name="txtRateCoast" type="text" class="form-control" placeholder="บาท/วัน">
+
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>จำวนวนวันทำงาน:</label>
+
+                                    <input name="txtWorkDay" type="text" class="form-control" placeholder="วัน/เดือน">
+
+                                </div>
+                            </div>
+                            <!--.ข้อมูลเกี่ยวกับการทำงาน-->
+                            
+                            <!--เงื่อนไขวันหยุดและสวัสดิการ+หมายเหตุ-->
+                           
+                            <div class="row">
+                                <div class="col-sm-6">
+                                     <label>&nbsp;</label>
+                                     <textarea name="txtareaCondition" rows="3" cols="30" class="form-control" placeholder="เงื่อนไขวันหยุดและสวัสดิการ"></textarea>
+                                </div>
+                                
+                                <div class="col-sm-6">
+                                     <label>&nbsp;</label>
+                                     <textarea name="txtareaMark" rows="3" cols="30" class="form-control" placeholder="หมายเหตุ"></textarea>
+                                </div>
+                            
+                            </div>
+                            
+                           
+                                
+                            
+                             <!--.เงื่อนไขวันหยุดและสวัสดิการ+หมายเหตุ-->
 
                         </div>
                         <!-- /.box-body -->
