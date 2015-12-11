@@ -176,18 +176,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="row">
                                 <div class="col-sm-3">
                                     <label>&nbsp;</label>
-                                    <input type="text" name="txtNameCon" id="txtNameCon" class="form-control" placeholder="ชื่อผู้มีอำนาจลงนาม"/>
+                                    <div id="olNameCon">
+                                        <input type="text" name="txtNameCon[]" id="txtNameCon" class="form-control" placeholder="ชื่อผู้มีอำนาจลงนาม"/>
+                                    </div>
+                                    
                                 </div>
-                                
+
                                 <div class="col-sm-4">
                                     <label>สถานะ:</label>
                                     <ul class="list-inline">
-                                        <li> <select class="form-control" name="selStatusCondition" id="selStatusCondition">
-                                                <option value="เจ้าของกิจการ">เจ้าของกิจการ</option>
-                                                <option value="หุ้นส่วนผู้จัดการ">หุ้นส่วนผู้จัดการ</option>
-                                                <option value="กรรมการผู้จัดการ">กรรมการผู้จัดการ</option>
-                                            </select>
-                                        </li>
+                                        
+                                            <li> <select class="form-control" name="selStatusCondition" id="selStatusCondition">
+                                                    <option value="เจ้าของกิจการ">เจ้าของกิจการ</option>
+                                                    <option value="หุ้นส่วนผู้จัดการ">หุ้นส่วนผู้จัดการ</option>
+                                                    <option value="กรรมการผู้จัดการ">กรรมการผู้จัดการ</option>
+                                                </select>
+                                            </li>
+                                        
                                         <li><button id="btnAdd" name="btnAdd" class="btn btn-block btn-default btm-sm"><span class="fa fa-plus"></span></button></li>
                                         <li><button id="btnDel" name="btnDel" class="btn btn-block btn-default btm-sm"><span class="fa fa-minus"></span></button></li>
 
@@ -242,5 +247,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
              fixed layout. -->
         <!--Datpicker-->
         <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+
+        <!--add element-->
+        <script>
+            $(document).ready(function () {
+                $("#btnAdd").click(function () {
+                    $("#olNameCon").append("<input type='text' name='txtNameCon[]' id='txtNameCon1' class='form-control' placeholder='ชื่อผู้มีอำนาจลงนาม'/>");
+                    
+                });
+            });
+        </script>
+        <!--remove element-->
+        <script>
+            $(document).ready(function () {
+                $("#btnDel").click(function () {
+                    $("#txtNameCon1").remove();
+                });
+            });
+        </script>
     </body>
 </html>
