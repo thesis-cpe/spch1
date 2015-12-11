@@ -141,7 +141,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <label>&nbsp;</label>
                                     <div class="input-group">
                                         <div class="input-group-addon">
-                                            <i class="fa fa-mobile-phone"></i>
+                                            <i class="fa fa-phone"></i>
                                         </div>
                                         <input name="txtCusTel" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์">
                                     </div>
@@ -150,7 +150,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <label>&nbsp;</label>
                                     <div class="input-group">
                                         <div class="input-group-addon">
-                                            <i class="fa fa-phone"></i>
+                                            <i class="fa fa-fax"></i>
                                         </div>
                                         <input name="txtCusFax" type="text" class="form-control" placeholder="หมายเลขโทรสาร">
                                     </div>
@@ -159,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <label>&nbsp;</label>
                                     <div class="input-group">
                                         <div class="input-group-addon">
-                                            <i class="fa fa-desktop"></i>
+                                            <i class="fa  fa-globe"></i>
                                         </div>
                                         <input name="txtCusWeb" type="text" class="form-control" placeholder="www.example.com">
                                     </div>
@@ -217,7 +217,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <label>&nbsp;</label>
                                     <div class="input-group">
                                         <div class="input-group-addon">
-                                            <i class="fa fa-mobile-phone"></i>
+                                            <i class="fa fa-phone"></i>
                                         </div>
                                         <input name="txtContractTel" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์ผู้ติดต่องาน"/>
                                     </div>
