@@ -106,7 +106,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="box">
                                                   <div class="box-header">
                                                      <!-- <h3 class="box-title">รายการข้อมูลลูกค้า</h3> -->
-                                                     <a  href="#" title="เพิ่มข้อมูลลูกค้า"><i class="fa fa-user-plus"></i> เพิ่มลูกค้า</a>
+                                                     <a  href="add-customer.php" title="เพิ่มข้อมูลลูกค้า"><i class="fa fa-user-plus"></i> เพิ่มลูกค้า</a>
                                                   </div>  
 
 
