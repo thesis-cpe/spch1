@@ -192,8 +192,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <li><button id="btnDel" name="btnDel" class="btn btn-block btn-default btm-sm"><span class="fa fa-minus"></span></button></li>
 
                                     </ul>
-
-
                                 </div>
 
                             </div>
