@@ -35,6 +35,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!--Datpicker-->
         <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+        <!--Googlemap-->
+        <link rel="stylesheet" href="plugins/googleMap/googlemap.css">
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -241,14 +243,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <textarea class="form-control" name="txtCustomerMark" cols="40" rows="1" placeholder="หมายเหตุ"></textarea>
                                 </div>
                                 <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <input name="txtLat" class="form-control" placeholder="ละติจูด " />
+                                    <label>&nbsp;</label>  <!--รับค่าจาก GoogleMap-->
+                                    <input name="txtLat" id="lat_value" class="form-control" placeholder="ละติจูด(ค่าอัตโนมัติเมื่อลากหมุด)" />
                                 </div>
                                 <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <input name="txtLong" class="form-control" placeholder="ลองติจูด " />
+                                    <label>&nbsp;</label><!--รับค่าจาก GoogleMap-->
+                                    <input name="txtLong" id="lon_value" class="form-control" placeholder="ลองติจูด(ค่าอัตโนมัติเมื่อลากหมุด)" />
                                 </div>
                             </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>แผนที่:</label>
+                                     <div id="map_canvas"></div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <!--Div Footer-->
                         <div class="box-footer">
@@ -295,6 +305,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
              fixed layout. -->
         <!--Datpicker-->
         <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+       <!--GoogleMap-->
+       <script src="plugins/googleMap/googlemap.js"></script>
+       
 
         <!--add element-->
         <script>
