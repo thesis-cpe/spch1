@@ -179,30 +179,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <div id="olNameCon">
                                         <input type="text" name="txtNameCon[]" id="txtNameCon" class="form-control" placeholder="ชื่อผู้มีอำนาจลงนาม"/>
                                     </div>
-                                    
+
                                 </div>
 
-                                <div class="col-sm-4">
+                                <div class="col-sm-2">
                                     <label>สถานะ:</label>
-                                    <ul class="list-inline">
-                                        
-                                            <li> <select class="form-control" name="selStatusCondition" id="selStatusCondition">
-                                                    <option value="เจ้าของกิจการ">เจ้าของกิจการ</option>
-                                                    <option value="หุ้นส่วนผู้จัดการ">หุ้นส่วนผู้จัดการ</option>
-                                                    <option value="กรรมการผู้จัดการ">กรรมการผู้จัดการ</option>
-                                                </select>
-                                            </li>
-                                        
+                                    <div id="selStatus">  
+                                        <select class="form-control" name="selStatusCondition[]" id="selStatusCondition">
+                                            <option value="เจ้าของกิจการ">เจ้าของกิจการ</option>
+                                            <option value="หุ้นส่วนผู้จัดการ">หุ้นส่วนผู้จัดการ</option>
+                                            <option value="กรรมการผู้จัดการ">กรรมการผู้จัดการ</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-2">
+                                    <label>&nbsp;</label>
+                                  <ul class="list-inline">
                                         <li><button id="btnAdd" name="btnAdd" class="btn btn-block btn-default btm-sm"><span class="fa fa-plus"></span></button></li>
                                         <li><button id="btnDel" name="btnDel" class="btn btn-block btn-default btm-sm"><span class="fa fa-minus"></span></button></li>
-
-                                    </ul>
+                                    </ul> 
                                 </div>
 
                             </div>
                         </div>
-                        <!-- /.box-body -->
-
                         <!--Div Footer-->
                         <div class="box-footer">
                             <button type="reset" class="btn btn-default">ล้างข้อมูล</button>
@@ -211,7 +211,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!--.Div Footer-->
 
                     </div>
-
+                    <!-- /.box-body -->
+                    </
 
 
 
@@ -253,7 +254,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $(document).ready(function () {
                 $("#btnAdd").click(function () {
                     $("#olNameCon").append("<input type='text' name='txtNameCon[]' id='txtNameCon1' class='form-control' placeholder='ชื่อผู้มีอำนาจลงนาม'/>");
-                    
+                    $("#selStatus").append("<select class='form-control' name='selStatusCondition[]' id='selStatusCondition1'><option value='เจ้าของกิจการ'>เจ้าของกิจการ</option><option value='กรรมการผู้จัดการ'>กรรมการผู้จัดการ</option></select>");
                 });
             });
         </script>
@@ -262,6 +263,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $(document).ready(function () {
                 $("#btnDel").click(function () {
                     $("#txtNameCon1").remove();
+                    $("#selStatusCondition1").remove();
                 });
             });
         </script>
