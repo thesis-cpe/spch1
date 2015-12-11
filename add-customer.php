@@ -168,7 +168,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="input-group-addon">
                                             <i class="fa fa-envelope"></i>
                                         </div>
-                                        <input name="txtCusMail" type="text" class="form-control" placeholder="exam@example.com">
+                                        <input name="txtCusMail" type="email" class="form-control" placeholder="exam@example.com">
                                     </div>
                                 </div>
                             </div>
@@ -195,12 +195,44 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                 <div class="col-sm-2">
                                     <label>&nbsp;</label>
-                                  <ul class="list-inline">
+                                    <ul class="list-inline">
                                         <li><button id="btnAdd" name="btnAdd" class="btn btn-block btn-default btm-sm"><span class="fa fa-plus"></span></button></li>
                                         <li><button id="btnDel" name="btnDel" class="btn btn-block btn-default btm-sm"><span class="fa fa-minus"></span></button></li>
                                     </ul> 
                                 </div>
+                                <div class="col-sm-5">
+                                    <label>&nbsp;</label>
+                                    <textarea name="txtConditionNam" class="form-control" cols="1" rows="1" placeholder="เงื่อนไขการลงนาม(ขยายช่องกรอกได้)"></textarea>
+                                </div>
+                            </div>
 
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label>ผู้ติดต่องาน:</label>
+                                    <input class="form-control" name="txtContractName" type="text" placeholder="ชื่อผู้ที่ติดต่องาน"/>
+                                </div>
+                                <div class="col-md-3"> 
+                                    <label>&nbsp;</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-mobile-phone"></i>
+                                        </div>
+                                        <input name="txtContractTel" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์ผู้ติดต่องาน"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label>&nbsp;</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                        <input name="txtContractMail" type="email" class="form-control" placeholder="exam@example.com"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                       <label>รูปถ่าย:</label>
+                                       <input type="file" class="form-control" name="fileImgCustomer">
+                                </div>
                             </div>
                         </div>
                         <!--Div Footer-->
