@@ -234,6 +234,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                        <input type="file" class="form-control" name="fileImgCustomer">
                                 </div>
                             </div>
+                            
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>&nbsp;</label>
+                                    <textarea class="form-control" name="txtCustomerMark" cols="40" rows="1" placeholder="หมายเหตุ"></textarea>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <input name="txtLat" class="form-control" placeholder="ละติจูด " />
+                                </div>
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <input name="txtLong" class="form-control" placeholder="ลองติจูด " />
+                                </div>
+                            </div>
                         </div>
                         <!--Div Footer-->
                         <div class="box-footer">
