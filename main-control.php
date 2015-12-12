@@ -161,6 +161,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 
                             </div>
+                            <div class="row">
+                                   <!--เพิ่มข้อมูลลูกค้า-->
+                                <div class="col-sm-3">
+                                    <div class="small-box bg-aqua">
+                                        <div class="inner">
+                                            <h4>เพิ่มข้อมูลลูกค้า</h4>
+
+                                           <p>&nbsp;</p> 
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-briefcase"></i>
+                                        </div>
+                                        <a href="add-customer.php" class="small-box-footer">
+                                            เพิ่มข้อมูลกิจการของลูกค้าเข้าสู่ระบบ <i class="fa fa-arrow-circle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                     <!--เพิ่มข้อมูลพนักงาน-->
+                                <div class="col-sm-3">
+                                    <div class="small-box bg-aqua">
+                                        <div class="inner">
+                                            <h4>เพิ่มพนักงาน</h4>
+
+                                           <p>&nbsp;</p> 
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-user-plus"></i>
+                                        </div>
+                                        <a href="add-employee.php" class="small-box-footer">
+                                            เพิ่มข้อมูลพนักงานเข้าสู่ระบบ <i class="fa fa-arrow-circle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.box-body -->
                     </div>

@@ -128,7 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <div class="col-sm-3">
                                     <label>&nbsp;</label>
-                                    <textarea name="txtAddrTh" class="form-control" cols="40" rows="1" placeholder="ที่อยู่ภาษไทย(ขยายช่องกรอกได้)"></textarea>
+                                    <textarea name="txtAddrTh" class="form-control" cols="40" rows="1" placeholder="ที่อยู่ภาษาไทย(ขยายช่องกรอกได้)"></textarea>
                                 </div>
                                 <div class="col-sm-3">
                                     <label>&nbsp;</label>
