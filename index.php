@@ -1,5 +1,5 @@
 <?php
 
- header( "location: main-data.php" );
+ header( "location: main-control.php" );
  exit(0);
 

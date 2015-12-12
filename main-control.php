@@ -74,7 +74,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <section class="content-header">
                     <h1>
                         ส่วนควบคุมหลัก
-                        <small>ทำอะไรก่อนดี >,<</small>
+                        <small>รวมเมนูทั้งระบบ</small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> ส่วนควบคุมหลัก</a></li>
@@ -93,7 +93,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
+                            
                             <div class="row">
+                                <!--ข้อมูลหลัก-->
                                 <div class="col-sm-3">
                                     <div class="small-box bg-aqua">
                                         <div class="inner">
@@ -104,13 +106,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="icon">
                                             <i class="fa fa-database"></i>
                                         </div>
-                                        <a href="#" class="small-box-footer">
+                                        <a href="main-data.php" class="small-box-footer">
                                             แสดงข้อมูลลูกค้าและพนักงาน <i class="fa fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
                                 </div>
+                                <!--เปิดงาน-->
                                 <div class="col-sm-3">
-                                    <div class="small-box bg-green">
+                                    <div class="small-box bg-aqua">
                                         <div class="inner">
                                             <h4>เปิดงาน</h4>
 
@@ -124,6 +127,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </a>
                                     </div>
                                 </div>
+                                <!--งานประจำวัน-->
+                                 <div class="col-sm-3">
+                                    <div class="small-box bg-aqua">
+                                        <div class="inner">
+                                            <h4>งานประจำวัน</h4>
+
+                                           <p>&nbsp;</p> 
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-tasks"></i>
+                                        </div>
+                                        <a href="daily-work.php" class="small-box-footer">
+                                            บันทึกข้อมูลงานประจำวัน <i class="fa fa-arrow-circle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--รายงาน-->
+                                <div class="col-sm-3">
+                                    <div class="small-box bg-aqua">
+                                        <div class="inner">
+                                            <h4>รายงาน</h4>
+
+                                           <p>&nbsp;</p> 
+                                        </div>
+                                        <div class="icon">
+                                            <i class="fa fa-line-chart"></i>
+                                        </div>
+                                        <a href="#" class="small-box-footer">
+                                            รายงานของระบบ <i class="fa fa-arrow-circle-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </div>
                         <!-- /.box-body -->
