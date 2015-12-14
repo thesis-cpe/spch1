@@ -93,7 +93,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="col-sm-12">
                             <div class="box-body">
                                 <div class="callout callout-info">
-
                                     <center>เลขประจำตัวผู้เสียภาษีอากร: <a>112233458</a> หน่วยงาน: <a>absolute</a></center>  
                                 </div>
                             </div>
@@ -105,7 +104,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <h3 class="box-title">ข้อมูลโครงการ</h3>
                         </div>
                         <div class="box-body">
-
+                            <div class="row">
+                                <!--รหัสงานที่ Gen ใหม่-->
+                                <div class="col-sm-3">
+                                    <label>&nbsp</label>
+                                    <input type="text" class="form-control" name="txtIdWorkCustomer" placeholder="รหัสงานบริษัท(อาจจะอัตโนมัติ)"  />
+                                </div>
+                                <div class="col-sm-3">
+                                    <!--echo ชื่อหน่วยงานลง value-->
+                                    <label>หน่วยงาน:</label>
+                                    <input type="text" class="form-control" name="txtCustomerName" value="absolute" readonly=""/>
+                                </div>
+                                <!--รายได้โครงการ-->
+                                <div class="col-sm-3">
+                                    <label>&nbsp</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="glyphicon glyphicon-usd"></i>
+                                        </div>
+                                        <input name="txtAssetProject" type="number" class="form-control" placeholder="รายได้โครงการ(บาท)"/>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.box-body -->
                     </div>
