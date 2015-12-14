@@ -108,10 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <!-- <h3 class="box-title">รายการข้อมูลลูกค้า</h3> -->
                                                     
                                                 </div>  
-
-
-
-                                                <!-- /.box-header -->
+                                            <!-- /.box-header -->
                                                 <div class="box-body">
                                                     <div class="table-responsive">
                                                         <table id="example1" class="table table-bordered table-striped">
@@ -135,7 +132,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <!--อีเมล์-->
                                                                     <td>admin@absolute.com</td>
                                                                     <!--เพิ่มเติม-->
-                                                                    <td><button name="btnAddProject" title="เพิ่มโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-suitcase"></span></button>
+                                                                    <td><a href="add-project.php" name="btnAddProject" title="เพิ่มโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-suitcase"></span></a>
                                                                         <!--ปิดโครงการ-->
                                                                         <button name="btnCloseProject" title="ปิดโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-lock"></span></button></td>
                                                                 </tr>
