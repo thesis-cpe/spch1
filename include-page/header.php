@@ -32,7 +32,7 @@
               <!-- The user image in the navbar-->
               <img src="dist/img/default-user.png" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">Anonymous</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -40,7 +40,7 @@
                 <img src="dist/img/default-user.png" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  Anonymous- Web Developer
                   <small>Member since Nov. 2015</small>
                 </p>
               </li>
