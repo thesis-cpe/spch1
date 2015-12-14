@@ -107,7 +107,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="row">
                                 <!--รหัสงานที่ Gen ใหม่-->
                                 <div class="col-sm-3">
-                                    <label>&nbsp</label>
+                                    <label>รหัสงานใหม่:</label>
                                     <input type="text" class="form-control" name="txtIdWorkCustomer" placeholder="รหัสงานบริษัท(อาจจะอัตโนมัติ)"  />
                                 </div>
                                 <div class="col-sm-3">
@@ -117,13 +117,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!--รายได้โครงการ-->
                                 <div class="col-sm-3">
-                                    <label>&nbsp</label>
+                                    <label>&nbsp;</label>
                                     <div class="input-group">
                                         <div class="input-group-addon">
                                             <i class="glyphicon glyphicon-usd"></i>
                                         </div>
                                         <input name="txtAssetProject" type="number" class="form-control" placeholder="รายได้โครงการ(บาท)"/>
                                     </div>
+                                </div>
+                                <!--ค่าใช้จ่ายสำนักงาน-->
+                                <div class="col-sm-3">
+                                    
+                                    <label>&nbsp;</label>
+                                    <input type="number"  class="form-control" name="txtCustomerName" placeholder="ค่าใช้จ่ายสำนักงาน(บาท)"  />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>&nbsp;</label>
+                                    <textarea class="form-control" name="txtMarkProject" placeholder="หมายเหตุ"></textarea>
                                 </div>
                             </div>
                         </div>
