@@ -1,7 +1,7 @@
 <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      Stay hungry, stay foolish. (cr. Steve Jobs).
     </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2015 <a href="#">ศุภโชค ออดิเตอร์ จำกัด</a>.</strong> All rights reserved.
