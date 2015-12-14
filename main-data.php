@@ -98,55 +98,57 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="tab-pane active" id="tab_1">
                                 <!--Conten Tab1-->
                                 <section class="content">
-                                  <!--  <div class="row">
-                                        <div class="col-sm-offset-10 col-xs-2"> <a href="#"><i class="fa   fa-user-plus"></i> เพิ่มลูกค้า</a></div>
-                                    </div>   -->
+                                    <!--  <div class="row">
+                                          <div class="col-sm-offset-10 col-xs-2"> <a href="#"><i class="fa   fa-user-plus"></i> เพิ่มลูกค้า</a></div>
+                                      </div>   -->
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="box">
-                                                  <div class="box-header">
-                                                     <!-- <h3 class="box-title">รายการข้อมูลลูกค้า</h3> -->
-                                                     <a  href="add-customer.php" title="เพิ่มข้อมูลลูกค้า"><i class="fa fa-user-plus"></i> เพิ่มลูกค้า</a>
-                                                  </div>  
+                                                <div class="box-header">
+                                                    <!-- <h3 class="box-title">รายการข้อมูลลูกค้า</h3> -->
+                                                    <a  href="add-customer.php" title="เพิ่มข้อมูลลูกค้า"><i class="fa fa-user-plus"></i> เพิ่มลูกค้า</a>
+                                                </div>  
 
 
 
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
-                                                    <table id="example1" class="table table-bordered table-striped">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                                <th>ชื่อกิจการ</th>
-                                                                <th>โทรศัพท์</th>
-                                                                <th>อีเมล์</th>
-                                                                <th>เพิ่มเติม</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <!--เลขประจำตัวผู้เสียภาษีอากร-->
-                                                                <td>112233458</td>
-                                                                <!--ชื่อกิจการ-->
-                                                                <td>absolute</td>
-                                                                <!--โทรศัพท์-->
-                                                                <td>0855387928</td>
-                                                                <!--อีเมล์-->
-                                                                <td>admin@absolute.com</td>
-                                                                <!--เพิ่มเติม-->
-                                                                <td></td>
-                                                            </tr>
-                                                        </tbody>
-                                                        <tfoot>
-                                                            <tr>
-                                                                <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                                <th>ชื่อกิจการ</th>
-                                                                <th>โทรศัพท์</th>
-                                                                <th>อีเมล์</th>
-                                                                <th>เพิ่มเติม</th>
-                                                            </tr>
-                                                        </tfoot>
-                                                    </table>
+                                                    <div class="table-responsive">
+                                                        <table id="example1" class="table table-bordered table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>เลขประจำตัวผู้เสียภาษีอากร</th>
+                                                                    <th>ชื่อกิจการ</th>
+                                                                    <th>โทรศัพท์</th>
+                                                                    <th>อีเมล์</th>
+                                                                    <th>เพิ่มเติม</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <!--เลขประจำตัวผู้เสียภาษีอากร-->
+                                                                    <td>112233458</td>
+                                                                    <!--ชื่อกิจการ-->
+                                                                    <td>absolute</td>
+                                                                    <!--โทรศัพท์-->
+                                                                    <td>0855387928</td>
+                                                                    <!--อีเมล์-->
+                                                                    <td>admin@absolute.com</td>
+                                                                    <!--เพิ่มเติม-->
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tbody>
+                                                            <tfoot>
+                                                                <tr>
+                                                                    <th>เลขประจำตัวผู้เสียภาษีอากร</th>
+                                                                    <th>ชื่อกิจการ</th>
+                                                                    <th>โทรศัพท์</th>
+                                                                    <th>อีเมล์</th>
+                                                                    <th>เพิ่มเติม</th>
+                                                                </tr>
+                                                            </tfoot>
+                                                        </table>
+                                                    </div> <!--/.div table responsive-->
                                                 </div>
                                                 <!-- /.box-body -->
                                             </div>
@@ -170,8 +172,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                             <div class="box">
                                                 <div class="box-header">
-                                                   <!-- <h3 class="box-title">Data Table With Full Features</h3>  -->
-                                                   <a  href="add-employee.php" title="เพิ่มข้อมูลพนักงาน"><i class="fa fa-user-plus"></i>เพิ่มพนักงาน</a>
+                                                    <!-- <h3 class="box-title">Data Table With Full Features</h3>  -->
+                                                    <a  href="add-employee.php" title="เพิ่มข้อมูลพนักงาน"><i class="fa fa-user-plus"></i>เพิ่มพนักงาน</a>
                                                 </div>
                                                 <!-- /.box-header -->
                                                 <div class="box-body">
