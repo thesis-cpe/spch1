@@ -127,9 +127,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                                 <!--ค่าใช้จ่ายสำนักงาน-->
                                 <div class="col-sm-3">
-                                    
+
                                     <label>&nbsp;</label>
-                                    <input type="number"  class="form-control" name="txtCustomerName" placeholder="ค่าใช้จ่ายสำนักงาน(บาท)"  />
+                                    <input type="number"  class="form-control" name="txtCoastOffice" placeholder="ค่าใช้จ่ายสำนักงาน(บาท)"  />
                                 </div>
                             </div>
                             <div class="row">
@@ -152,8 +152,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <!-- /.box-body -->
                     </div>
-                    
-                     <!--Box ข้อมูลงาน-->
+
+                    <!--Box ข้อมูลงาน-->
                     <div class="box box-info">
                         <div class="box-header with-border">
                             <h3 class="box-title">ข้อมูลงาน</h3>
@@ -161,7 +161,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="box-body">
                             <!--วันที่เริ่มทำ-->
                             <div class="row">
-                                <div class="col-sm-3">
+                                <div class="col-sm-4">
                                     <label>วันที่เริ่มรอบบัญชี:</label>
 
                                    <!-- <input  data-provide="datepicker" name="datInWork" type="text" class="form-control datepicker" placeholder="" data-date-format="dd/mm/yyyy">-->
@@ -170,13 +170,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
                                         <input name="datIntWork" type="text" class="form-control" placeholder="01/01/2016">
-                                        
+
                                     </div>
                                 </div>
-                                
-                                
-                              <!--วันที่สิ้นสุด-->  
-                                <div class="col-sm-3">
+
+
+                                <!--วันที่สิ้นสุด-->  
+                                <div class="col-sm-4">
                                     <label>วันที่สิ้นสุดรอบบัญชี:</label>
 
                                    <!-- <input  data-provide="datepicker" name="datInWork" type="text" class="form-control datepicker" placeholder="" data-date-format="dd/mm/yyyy">-->
@@ -185,12 +185,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
                                         <input name="datFinalWork" type="text" class="form-control" placeholder="01/01/2017">
-                                        
+
                                     </div>
                                 </div>
-                              
-                               <!--วันที่รับทำบัญชี-->  
-                                <div class="col-sm-3">
+
+                                <!--วันที่รับทำบัญชี-->  
+                                <div class="col-sm-4">
                                     <label>วันที่รับทำบัญชี:</label>
 
                                    <!-- <input  data-provide="datepicker" name="datInWork" type="text" class="form-control datepicker" placeholder="" data-date-format="dd/mm/yyyy">-->
@@ -199,10 +199,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
                                         <input name="datAcepeWork" type="text" class="form-control" placeholder="01/01/2016">
-                                        
+
                                     </div>
                                 </div>
+
+                                <!--อัตราค่าทำบัญชี-->
+
                             </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label>อัตราค่าทำบัญชี:</label>
+                                    <select class="form-control" name="selRateCoast">
+
+                                        <option value="รายเดือน">รายเดือน</option>
+                                        <option value="รายครั้ง">รายครั้ง</option>
+                                    </select>
+                                </div>
+                                <!--จำนวนเงินบาท-->
+                                <div class="col-sm-4">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" name="txtRevenueAudit" type="number" placeholder="จำนวนเงิน(บาท)" />
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" name="txtInstallment" type="number" placeholder="จำนวนงวดงาน"/>
+                                </div>
+
+                            </div>
+                            
+                            
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -211,10 +237,68 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!--ใบเสนอราคา-->
                     <div class="box box-default">
                         <div class="box-header">
-                            <h3 class="box-title">ใบเสนอราคา</h3>
+                            <h3 class="box-title">เอกสาร</h3>
                         </div>
                         <div class="box-body">
+                            <!--ใบเสนอราคา-->
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label>ใบเสนอราคา:</label>
+                                    <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                        <input name="datOffers" type="text" class="form-control" placeholder="วันที่เสนอราคา 01/01/2016">
 
+                                    </div>
+                                </div>
+                                <!--ยอดเงินรวม-->  
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" name="txtSumMoney" type="number" placeholder="ยอดเงินรวม"/>
+                                </div>
+                                <!--เลขที่ใบเสนอราคา-->  
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" name="txtNoOffer" type="number" placeholder="เลขที่ใบเสนอราคา"/>
+                                </div>
+                                <!--ไฟล์ใบเสนอราคา-->  
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" name="fileDocOfffer" type="file" />
+                                </div>
+
+                            </div>
+                            
+                            <!--สัญญาจ้าง-->
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label>สัญญาจ้าง:</label>
+                                    <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                        <input name="datOffersEmploy" type="text" class="form-control" placeholder="วันที่เสนอราคา 01/01/2016">
+
+                                    </div>
+                                </div>
+                                <!--ยอดเงินรวม-->  
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" name="txtSumMoneyEmploy" type="number" placeholder="ยอดเงินรวม"/>
+                                </div>
+                                <!--เลขที่สัญญาจ้าง--->  
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" name="txtNoEmploy" type="number" placeholder="เลขที่ใบเสนอราคา"/>
+                                </div>
+                                <!--ไฟล์สัญญาจ้าง--->  
+                                <div class="col-sm-3">
+                                    <label>&nbsp;</label>
+                                    <input class="form-control" name="fileDocEmploy" type="file" />
+                                </div>
+
+                            </div>
                         </div>
                         <!-- /.box-body -->
 
