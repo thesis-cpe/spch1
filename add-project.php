@@ -152,6 +152,60 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <!-- /.box-body -->
                     </div>
+                    
+                     <!--Box ข้อมูลงาน-->
+                    <div class="box box-info">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">ข้อมูลงาน</h3>
+                        </div>
+                        <div class="box-body">
+                            <!--วันที่เริ่มทำ-->
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <label>วันที่เริ่มรอบบัญชี:</label>
+
+                                   <!-- <input  data-provide="datepicker" name="datInWork" type="text" class="form-control datepicker" placeholder="" data-date-format="dd/mm/yyyy">-->
+                                    <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                        <input name="datIntWork" type="text" class="form-control" placeholder="01/01/2016">
+                                        
+                                    </div>
+                                </div>
+                                
+                                
+                              <!--วันที่สิ้นสุด-->  
+                                <div class="col-sm-3">
+                                    <label>วันที่สิ้นสุดรอบบัญชี:</label>
+
+                                   <!-- <input  data-provide="datepicker" name="datInWork" type="text" class="form-control datepicker" placeholder="" data-date-format="dd/mm/yyyy">-->
+                                    <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                        <input name="datFinalWork" type="text" class="form-control" placeholder="01/01/2017">
+                                        
+                                    </div>
+                                </div>
+                              
+                               <!--วันที่รับทำบัญชี-->  
+                                <div class="col-sm-3">
+                                    <label>วันที่รับทำบัญชี:</label>
+
+                                   <!-- <input  data-provide="datepicker" name="datInWork" type="text" class="form-control datepicker" placeholder="" data-date-format="dd/mm/yyyy">-->
+                                    <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                        <input name="datAcepeWork" type="text" class="form-control" placeholder="01/01/2016">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
 
 
                     <!--ใบเสนอราคา-->
