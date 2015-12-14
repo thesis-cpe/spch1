@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="icon">
                                             <i class="fa fa fa-group"></i>
                                         </div>
-                                        <a href="#" class="small-box-footer">
+                                        <a href="project.php" class="small-box-footer">
                                             เปิดงานและจัดการทีมงาน <i class="fa fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
