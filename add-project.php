@@ -35,6 +35,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!--Datpicker-->
         <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -142,16 +144,74 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- /.box-body -->
                     </div>
 
+
                     <!--Box ข้อมูลทีมงาน-->
                     <div class="box box-info">
                         <div class="box-header with-border">
                             <h3 class="box-title">ข้อมูลทีมงาน</h3>
                         </div>
                         <div class="box-body">
+                            <!-- /ส่วนเลือกพนักงาน -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label>&nbsp;</label>
+                                    เลือกพนักงาน
+                                </div>
+                            </div>  <!-- /.ส่วนเลือกพนักงาน -->
 
+                            <!-- /Data table แสดงพนักงานในทีม -->
+                            <br />
+                          <!--  <div class="box"> -->
+                               <!-- <div class="box-header"></div> --><!-- /.box-header แสดงพนักงานในทีม -->  
+                               <!-- <div class="box-body">  -->
+                                    <!--Data Table ข้อมูลพนักงานในทีม-->
+                                    <div class="table-responsive">
+                                        <table id="example1" class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>เลขประจำตัวผู้เสียภาษีอากร</th>
+                                                    <th>ชื่อกิจการ</th>
+                                                    <th>โทรศัพท์</th>
+                                                    <th>อีเมล์</th>
+                                                    <th>เพิ่มเติม</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <!--เลขประจำตัวผู้เสียภาษีอากร-->
+                                                    <td>112233458</td>
+                                                    <!--ชื่อกิจการ-->
+                                                    <td>absolute</td>
+                                                    <!--โทรศัพท์-->
+                                                    <td>0855387928</td>
+                                                    <!--อีเมล์-->
+                                                    <td>admin@absolute.com</td>
+                                                    <!--เพิ่มเติม-->
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <th>เลขประจำตัวผู้เสียภาษีอากร</th>
+                                                    <th>ชื่อกิจการ</th>
+                                                    <th>โทรศัพท์</th>
+                                                    <th>อีเมล์</th>
+                                                    <th>เพิ่มเติม</th>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div> <!--/.div table responsive-->
+
+                                    <!--/.Data Table ข้อมูลพนักงานในทีม-->
+                               <!-- </div> -->
+                                <!-- /.box-body แสดงพนักงานในทีม -->  
+                         <!--   </div> -->
+                            <!-- /.Box Data table แสดงพนักงานในทีม -->  
                         </div>
                         <!-- /.box-body -->
                     </div>
+
+
 
                     <!--Box ข้อมูลงาน-->
                     <div class="box box-info">
@@ -227,8 +287,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
 
                             </div>
-                            
-                            
+
+
                         </div>
                         <!-- /.box-body -->
                     </div>
@@ -269,7 +329,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
 
                             </div>
-                            
+
                             <!--สัญญาจ้าง-->
                             <div class="row">
                                 <div class="col-sm-3">
@@ -346,5 +406,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
              fixed layout. -->
         <!--Datpicker-->
         <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+        <!-- DataTables -->
+        <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
+        <!--Data 1  -->
+        <script>
+            $(function () {
+                $("#example1").DataTable();
+                $('#example2').DataTable({
+                    "paging": true,
+                    "lengthChange": false,
+                    "searching": false,
+                    "ordering": true,
+                    "info": true,
+                    "autoWidth": false
+                });
+            });
+        </script>
     </body>
 </html>
