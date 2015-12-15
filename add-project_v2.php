@@ -226,7 +226,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th><a href="javascript:;" class="deleteall btn btn-default btm-xs" title="ลบรายที่เลือก"><span class="fa fa-user-times"></span></a></th>
+                                            <th><a href="javascript:;" class="deleteall btn btn-default btm-xs" title="ลบรายที่เลือก"><span class="fa fa-trash"></span></a></th>
                                             <th>ชื่อ-นามสกุล</th>
                                             <th>จำนวนชั่วโมง</th>
                                             <th>บาท/ชั่วโมง</th>
