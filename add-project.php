@@ -151,13 +151,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <h3 class="box-title">ข้อมูลทีมงาน</h3>
                         </div>
                         <div class="box-body">
-                            <!-- /ส่วนเลือกพนักงาน -->
-                            <div class="row">
-                                <div class="col-sm-12">
-                                    <label>&nbsp;</label>
-                                    เลือกพนักงาน
-                                </div>
-                            </div>  <!-- /.ส่วนเลือกพนักงาน -->
+
 
                             <!-- /Data table แสดงพนักงานในทีม -->
                             <br />
@@ -186,27 +180,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </select>
                                             </td>
                                             <!--ชื่อ-นามสกุล-->
-                                            <td>มงคล ทองอ่อน</td>
+                                            <td>
+                                                <select class="form-control" name="selEmName">
+                                                    <option value="มงคล ทองอ่อน">มงคล ทองอ่อน</option>
+                                                    <option value="ไพรเพชร หิตการุญ">ไพรเพชร หิตการุญ</option>
+                                                </select>
+                                            </td>
                                             <!--จำนวนชั่วโมง-->
                                             <td>
                                                 <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-clock-o"></i>
-                                        </div>
-                                        <input name="txtCountWorkHour" type="number" class="form-control" placeholder="ชั่วโมงการทำงาน">
-                                    </div>
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-clock-o"></i>
+                                                    </div>
+                                                    <input name="txtCountWorkHour" type="number" class="form-control" placeholder="ชั่วโมงการทำงาน">
+                                                </div>
                                             </td>
                                             <!--บาท/ชั่วโมง-->
                                             <td>
                                                 <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="glyphicon glyphicon-usd"></i>
-                                        </div>
-                                        <input name="txtBathTime" type="number" class="form-control" placeholder="ค่าจ้าง">
-                                    </div>
+                                                    <div class="input-group-addon">
+                                                        <i class="glyphicon glyphicon-usd"></i>
+                                                    </div>
+                                                    <input name="txtBathTime" type="number" class="form-control" placeholder="ค่าจ้าง">
+                                                </div>
                                             </td>
                                             <!--เพิ่มเติม-->
-                                            <td></td>
+                                            <td>
+                                                <ul class="list-inline">
+                                                    <li><button title="เพิ่มทีมงาน" id="btnAdd" name="btnAdd" class="btn btn-block btn-default btm-xs"><span class="fa fa-plus"></span></button></li>
+                                                    <li><button title="ลบรายการนี้" id="btnDel" name="btnDel" class="btn btn-block btn-default btm-xs"><span class="fa fa-minus"></span></button></li>
+                                                </ul>
+                                            </td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
