@@ -37,6 +37,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
         <!-- DataTables -->
         <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+        
+        
+        
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -152,17 +155,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <div class="box-body">
 
+                            <div class="row">
+                                <!--เมนูจัดการทีมงาน-->
+                                <div class="col-sm-12">
+                                    <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
+                                        เมนูจัดการทีมงาน<br/><br/>
+                                        <button title="เพิ่มพนักงานเข้าสู่ทีม" id="btnAdd" name="btnAdd" class="btn btn-default btm-sm"><span class="fa fa-users"></span></button>
+                                        <a href="javascript:;" class="deleteall btn btn-default btm-sm" title="ลบรายที่เลือก"><span class="fa fa-user-times"></span></a>
+                                    </p>
+                                </div>
+                            </div>
 
-                            <!-- /Data table แสดงพนักงานในทีม -->
                             <br />
-                            <!--  <div class="box"> -->
-                            <!-- <div class="box-header"></div> --><!-- /.box-header แสดงพนักงานในทีม -->  
-                            <!-- <div class="box-body">  -->
                             <!--Data Table ข้อมูลพนักงานในทีม-->
                             <div class="table-responsive">
-                                <table id="example1" class="table table-bordered table-striped">
+                                <table id="example1" class="table table-bordered table-striped delete_multiple_check_box">
                                     <thead>
                                         <tr>
+                                            <th><input type="checkbox" class="checkall" /></th>
                                             <th>สถานะ</th>
                                             <th>ชื่อ-นามสกุล</th>
                                             <th>จำนวนชั่วโมง</th>
@@ -170,9 +180,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <th>เพิ่มเติม</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="trAddEm"> 
                                         <tr>
                                             <!--สถานะ-->
+                                            <td><input type="checkbox" class="checkbox" /></td>
                                             <td>
                                                 <select class="form-control" name="selEmRole">
                                                     <option value="ผู้ทำบัญชี">ผู้ทำบัญชี</option>
@@ -206,10 +217,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             </td>
                                             <!--เพิ่มเติม-->
                                             <td>
-                                                <ul class="list-inline">
-                                                    <li><button title="เพิ่มทีมงาน" id="btnAdd" name="btnAdd" class="btn btn-block btn-default btm-xs"><span class="fa fa-plus"></span></button></li>
-                                                    <li><button title="ลบรายการนี้" id="btnDel" name="btnDel" class="btn btn-block btn-default btm-xs"><span class="fa fa-minus"></span></button></li>
-                                                </ul>
+                                                
                                             </td>
                                         </tr>
                                     </tbody>
@@ -446,5 +454,85 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 });
             });
         </script>
+
+        <!--add element -->
+        <script>
+            $(document).ready(function () {
+                $("#btnAdd").click(function () {
+                    $("#trAddEm").append("ใส่ CODE");
+
+                });
+            });
+        </script>  
+
+        <!--Delete Multiple Select-->
+        <script>
+            $(document).ready(function () {
+                zebra();
+
+                $('.checkall').on('click', function () {
+                    var $this = $(this),
+                            // Test to see if it is checked
+                            checked = $this.prop('checked'),
+                            //Find all the checkboxes
+                            cbs = $this.closest('table').children('tbody').find('.checkbox');
+                    // Check or Uncheck them.
+                    cbs.prop('checked', checked);
+                    //toggle the selected class to all the trs
+                    cbs.closest('tr').toggleClass('selected', checked);
+                });
+                $('tbody tr').on('click', function () {
+                    var $this = $(this).toggleClass('selected');
+                    $this.find('.checkbox').prop('checked', $this.hasClass('selected'));
+                    if (!$this.hasClass('selected')) {
+                        $this.closest('table').children('thead').find('.checkall').prop('checked', false);
+                    }
+                });
+                $('.delete_single').on('click', function (e) {
+                    e.preventDefault();
+                    //Dont let the click bubble up to the tr
+                    e.stopPropagation();
+                    var $this = $(this),
+                            c = confirm('Are you sure you want to delete this row?');
+                    if (!c) {
+                        return false;
+                    }
+                    $this.closest('tr').fadeOut(function () {
+                        $(this).remove();
+                        zebra();
+                    });
+                });
+                $('a.deleteall').on('click', function (e) {
+                    e.preventDefault();
+                    var $this = $(this),
+                            $trows = $this.closest('table').children('tbody').find('tr.selected'),
+                            sel = !!$trows.length;
+
+                    // Don't confirm delete if no rows selected.
+                    if (!sel) {
+                        alert('No rows selected');
+                        return false;
+                    }
+                    var c = confirm('Are you sure you want to delete the slected rows?');
+                    if (!c) {
+                        return false;
+                    }
+                    $trows.fadeOut(function () {
+                        $trows.remove();
+                        zebra();
+                    });
+                });
+
+
+                //would be better if zebra was done in pure css
+                function zebra() {
+                    $(".delete_multiple_check_box").find('tbody')
+                            .find('.odd').removeClass('odd').end()
+                            .find('tr:odd').addClass("odd");
+                }
+                ;
+            });
+        </script>
+
     </body>
 </html>
