@@ -187,7 +187,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </tr>
 
                                                             <tr>
-                                                                <td><input id="chkBox2" name="chkBox1" type="checkbox"/></td>
+                                                                <td><input id="chkBox2" name="chkBox2" type="checkbox"/></td>
                                                                 <td>55022789866</td>
                                                                 <td>app inovative inc.</td>
                                                                 <td>10/12/2558</td>
@@ -332,7 +332,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             });
 
             $('#basicExample .date').datepicker({
-                'format': 'm/d/yyyy',
+                'format': 'd/m/yyyy',
                 'autoclose': true
             });
 

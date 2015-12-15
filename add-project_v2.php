@@ -516,7 +516,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         alert('No rows selected');
                         return false;
                     }
-                    var c = confirm('Are you sure you want to delete the slected rows?');
+                    var c = confirm('ต้องการลบส่วนที่เลือกใช่หรือไม่'); //Are you sure you want to delete the slected rows?
                     if (!c) {
                         return false;
                     }
