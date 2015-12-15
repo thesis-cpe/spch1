@@ -161,51 +161,70 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <!-- /Data table แสดงพนักงานในทีม -->
                             <br />
-                          <!--  <div class="box"> -->
-                               <!-- <div class="box-header"></div> --><!-- /.box-header แสดงพนักงานในทีม -->  
-                               <!-- <div class="box-body">  -->
-                                    <!--Data Table ข้อมูลพนักงานในทีม-->
-                                    <div class="table-responsive">
-                                        <table id="example1" class="table table-bordered table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                    <th>ชื่อกิจการ</th>
-                                                    <th>โทรศัพท์</th>
-                                                    <th>อีเมล์</th>
-                                                    <th>เพิ่มเติม</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <!--เลขประจำตัวผู้เสียภาษีอากร-->
-                                                    <td>112233458</td>
-                                                    <!--ชื่อกิจการ-->
-                                                    <td>absolute</td>
-                                                    <!--โทรศัพท์-->
-                                                    <td>0855387928</td>
-                                                    <!--อีเมล์-->
-                                                    <td>admin@absolute.com</td>
-                                                    <!--เพิ่มเติม-->
-                                                    <td></td>
-                                                </tr>
-                                            </tbody>
-                                            <tfoot>
-                                                <tr>
-                                                    <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                    <th>ชื่อกิจการ</th>
-                                                    <th>โทรศัพท์</th>
-                                                    <th>อีเมล์</th>
-                                                    <th>เพิ่มเติม</th>
-                                                </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div> <!--/.div table responsive-->
+                            <!--  <div class="box"> -->
+                            <!-- <div class="box-header"></div> --><!-- /.box-header แสดงพนักงานในทีม -->  
+                            <!-- <div class="box-body">  -->
+                            <!--Data Table ข้อมูลพนักงานในทีม-->
+                            <div class="table-responsive">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>สถานะ</th>
+                                            <th>ชื่อ-นามสกุล</th>
+                                            <th>จำนวนชั่วโมง</th>
+                                            <th>บาท/ชั่วโมง</th>
+                                            <th>เพิ่มเติม</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <!--สถานะ-->
+                                            <td>
+                                                <select class="form-control" name="selEmRole">
+                                                    <option value="ผู้ทำบัญชี">ผู้ทำบัญชี</option>
+                                                    <option value="ผู้ปฏิบัติงาน">ผู้ปฏิบัติงาน</option>
+                                                </select>
+                                            </td>
+                                            <!--ชื่อ-นามสกุล-->
+                                            <td>มงคล ทองอ่อน</td>
+                                            <!--จำนวนชั่วโมง-->
+                                            <td>
+                                                <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="fa fa-clock-o"></i>
+                                        </div>
+                                        <input name="txtCountWorkHour" type="number" class="form-control" placeholder="ชั่วโมงการทำงาน">
+                                    </div>
+                                            </td>
+                                            <!--บาท/ชั่วโมง-->
+                                            <td>
+                                                <div class="input-group">
+                                        <div class="input-group-addon">
+                                            <i class="glyphicon glyphicon-usd"></i>
+                                        </div>
+                                        <input name="txtBathTime" type="number" class="form-control" placeholder="ค่าจ้าง">
+                                    </div>
+                                            </td>
+                                            <!--เพิ่มเติม-->
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>สถานะ</th>
+                                            <th>ชื่อ-นามสกุล</th>
+                                            <th>จำนวนชั่วโมง</th>
+                                            <th>บาท/ชั่วโมง</th>
+                                            <th>เพิ่มเติม</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div> <!--/.div table responsive-->
 
-                                    <!--/.Data Table ข้อมูลพนักงานในทีม-->
-                               <!-- </div> -->
-                                <!-- /.box-body แสดงพนักงานในทีม -->  
-                         <!--   </div> -->
+                            <!--/.Data Table ข้อมูลพนักงานในทีม-->
+                            <!-- </div> -->
+                            <!-- /.box-body แสดงพนักงานในทีม -->  
+                            <!--   </div> -->
                             <!-- /.Box Data table แสดงพนักงานในทีม -->  
                         </div>
                         <!-- /.box-body -->
