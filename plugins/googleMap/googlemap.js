@@ -5,7 +5,7 @@ var GGM; // กำหนดตัวแปร GGM ไว้เก็บ google.m
 function initialize() { // ฟังก์ชันแสดงแผนที่
     GGM = new Object(google.maps); // เก็บตัวแปร google.maps Object ไว้ในตัวแปร GGM
     // กำหนดจุดเริ่มต้นของแผนที่
-    var my_Latlng = new GGM.LatLng(19.0293178, 99.895302);
+    var my_Latlng = new GGM.LatLng(19.170210, 99.900722);  //ม.พะเยา  19.0293178, 99.895302
     var my_mapTypeId = GGM.MapTypeId.ROADMAP; // กำหนดรูปแบบแผนที่ที่แสดง
     // กำหนด DOM object ที่จะเอาแผนที่ไปแสดง ที่นี้คือ div id=map_canvas
     var my_DivObj = $("#map_canvas")[0];

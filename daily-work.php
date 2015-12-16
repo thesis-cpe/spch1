@@ -148,7 +148,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td colspan="3" align="center">รายการบันทึก</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td width="20"  align="center">เวลาใช้ไป</td>
+                                                                    <td width="20"  align="center">ใช้ไป</td>
                                                                     <td  align="center">ยกมา</td>
                                                                     <td  align="center">คงเหลือ</td>
                                                                     <td  align="center">ยกมา</td>
@@ -234,7 +234,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <td colspan="3" align="center">รายการบันทึก</td>
                                                                 </tr>
                                                                 <tr>
-                                                                    <td  align="center">เวลาใช้ไป</td>
+                                                                    <td  align="center">ใช้ไป</td>
                                                                     <td  align="center">ยกมา</td>
                                                                     <td  align="center">คงเหลือ</td>
                                                                     <td  align="center">ยกมา</td>

@@ -113,7 +113,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!--รหัสงานที่ Gen ใหม่-->
                                 <div class="col-sm-3">
                                     <label>รหัสงานใหม่:</label>
-                                    <input type="text" class="form-control" name="txtIdWorkCustomer" placeholder="รหัสงานบริษัท(อาจจะอัตโนมัติ)"  />
+                                    <input type="text" class="form-control" name="txtIdWorkCustomer"  value="58112233458-1" readonly=""/>
                                 </div>
                                 <div class="col-sm-3">
                                     <!--echo ชื่อหน่วยงานลง value-->
@@ -164,12 +164,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <th width="10">ลำดับ</th>
                                             <th>สถานะ</th>
                                             <th>ชื่อ-นามสกุล</th>
-                                            <th>จำนวนชั่วโมง</th>
-                                            <th>บาท/ชั่วโมง</th>
+                                            <th>จำนวนนาที</th>
+                                            <th>บาท/นาที</th>
                                             <th>เพิ่มเติม</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="trAddEm"> 
+                                    <tbody> 
                                         <?php for ($i = 1; $i < 11; $i++) { ?>        
                                             <tr>
                                                 <!--สถานะ-->
@@ -178,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <td>
                                             <select class="form-control" name="selEmRole[]" id="selEmRole<?php echo $i; ?>" disabled="">
                                                 <option value="" disabled selected>เลือกสถานะ</option>
-                                                <option value="ผู้ทำบัญชี">ผู้ทำบัญชี</option>
+                                                <option value="ผู้ทำบัญชี">หัวหน้าทีม</option>
                                                 <option value="ผู้ปฏิบัติงาน">ผู้ปฏิบัติงาน</option>
                                             </select>
                                         </td>
@@ -222,8 +222,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 document.getElementById('txtBathTime<?php echo $i; ?>').disabled = !this.checked;
 
                                             };
-
-
                                         </script>
                                         <!--.CheckBox-->
                                     <?php } ?> 
@@ -232,9 +230,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <tfoot>
                                         <tr>
                                             <th><a href="javascript:;" class="deleteall btn btn-default btm-xs" title="ลบรายที่เลือก"><span class="fa fa-trash"></span></a></th>
+                                            <th>ลำดับ</th>
+                                            <th>สถานะ</th>
                                             <th>ชื่อ-นามสกุล</th>
-                                            <th>จำนวนชั่วโมง</th>
-                                            <th>บาท/ชั่วโมง</th>
+                                            <th>จำนวนนาที</th>
+                                            <th>บาท/นาที</th>
                                             <th>เพิ่มเติม</th>
                                         </tr>
                                     </tfoot>
@@ -535,22 +535,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </script>
 
 
-        <!--add element -->
-        <script>
-            $(document).ready(function () {
-                $("#btnAdd").click(function () {
-                    $("#trAddEm").append("<tr>\n\
-            <td><input type='checkbox' class='checkbox' /></td>\n\
-<td></td>\n\
-<td></td>\n\
-<td></td>\n\
-<td></td>\n\
-<td><a href='javascript:;' class='delete_single'>delete</a></td>\n\
-</tr>");
-
-                });
-            });
-        </script>  
+       
 
     </body>
 </html>
