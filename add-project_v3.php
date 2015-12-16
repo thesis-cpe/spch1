@@ -160,7 +160,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <table id="example1" class="table table-bordered table-striped delete_multiple_check_box">
                                     <thead>
                                         <tr>
-                                            <th><input type="checkbox" class="checkall" /></th>
+                                            <th><!--<input type="checkbox" class="checkall"  /> -->เลือก</th> 
                                             <th width="10">ลำดับ</th>
                                             <th>สถานะ</th>
                                             <th>ชื่อ-นามสกุล</th>
@@ -173,17 +173,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <?php for($i=1;$i<11;$i++){  ?>        
                                         <tr>
                                             <!--สถานะ-->
-                                            <td><input type="checkbox" class="checkbox" /></td>
+                                            <td><input type="checkbox" class="checkbox" id="chkBox<?php echo $i;?>" /></td>
                                             <td><center><?php echo $i; ?></center></td>
                                             <td>
-                                                <select class="form-control" name="selEmRole[]">
+                                                <select class="form-control" name="selEmRole[]" id="selEmRole<?php echo $i;?>" disabled="">
+                                                    <option value="" disabled selected>เลือกสถานะ</option>
                                                     <option value="ผู้ทำบัญชี">ผู้ทำบัญชี</option>
                                                     <option value="ผู้ปฏิบัติงาน">ผู้ปฏิบัติงาน</option>
                                                 </select>
                                             </td>
                                             <!--ชื่อ-นามสกุล-->
                                             <td>
-                                                <select class="form-control" name="selEmName[]">
+                                                <select class="form-control" name="selEmName[]" id="selEmName<?php echo $i;?>" disabled="">
                                                     <option value="" disabled selected>เลือกพนักงาน</option>
                                                     <option value="มงคล ทองอ่อน">มงคล ทองอ่อน</option>
                                                     <option value="ไพรเพชร หิตการุญ">ไพรเพชร หิตการุญ</option>
@@ -195,7 +196,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-clock-o"></i>
                                                     </div>
-                                                    <input name="txtCountWorkHour[]" type="number" class="form-control" placeholder="ชั่วโมงการทำงาน">
+                                                    <input name="txtCountWorkHour[]" id="txtCountWorkHour<?php echo $i;?>" type="number" class="form-control" placeholder="ชั่วโมงการทำงาน" disabled="" />
                                                 </div>
                                             </td>
                                             <!--บาท/ชั่วโมง-->
@@ -204,7 +205,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <div class="input-group-addon">
                                                         <i class="glyphicon glyphicon-usd"></i>
                                                     </div>
-                                                    <input name="txtBathTime[]" type="number" class="form-control" placeholder="ค่าจ้าง">
+                                                    <input name="txtBathTime[]" id="txtBathTime<?php echo $i;?>" type="number" class="form-control" placeholder="ค่าจ้าง" disabled="" />
                                                 </div>
                                             </td>
                                             <!--เพิ่มเติม-->
@@ -212,7 +213,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <a title="ลบรายการนี้" href="javascript:;" class="delete_single btn btn-sm btn-default"><span class="fa fa-trash"></span></a>
                                             </td>
                                         </tr>
-                                        
+                                        <!--CheckBox-->
+                                                            <script>
+                                                                document.getElementById('chkBox<?php echo $i;?>').onchange = function () {
+                                                                    document.getElementById('selEmRole<?php echo $i;?>').disabled = !this.checked;
+                                                                    document.getElementById('selEmName<?php echo $i;?>').disabled = !this.checked;
+                                                                    document.getElementById('txtCountWorkHour<?php echo $i;?>').disabled = !this.checked;
+                                                                    document.getElementById('txtBathTime<?php echo $i;?>').disabled = !this.checked;
+
+                                                                };
+                                                                
+                                                                
+                                                            </script>
+                                                            <!--.CheckBox-->
                                 <?php }?> 
                                       
                                     </tbody>
