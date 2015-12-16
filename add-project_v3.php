@@ -154,25 +154,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <h3 class="box-title">ข้อมูลทีมงาน</h3>
                         </div>
                         <div class="box-body">
-
-                            <div class="row">
-                                <!--เมนูจัดการทีมงาน-->
-                               <div class="col-sm-12">
-                                    <p class="text-muted well well-sm no-shadow" style="margin-top: 10px;">
-                                        เมนูจัดการทีมงาน<br/><br/>
-                                        <button title="เพิ่มพนักงานเข้าสู่ทีม" id="btnAdd" name="btnAdd" class="btn btn-default btm-sm"><span class="fa fa-users"></span></button>
-                                        
-                                    </p>
-                                </div> 
-                            </div>
-
-                            <br />
+                            
                             <!--Data Table ข้อมูลพนักงานในทีม-->
                             <div class="table-responsive">
                                 <table id="example1" class="table table-bordered table-striped delete_multiple_check_box">
                                     <thead>
                                         <tr>
                                             <th><input type="checkbox" class="checkall" /></th>
+                                            <th width="10">ลำดับ</th>
                                             <th>สถานะ</th>
                                             <th>ชื่อ-นามสกุล</th>
                                             <th>จำนวนชั่วโมง</th>
@@ -181,18 +170,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </tr>
                                     </thead>
                                     <tbody id="trAddEm"> 
+                                <?php for($i=1;$i<11;$i++){  ?>        
                                         <tr>
                                             <!--สถานะ-->
                                             <td><input type="checkbox" class="checkbox" /></td>
+                                            <td><center><?php echo $i; ?></center></td>
                                             <td>
-                                                <select class="form-control" name="selEmRole">
+                                                <select class="form-control" name="selEmRole[]">
                                                     <option value="ผู้ทำบัญชี">ผู้ทำบัญชี</option>
                                                     <option value="ผู้ปฏิบัติงาน">ผู้ปฏิบัติงาน</option>
                                                 </select>
                                             </td>
                                             <!--ชื่อ-นามสกุล-->
                                             <td>
-                                                <select class="form-control" name="selEmName">
+                                                <select class="form-control" name="selEmName[]">
+                                                    <option value="" disabled selected>เลือกพนักงาน</option>
                                                     <option value="มงคล ทองอ่อน">มงคล ทองอ่อน</option>
                                                     <option value="ไพรเพชร หิตการุญ">ไพรเพชร หิตการุญ</option>
                                                 </select>
@@ -203,7 +195,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <div class="input-group-addon">
                                                         <i class="fa fa-clock-o"></i>
                                                     </div>
-                                                    <input name="txtCountWorkHour" type="number" class="form-control" placeholder="ชั่วโมงการทำงาน">
+                                                    <input name="txtCountWorkHour[]" type="number" class="form-control" placeholder="ชั่วโมงการทำงาน">
                                                 </div>
                                             </td>
                                             <!--บาท/ชั่วโมง-->
@@ -212,16 +204,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <div class="input-group-addon">
                                                         <i class="glyphicon glyphicon-usd"></i>
                                                     </div>
-                                                    <input name="txtBathTime" type="number" class="form-control" placeholder="ค่าจ้าง">
+                                                    <input name="txtBathTime[]" type="number" class="form-control" placeholder="ค่าจ้าง">
                                                 </div>
                                             </td>
                                             <!--เพิ่มเติม-->
                                             <td>
-                                                <a href="javascript:;" class="delete_single">delete</a>
+                                                <a title="ลบรายการนี้" href="javascript:;" class="delete_single btn btn-sm btn-default"><span class="fa fa-trash"></span></a>
                                             </td>
                                         </tr>
                                         
-                                        
+                                <?php }?> 
                                       
                                     </tbody>
                                     <tfoot>
