@@ -100,7 +100,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="tab-pane active" id="tab_1">
                                 <!--Conten Tab1-->
                                 <section class="content">
+                                    <form name="formCustomer" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                                        <div class="row">
 
+                                            <div class="col-sm-3"><input name="txtKeyWorkCustomer" type="text" class="form-control input-sm" placeholder="รหัสงานบริษัท" /></div>
+                                            <div class="col-sm-3"><input name="txtCustomerName" type="text" class="form-control input-sm" placeholder="ชื่อบริษัท" /></div>
+                                            <div class="col-sm-3">
+                                                <select class="form-control input-sm" name="selYear">
+                                                    <option value="" disabled="" selected="">ปี</option>
+                                                    <?php
+                                                    for ($year = 2555; $year <= 2600; $year++) {
+                                                        ?>
+                                                        <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>  
+                                            <div class="col-sm-2">
+                                                <button name="btnSubmitCustomer" type="submit"  class="btn btn-sm btn-default"><span class="fa fa-search"></span></button>
+                                            </div>
+
+
+                                        </div>
+                                    </form>
+                                    <br>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="table-responsive">
@@ -108,20 +130,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     <thead>
                                                         <tr>
                                                             <th colspan="2"><center>ข้อมูล</center></th>
-                                                             <th colspan="3"><center>เวลา</center></th>
-                                                            <th colspan="3"><center>รายการบันทึก</center></th>
-                                                         </tr> 
-                                                        
-                                                        <tr>
-                                                            <th>รหัสพนักงาน</th>
-                                                            <th>ชื่อพนักงาน</th>
-                                                            <th>ใช้ไป</th>
-                                                            <th>ยกมา</th>
-                                                            <th>คงเหลือ</th>
-                                                            <th>ยกมา</th>
-                                                            <th>คีย์เข้า</th>
-                                                            <th>ยกไป</th>
-                                                        </tr>
+                                                    <th colspan="3"><center>เวลา</center></th>
+                                                    <th colspan="3"><center>รายการบันทึก</center></th>
+                                                    </tr> 
+
+                                                    <tr>
+                                                        <th>รหัสพนักงาน</th>
+                                                        <th>ชื่อพนักงาน</th>
+                                                        <th>ใช้ไป</th>
+                                                        <th>ยกมา</th>
+                                                        <th>คงเหลือ</th>
+                                                        <th>ยกมา</th>
+                                                        <th>คีย์เข้า</th>
+                                                        <th>ยกไป</th>
+                                                    </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
@@ -177,24 +199,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="table-responsive">
                                                 <table id="example3" class="table table-bordered table-striped">
                                                     <thead>
-                                                        
+
                                                         <tr>
                                                             <th colspan="2"><center>ข้อมูล</center></th>
-                                                             <th colspan="3"><center>เวลา</center></th>
-                                                            <th colspan="3"><center>รายการบันทึก</center></th>
-                                                         </tr> 
-                                                        
-                                                        <tr>
-                                                            <th>รหัสงานบริษัท</th>
-                                                            <th>ชื่อบริษัท</th>
-                                                            <th>เวลาใช้ไป</th>
-                                                            <th>เวลายกมา</th>
-                                                            <th>คงเหลือ</th>
-                                                            <th>ยกมา</th>
-                                                            <th>คีย์เข้า</th>
-                                                            <th>ยกไป</th>
+                                                    <th colspan="3"><center>เวลา</center></th>
+                                                    <th colspan="3"><center>รายการบันทึก</center></th>
+                                                    </tr> 
 
-                                                        </tr>
+                                                    <tr>
+                                                        <th>รหัสงานบริษัท</th>
+                                                        <th>ชื่อบริษัท</th>
+                                                        <th>ใช้ไป</th>
+                                                        <th>ยกมา</th>
+                                                        <th>คงเหลือ</th>
+                                                        <th>ยกมา</th>
+                                                        <th>คีย์เข้า</th>
+                                                        <th>ยกไป</th>
+
+                                                    </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
@@ -216,19 +238,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <td>&nbsp;</td>
                                                         </tr>
                                                     </tbody>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <th>รหัสงานบริษัท</th>
-                                                            <th>ชื่อบริษัท</th>
-                                                            <th>เวลาใช้ไป</th>
-                                                            <th>เวลายกมา</th>
-                                                            <th>คงเหลือ</th>
-                                                            <th>ยกมา</th>
-                                                            <th>คีย์เข้า</th>
-                                                            <th>ยกไป</th>
 
-                                                        </tr>
-                                                    </tfoot>
                                                 </table>
                                             </div> 
                                         </div>
