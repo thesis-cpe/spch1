@@ -100,7 +100,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <!-- Main content -->
                 
-                <form action="<?php echo $_SESSION['PHP_SELF'];?>" method="POST">  <!--Form-->
+                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">  <!--Form-->
                 <section class="content">
                     
                     <!-- Your Page Content Here -->
