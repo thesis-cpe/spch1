@@ -198,16 +198,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <!-- /.box-body -->
                     </div>
-
-
-
-
-
-
-
-
-
-
                     <!-- /Your Page Content Here -->
                 </section>
                 <!-- /.content -->

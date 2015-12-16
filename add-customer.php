@@ -238,10 +238,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </div>
                             
                             <div class="row">
-                                <div class="col-sm-6">
-                                    <label>&nbsp;</label>
-                                    <textarea class="form-control" name="txtCustomerMark" cols="40" rows="1" placeholder="หมายเหตุ"></textarea>
-                                </div>
+                                
                                 <div class="col-sm-3">
                                     <label>&nbsp;</label>  <!--รับค่าจาก GoogleMap-->
                                     <input name="txtLat" id="lat_value" class="form-control" placeholder="ละติจูด(ค่าอัตโนมัติเมื่อลากหมุด)" />
@@ -250,13 +247,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <label>&nbsp;</label><!--รับค่าจาก GoogleMap-->
                                     <input name="txtLong" id="lon_value" class="form-control" placeholder="ลองติจูด(ค่าอัตโนมัติเมื่อลากหมุด)" />
                                 </div>
+                                <div class="col-sm-6">
+                                    <label>&nbsp;</label>
+                                    <textarea class="form-control" name="txtCustomerMark" cols="40" rows="1" placeholder="หมายเหตุ"></textarea>
+                                </div>
                             </div>
                             <br>
                             <div class="row">
-                                <div class="col-sm-12">
+                                <!--แผนที่-->
+                                <div class="col-sm-6">
                                     <label>แผนที่:</label>
                                      <div id="map_canvas"></div>
                                 </div>
+                              <!--รูป-->
+                                <div class="col-sm-6">
+                                    <label>รูปถ่าย:</label>
+                                    <img title="รูปถ่ายสำนักงาน" class="img-responsive" style="height: 350px; width: 100%;" src="dist/img/blank-pfolio.gif">
+                                </div>
+                              
                             </div>
                             
                         </div>
