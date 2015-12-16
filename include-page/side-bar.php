@@ -32,7 +32,7 @@
         <li><a href="main-data.php"><i class="fa fa-database"></i> <span>ข้อมูลหลัก</span></a></li>
         <li><a href="project.php"><i class="fa fa-group"></i> <span>เปิดงาน</span></a></li>
         <li><a href="daily-work.php"><i class="fa fa-tasks"></i> <span>งานประจำวัน</span></a></li>
-        <li><a href="#"><i class="fa fa-line-chart"></i> <span>รายงาน</span></a></li>
+        <li><a href="report.php"><i class="fa fa-line-chart"></i> <span>รายงาน</span></a></li>
        
         
         
