@@ -100,12 +100,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="tab-pane active" id="tab_1">
                                 <!--Conten Tab1-->
                                 <section class="content">
-                                    <form name="formCustomer" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+                                    <!--ส่วนค้นหาตามบริษัท-->
+                                    <form name="formCustomer" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                         <div class="row">
 
-                                            <div class="col-sm-3"><input name="txtKeyWorkCustomer" type="text" class="form-control input-sm" placeholder="รหัสงานบริษัท" /></div>
-                                            <div class="col-sm-3"><input name="txtCustomerName" type="text" class="form-control input-sm" placeholder="ชื่อบริษัท" /></div>
-                                            <div class="col-sm-3">
+                                            <div class="col-sm-2"><input name="txtKeyWorkCustomer" type="text" class="form-control input-sm" placeholder="รหัสงานบริษัท" /></div>
+                                            <div class="col-sm-2"><input name="txtCustomerName" type="text" class="form-control input-sm" placeholder="ชื่อบริษัท" /></div>
+                                            <div class="col-sm-2">
                                                 <select class="form-control input-sm" name="selYear">
                                                     <option value="" disabled="" selected="">ปี</option>
                                                     <?php
@@ -116,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </select>
                                             </div>  
                                             <div class="col-sm-2">
-                                                <button name="btnSubmitCustomer" type="submit"  class="btn btn-sm btn-default"><span class="fa fa-search"></span></button>
+                                                <button title="ค้นหา"  name="btnSubmitCustomer" type="submit"  class="btn btn-sm btn-default"><span class="fa fa-search"></span></button>
                                             </div>
 
 
@@ -193,7 +194,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="tab-pane" id="tab_2">
                                 <!--Conten Tab1-->
                                 <section class="content">
-                                    เนื้อหา Tab2
+                                    <!--ส่วนค้นหาตามพนักงาน-->
+                                    <form name="formEmployee" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                                        <div class="row">
+
+                                            <div class="col-sm-2"><input name="txtEmName" type="text" class="form-control input-sm" placeholder="ชื่อพนักงาน" /></div>
+                                            <div class="col-sm-2">
+                                                <select class="form-control input-sm" name="selProjectStatus">
+                                                    <option value="" disabled="" selected="">สถานะโครงการ</option>
+                                                    <option value="กำลังดำเนินการ">กำลังดำเนินการ</option>
+                                                    <option value="ปิดโครงการ">ปิดโครงการ</option>
+                                                    <option value="ทั้งหมด">ทั้งหมด</option>
+
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <select class="form-control input-sm" name="selYear">
+                                                    <option value="" disabled="" selected="">ปี</option>
+                                                    <?php
+                                                    for ($year = 2555; $year <= 2600; $year++) {
+                                                        ?>
+                                                        <option value="<?php echo $year; ?>"><?php echo $year; ?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>  
+                                            <div class="col-sm-2">
+                                                <button title="ค้นหา" name="btnSubmitEmployee" type="submit"  class="btn btn-sm btn-default"><span class="fa fa-search"></span></button>
+                                            </div>
+
+
+                                        </div>
+                                    </form>
+                                    <br>
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="table-responsive">
