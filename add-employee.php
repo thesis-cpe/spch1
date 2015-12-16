@@ -87,73 +87,95 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <!-- Main content -->
                 <section class="content">
+                    <div class="row">
+                        <!--รูปประจำตัว-->
+                        <div class="col-sm-3">
+                            <div class="box box-info">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">รูปพนักงาน</h3>
+                                </div>
+                                <div class="box-body box-profile">
+                                    <img class="profile-user-img img-responsive img-circle" src="dist/img/default-user.png" title="รูปประจำตัว">
+                                    <div style="padding-top: 9px"></div>
+                                    <input type="file" class="form-control input-sm" name="fileEmPhoto"/>
+                                </div>
+                            </div>
 
-                    <!-- Your Page Content Here -->
-                    <div class="box box-info">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">ข้อมูลพนักงาน</h3>
-                        </div>
-                        <div class="box-body">
-                            <!--ชื่อ-นามสกุล-->
-                           
-                            <div class="row">
 
-                                <div class="col-sm-2">
-                                     <label>ชื่อ-นามสกุล:</label>
-                                    <select class="form-control" name="selTitle">
-                                        <option value="นาย">นาย</option>
-                                        <option value="นาง">นาง</option>
-                                        <option value="นางสาว">นางสาว</option>
-                                    </select>
-
-                                    <!-- /input-group -->
-                                </div>
-
-                                <div class="col-sm-5">
-                                    <label>&nbsp;</label>
-                                    <input name="txtEmName" type="text" class="form-control" placeholder="ชื่อ">
-
-                                    <!-- /input-group -->
-                                </div>
-                                <!-- /.col-lg-6 -->
-                                <div class="col-sm-5">
-                                    <label>&nbsp;</label>
-                                    <input name="txtEmLastName" type="text" class="form-control " placeholder="นามสกุล">
-                                    <!-- /input-group -->
-                                </div>
-                                <!-- /.col-lg-6 -->
-                            </div>  
-                            <!--.ชื่อ-นามสกุล-->
-                            <br>
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label>สถานการทำงาน:</label>
-                                    <select name="selStatus" class="form-control">
-                                        <option>คงอยู่</option>
-                                        <option>ลาออก</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>สถานะในระบบ:</label>
-                                    <select name="selRole" class="form-control">
-                                        <option>ผู้ดูแลระบบ</option>
-                                        <option>ผู้ใช้งาน</option>
-                                    </select>
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <input class="form-control" name="txtEmId" placeholder="หมายเลขพนักงาน">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <input class="form-control" name="txtAuditId" placeholder="หมายเลขผู้ทำบัญชี">
-                                </div>
-
-                            </div> 
 
                         </div>
-                        <!-- /.box-body -->
-                    </div>
+                        <!--ข้อมูลพนักงาน-->
+                        <div class="col-sm-9">
+                            <div class="box box-info">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">ข้อมูลพนักงาน</h3>
+                                </div>
+                                <div class="box-body">
+                                    <!--ชื่อ-นามสกุล-->
+
+                                    <div class="row">
+
+                                        <div class="col-sm-2">
+                                            <label>ชื่อ:</label>
+                                            <select class="form-control" name="selTitle">
+                                                <option value="นาย">นาย</option>
+                                                <option value="นาง">นาง</option>
+                                                <option value="นางสาว">นางสาว</option>
+                                            </select>
+
+                                            <!-- /input-group -->
+                                        </div>
+
+                                        <div class="col-sm-5">
+                                            <label>&nbsp;</label>
+                                            <input name="txtEmName" type="text" class="form-control" placeholder="ชื่อ">
+
+                                            <!-- /input-group -->
+                                        </div>
+                                        <!-- /.col-lg-6 -->
+                                        <div class="col-sm-5">
+                                            <label>&nbsp;</label>
+                                            <input name="txtEmLastName" type="text" class="form-control " placeholder="นามสกุล">
+                                            <!-- /input-group -->
+                                        </div>
+                                        <!-- /.col-lg-6 -->
+                                    </div>  
+                                    <!--.ชื่อ-นามสกุล-->
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>สถานการทำงาน:</label>
+                                            <select name="selStatus" class="form-control">
+                                                <option>คงอยู่</option>
+                                                <option>ลาออก</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>สถานะในระบบ:</label>
+                                            <select name="selRole" class="form-control">
+                                                <option>ผู้ดูแลระบบ</option>
+                                                <option>ผู้ใช้งาน</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>&nbsp;</label>
+                                            <input type="number" class="form-control" name="txtEmId" placeholder="หมายเลขพนักงาน">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>&nbsp;</label>
+                                            <input type="number" class="form-control" name="txtAuditId" placeholder="หมายเลขผู้ทำบัญชี">
+                                        </div>
+
+                                    </div> 
+                                      <!-- /.class row  สถานการทำงาน-->
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
+                        </div>
+                          <!-- /.col-sm-9 ข้อมูลพนักงาน -->
+                    </div>        
+                 <!-- /.class row -->
+
 
 
                     <!--ข้อมูลส่วนบุคคล-->
@@ -275,7 +297,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
                                         <input name="datInWork" type="text" class="form-control" placeholder="01/01/2016">
-                                        
+
                                     </div>
                                 </div>
                                 <div class="col-sm-3">
