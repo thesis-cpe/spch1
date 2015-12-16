@@ -132,7 +132,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     <!--อีเมล์-->
                                                                     <td>admin@absolute.com</td>
                                                                     <!--เพิ่มเติม-->
-                                                                    <td><a href="add-project.php" name="btnAddProject" title="เพิ่มโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-suitcase"></span></a>
+                                                                    <td><a href="add-project_v3.php?tax_id=1" name="btnAddProject" title="เพิ่มโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-suitcase"></span></a>
                                                                         <!--ปิดโครงการ-->
                                                                         <button name="btnCloseProject" title="ปิดโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-lock"></span></button></td>
                                                                 </tr>

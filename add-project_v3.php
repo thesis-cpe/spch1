@@ -37,9 +37,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
         <!-- DataTables -->
         <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
-        
-        
-        
+
+
+
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -154,7 +154,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <h3 class="box-title">ข้อมูลทีมงาน</h3>
                         </div>
                         <div class="box-body">
-                            
+
                             <!--Data Table ข้อมูลพนักงานในทีม-->
                             <div class="table-responsive">
                                 <table id="example1" class="table table-bordered table-striped delete_multiple_check_box">
@@ -170,64 +170,64 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </tr>
                                     </thead>
                                     <tbody id="trAddEm"> 
-                                <?php for($i=1;$i<11;$i++){  ?>        
-                                        <tr>
-                                            <!--สถานะ-->
-                                            <td><input type="checkbox" class="checkbox" id="chkBox<?php echo $i;?>" /></td>
-                                            <td><center><?php echo $i; ?></center></td>
-                                            <td>
-                                                <select class="form-control" name="selEmRole[]" id="selEmRole<?php echo $i;?>" disabled="">
-                                                    <option value="" disabled selected>เลือกสถานะ</option>
-                                                    <option value="ผู้ทำบัญชี">ผู้ทำบัญชี</option>
-                                                    <option value="ผู้ปฏิบัติงาน">ผู้ปฏิบัติงาน</option>
-                                                </select>
-                                            </td>
-                                            <!--ชื่อ-นามสกุล-->
-                                            <td>
-                                                <select class="form-control" name="selEmName[]" id="selEmName<?php echo $i;?>" disabled="">
-                                                    <option value="" disabled selected>เลือกพนักงาน</option>
-                                                    <option value="มงคล ทองอ่อน">มงคล ทองอ่อน</option>
-                                                    <option value="ไพรเพชร หิตการุญ">ไพรเพชร หิตการุญ</option>
-                                                </select>
-                                            </td>
-                                            <!--จำนวนชั่วโมง-->
-                                            <td>
-                                                <div class="input-group">
-                                                    <div class="input-group-addon">
-                                                        <i class="fa fa-clock-o"></i>
-                                                    </div>
-                                                    <input name="txtCountWorkHour[]" id="txtCountWorkHour<?php echo $i;?>" type="number" class="form-control" placeholder="ชั่วโมงการทำงาน" disabled="" />
+                                        <?php for ($i = 1; $i < 11; $i++) { ?>        
+                                            <tr>
+                                                <!--สถานะ-->
+                                                <td><input type="checkbox" class="checkbox" id="chkBox<?php echo $i; ?>" /></td>
+                                                <td><center><?php echo $i; ?></center></td>
+                                        <td>
+                                            <select class="form-control" name="selEmRole[]" id="selEmRole<?php echo $i; ?>" disabled="">
+                                                <option value="" disabled selected>เลือกสถานะ</option>
+                                                <option value="ผู้ทำบัญชี">ผู้ทำบัญชี</option>
+                                                <option value="ผู้ปฏิบัติงาน">ผู้ปฏิบัติงาน</option>
+                                            </select>
+                                        </td>
+                                        <!--ชื่อ-นามสกุล-->
+                                        <td>
+                                            <select class="form-control" name="selEmName[]" id="selEmName<?php echo $i; ?>" disabled="">
+                                                <option value="" disabled selected>เลือกพนักงาน</option>
+                                                <option value="มงคล ทองอ่อน">มงคล ทองอ่อน</option>
+                                                <option value="ไพรเพชร หิตการุญ">ไพรเพชร หิตการุญ</option>
+                                            </select>
+                                        </td>
+                                        <!--จำนวนชั่วโมง-->
+                                        <td>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-clock-o"></i>
                                                 </div>
-                                            </td>
-                                            <!--บาท/ชั่วโมง-->
-                                            <td>
-                                                <div class="input-group">
-                                                    <div class="input-group-addon">
-                                                        <i class="glyphicon glyphicon-usd"></i>
-                                                    </div>
-                                                    <input name="txtBathTime[]" id="txtBathTime<?php echo $i;?>" type="number" class="form-control" placeholder="ค่าจ้าง" disabled="" />
+                                                <input name="txtCountWorkHour[]" id="txtCountWorkHour<?php echo $i; ?>" type="number" class="form-control" placeholder="ชั่วโมงการทำงาน" disabled="" />
+                                            </div>
+                                        </td>
+                                        <!--บาท/ชั่วโมง-->
+                                        <td>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="glyphicon glyphicon-usd"></i>
                                                 </div>
-                                            </td>
-                                            <!--เพิ่มเติม-->
-                                            <td>
-                                                <a title="ลบรายการนี้" href="javascript:;" class="delete_single btn btn-sm btn-default"><span class="fa fa-trash"></span></a>
-                                            </td>
+                                                <input name="txtBathTime[]" id="txtBathTime<?php echo $i; ?>" type="number" class="form-control" placeholder="ค่าจ้าง" disabled="" />
+                                            </div>
+                                        </td>
+                                        <!--เพิ่มเติม-->
+                                        <td>
+                                            <a title="ลบรายการนี้" href="javascript:;" class="delete_single btn btn-sm btn-default"><span class="fa fa-trash"></span></a>
+                                        </td>
                                         </tr>
                                         <!--CheckBox-->
-                                                            <script>
-                                                                document.getElementById('chkBox<?php echo $i;?>').onchange = function () {
-                                                                    document.getElementById('selEmRole<?php echo $i;?>').disabled = !this.checked;
-                                                                    document.getElementById('selEmName<?php echo $i;?>').disabled = !this.checked;
-                                                                    document.getElementById('txtCountWorkHour<?php echo $i;?>').disabled = !this.checked;
-                                                                    document.getElementById('txtBathTime<?php echo $i;?>').disabled = !this.checked;
+                                        <script>
+                                            document.getElementById('chkBox<?php echo $i; ?>').onchange = function () {
+                                                document.getElementById('selEmRole<?php echo $i; ?>').disabled = !this.checked;
+                                                document.getElementById('selEmName<?php echo $i; ?>').disabled = !this.checked;
+                                                document.getElementById('txtCountWorkHour<?php echo $i; ?>').disabled = !this.checked;
+                                                document.getElementById('txtBathTime<?php echo $i; ?>').disabled = !this.checked;
 
-                                                                };
-                                                                
-                                                                
-                                                            </script>
-                                                            <!--.CheckBox-->
-                                <?php }?> 
-                                      
+                                            };
+
+
+                                        </script>
+                                        <!--.CheckBox-->
+                                    <?php } ?> 
+
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -450,20 +450,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
         <!--Data 1  -->
         <script>
-            $(function () {
-                $("#example1").DataTable();
-                $('#example2').DataTable({
-                    "paging": true,
-                    "lengthChange": false,
-                    "searching": false,
-                    "ordering": true,
-                    "info": true,
-                    "autoWidth": false
-                });
-            });
+                                                                $(function () {
+                                                                    $("#example1").DataTable();
+                                                                    $('#example2').DataTable({
+                                                                        "paging": true,
+                                                                        "lengthChange": false,
+                                                                        "searching": false,
+                                                                        "ordering": true,
+                                                                        "info": true,
+                                                                        "autoWidth": false
+                                                                    });
+                                                                });
         </script>
 
-        
+
 
         <!--Delete Multiple Select-->
         <script>
@@ -533,8 +533,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 ;
             });
         </script>
-        
-        
+
+
         <!--add element -->
         <script>
             $(document).ready(function () {
