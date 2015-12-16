@@ -107,10 +107,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <table id="example1" class="table table-bordered table-striped">
                                                     <thead>
                                                         <tr>
+                                                            <th colspan="2"><center>ข้อมูล</center></th>
+                                                             <th colspan="3"><center>เวลา</center></th>
+                                                            <th colspan="3"><center>รายการบันทึก</center></th>
+                                                         </tr> 
+                                                        
+                                                        <tr>
                                                             <th>รหัสพนักงาน</th>
                                                             <th>ชื่อพนักงาน</th>
-                                                            <th>เวลาใช้ไป</th>
-                                                            <th>เวลายกมา</th>
+                                                            <th>ใช้ไป</th>
+                                                            <th>ยกมา</th>
                                                             <th>คงเหลือ</th>
                                                             <th>ยกมา</th>
                                                             <th>คีย์เข้า</th>
@@ -138,7 +144,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                                         </tr>
                                                     </tbody>
-                                                    <tfoot>
+                                                <!--    <tfoot>
                                                         <tr>
                                                             <th>รหัสพนักงาน</th>
                                                             <th>ชื่อพนักงาน</th>
@@ -149,7 +155,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <th>คีย์เข้า</th>
                                                             <th>ยกไป</th>
                                                         </tr>
-                                                    </tfoot>
+                                                    </tfoot>  -->
                                                 </table>
                                             </div> 
                                         </div>
@@ -171,6 +177,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <div class="table-responsive">
                                                 <table id="example3" class="table table-bordered table-striped">
                                                     <thead>
+                                                        
+                                                        <tr>
+                                                            <th colspan="2"><center>ข้อมูล</center></th>
+                                                             <th colspan="3"><center>เวลา</center></th>
+                                                            <th colspan="3"><center>รายการบันทึก</center></th>
+                                                         </tr> 
+                                                        
                                                         <tr>
                                                             <th>รหัสงานบริษัท</th>
                                                             <th>ชื่อบริษัท</th>
