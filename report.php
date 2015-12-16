@@ -75,11 +75,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        ข้อมูลหลัก
-                        <small>แสดงข้อมูลลูกค้าและพนักงาน</small>
+                        รายงาน
+                        <small>แสดงข้อมูลรายงานลูกค้าและพนักงาน</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> ข้อมูลหลัก</a></li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> รายงาน</a></li>
                         <!--<li class="active">Here</li> -->
                     </ol>
                 </section>
@@ -91,51 +91,63 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- TAB --->
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab_1" data-toggle="tab">รายงานพนักงาน</a></li>
-                            <li><a href="#tab_2" data-toggle="tab">รายงานลูกค้า</a></li>
+                            <li class="active"><a href="#tab_1" data-toggle="tab">รายงานตามบริษัท</a></li>
+                            <li><a href="#tab_2" data-toggle="tab">รายงานตามพนักงาน</a></li>
 
                         </ul>
                         <div class="tab-content">
+                            <!--รายงานตามบริษัท-->
                             <div class="tab-pane active" id="tab_1">
                                 <!--Conten Tab1-->
                                 <section class="content">
-                                    <!--  <div class="row">
-                                          <div class="col-sm-offset-10 col-xs-2"> <a href="#"><i class="fa   fa-user-plus"></i> เพิ่มลูกค้า</a></div>
-                                      </div>   -->
+
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="table-responsive">
                                                 <table id="example1" class="table table-bordered table-striped">
                                                     <thead>
                                                         <tr>
-                                                            <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                            <th>ชื่อกิจการ</th>
-                                                            <th>โทรศัพท์</th>
-                                                            <th>อีเมล์</th>
-                                                            <th>เพิ่มเติม</th>
+                                                            <th>รหัสพนักงาน</th>
+                                                            <th>ชื่อพนักงาน</th>
+                                                            <th>เวลาใช้ไป</th>
+                                                            <th>เวลายกมา</th>
+                                                            <th>คงเหลือ</th>
+                                                            <th>ยกมา</th>
+                                                            <th>คีย์เข้า</th>
+                                                            <th>ยกไป</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <!--เลขประจำตัวผู้เสียภาษีอากร-->
-                                                            <td>112233458</td>
-                                                            <!--ชื่อกิจการ-->
-                                                            <td>absolute</td>
-                                                            <!--โทรศัพท์-->
-                                                            <td>0855387928</td>
-                                                            <!--อีเมล์-->
-                                                            <td>admin@absolute.com</td>
-                                                            <!--เพิ่มเติม-->
-                                                            <td></td>
+                                                            <!--รหัสพนักงาน-->
+                                                            <td>&nbsp;</td>
+                                                            <!--ชื่อพนักงาน-->
+                                                            <td>&nbsp;</td>
+                                                            <!--เวลาใช้ไป-->
+                                                            <td>&nbsp;</td>
+                                                            <!--เวลายกมา-->
+                                                            <td>&nbsp;</td>
+                                                            <!--คงเหลือ-->
+                                                            <td>&nbsp;</td>
+                                                            <!--ยกมา-->
+                                                            <td>&nbsp;</td>
+                                                            <!--คีย์เข้า-->
+                                                            <td>&nbsp;</td>
+                                                            <!--ยกไป-->
+                                                            <td>&nbsp;</td>
+
                                                         </tr>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
-                                                            <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                            <th>ชื่อกิจการ</th>
-                                                            <th>โทรศัพท์</th>
-                                                            <th>อีเมล์</th>
-                                                            <th>เพิ่มเติม</th>
+                                                            <th>รหัสพนักงาน</th>
+                                                            <th>ชื่อพนักงาน</th>
+                                                            <th>เวลาใช้ไป</th>
+                                                            <th>เวลายกมา</th>
+                                                            <th>คงเหลือ</th>
+                                                            <th>ยกมา</th>
+                                                            <th>คีย์เข้า</th>
+                                                            <th>ยกไป</th>
                                                         </tr>
                                                     </tfoot>
                                                 </table>
@@ -149,45 +161,59 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!--.Conten Tab1-->
                             </div>
 
-                            <!--Tab2-->
-                              <div class="tab-pane" id="tab_2">
+                            <!--Tab2-->  <!--รายงานตามพนักงาน-->
+                            <div class="tab-pane" id="tab_2">
                                 <!--Conten Tab1-->
                                 <section class="content">
-                                  เนื้อหา Tab2
+                                    เนื้อหา Tab2
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="table-responsive">
                                                 <table id="example3" class="table table-bordered table-striped">
                                                     <thead>
                                                         <tr>
-                                                            <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                            <th>ชื่อกิจการ</th>
-                                                            <th>โทรศัพท์</th>
-                                                            <th>อีเมล์</th>
-                                                            <th>เพิ่มเติม</th>
+                                                            <th>รหัสงานบริษัท</th>
+                                                            <th>ชื่อบริษัท</th>
+                                                            <th>เวลาใช้ไป</th>
+                                                            <th>เวลายกมา</th>
+                                                            <th>คงเหลือ</th>
+                                                            <th>ยกมา</th>
+                                                            <th>คีย์เข้า</th>
+                                                            <th>ยกไป</th>
+
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <!--เลขประจำตัวผู้เสียภาษีอากร-->
-                                                            <td>112233458</td>
-                                                            <!--ชื่อกิจการ-->
-                                                            <td>absolute</td>
-                                                            <!--โทรศัพท์-->
-                                                            <td>0855387928</td>
-                                                            <!--อีเมล์-->
-                                                            <td>admin@absolute.com</td>
-                                                            <!--เพิ่มเติม-->
-                                                            <td></td>
+                                                            <!--รหัสงานบริษัท-->
+                                                            <td>&nbsp;</td>
+                                                            <!--ชื่อบริษัท-->
+                                                            <td>&nbsp;</td>
+                                                            <!--เวลาใช้ไป-->
+                                                            <td>&nbsp;</td>
+                                                            <!--เวลายกมา-->
+                                                            <td>&nbsp;</td>
+                                                            <!--คงเหลือ-->
+                                                            <td>&nbsp;</td>
+                                                            <!--ยกมา-->
+                                                            <td>&nbsp;</td>
+                                                            <!--คีย์เข้า-->
+                                                            <td>&nbsp;</td>
+                                                            <!--ยกไป-->
+                                                            <td>&nbsp;</td>
                                                         </tr>
                                                     </tbody>
                                                     <tfoot>
                                                         <tr>
-                                                            <th>เลขประจำตัวผู้เสียภาษีอากร</th>
-                                                            <th>ชื่อกิจการ</th>
-                                                            <th>โทรศัพท์</th>
-                                                            <th>อีเมล์</th>
-                                                            <th>เพิ่มเติม</th>
+                                                            <th>รหัสงานบริษัท</th>
+                                                            <th>ชื่อบริษัท</th>
+                                                            <th>เวลาใช้ไป</th>
+                                                            <th>เวลายกมา</th>
+                                                            <th>คงเหลือ</th>
+                                                            <th>ยกมา</th>
+                                                            <th>คีย์เข้า</th>
+                                                            <th>ยกไป</th>
+
                                                         </tr>
                                                     </tfoot>
                                                 </table>
