@@ -49,7 +49,7 @@
               <!-- Menu Footer-->
             <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">โปรไฟล์</a>
+                  <a href="profile.php" class="btn btn-default btn-flat">โปรไฟล์</a>
                 </div>
                 <div class="pull-right">
                   <a href="#" class="btn btn-default btn-flat">ออกจากระบบ</a>
