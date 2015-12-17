@@ -115,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                     <div class="row">
 
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <label>ชื่อ:</label>
                                             <select class="form-control" name="selTitle">
                                                 <option value="นาย">นาย</option>
@@ -126,23 +126,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <!-- /input-group -->
                                         </div>
 
-                                        <div class="col-sm-5">
+                                        <div class="col-sm-3">
                                             <label>&nbsp;</label>
                                             <input name="txtEmName" type="text" class="form-control" placeholder="ชื่อ">
 
                                             <!-- /input-group -->
                                         </div>
                                         <!-- /.col-lg-6 -->
-                                        <div class="col-sm-5">
+                                        <div class="col-sm-3">
                                             <label>&nbsp;</label>
                                             <input name="txtEmLastName" type="text" class="form-control " placeholder="นามสกุล">
                                             <!-- /input-group -->
                                         </div>
-                                        <!-- /.col-lg-6 -->
-                                    </div>  
-                                    <!--.ชื่อ-นามสกุล-->
-                                    <br>
-                                    <div class="row">
+                                        
                                         <div class="col-sm-3">
                                             <label>สถานการทำงาน:</label>
                                             <select name="selStatus" class="form-control">
@@ -150,7 +146,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <option>ลาออก</option>
                                             </select>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <!-- /.col-lg-6 -->
+                                    </div>  
+                                    <!--.ชื่อ-นามสกุล-->
+                                    <br>
+                                    <div class="row">
+                                        
+                                        <div class="col-sm-2">
                                             <label>สถานะในระบบ:</label>
                                             <select name="selRole" class="form-control">
                                                 <option>ผู้ดูแลระบบ</option>
@@ -159,11 +161,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                         <div class="col-sm-3">
                                             <label>&nbsp;</label>
-                                            <input type="number" class="form-control" name="txtEmId" placeholder="หมายเลขพนักงาน">
+                                            <input type="text" class="form-control" name="txtEmId" placeholder="หมายเลขพนักงาน" required="">
                                         </div>
                                         <div class="col-sm-3">
                                             <label>&nbsp;</label>
-                                            <input type="number" class="form-control" name="txtAuditId" placeholder="หมายเลขผู้ทำบัญชี">
+                                            <input type="text" class="form-control" name="txtAuditId" placeholder="หมายเลขผู้ทำบัญชี" required="">
+                                        </div>
+                                        
+                                        <!--PassWord-->
+                                       <div class="col-sm-2">
+                                            <label>&nbsp;</label>
+                                            <input type="password" class="form-control" name="txtPassword" placeholder="รหัสผ่าน" required="">
+                                        </div>
+                                        
+                                        <!--PassWord-->
+                                       <div class="col-sm-2">
+                                            <label>&nbsp;</label>
+                                            <input type="password" class="form-control" name="txtPassword2" placeholder="ยืนยันรหัสผ่าน" required="">
                                         </div>
 
                                     </div> 
