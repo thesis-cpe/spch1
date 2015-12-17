@@ -178,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                        <div class="col-sm-2">
                                             <label>&nbsp;</label>
                                             <input type="password" class="form-control" name="txtPassword2" placeholder="ยืนยันรหัสผ่าน" required="">
-                                        </div>
+                                       </div>
 
                                     </div> 
                                       <!-- /.class row  สถานการทำงาน-->

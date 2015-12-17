@@ -49,10 +49,10 @@
               <!-- Menu Footer-->
             <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  <a href="#" class="btn btn-default btn-flat">โปรไฟล์</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="#" class="btn btn-default btn-flat">ออกจากระบบ</a>
                 </div>
               </li> 
             </ul>
