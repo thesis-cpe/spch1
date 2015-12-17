@@ -283,7 +283,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!--Div Footer-->
                                 <div class="box-footer">
                                     <button type="reset" class="btn btn-default">ล้างข้อมูล</button>
-                                    <button type="submit" class="btn btn-success pull-right">บันทึก</button>
+                                    <button type="submit" class="btn btn-success pull-right">แก้ไข</button>
                                 </div>
                                 <!--.Div Footer-->
 
