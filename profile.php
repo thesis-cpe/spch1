@@ -90,7 +90,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row">
                         <!--รูปประจำตัว-->
                         <div class="col-sm-3">
-                            <div class="box box-info">
+                            <div class="box box-primary">
                                 <div class="box-header with-border">
                                     <h3 class="box-title">ข้อมูลอย่างย่อ</h3>
                                 </div>
@@ -103,7 +103,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <ul class="list-group list-group-unbordered">
 
                                         <li class="list-group-item">
-                                            <b>สถานการทำงาน</b> <a class="pull-right">คงอยู่</a>
+                                            <b>สถานะการทำงาน</b> <a class="pull-right">คงอยู่</a>
                                         </li>
                                         <li class="list-group-item">
                                             <b>หมายเลขพนักงาน</b> <a class="pull-right">55022857</a>
@@ -119,16 +119,174 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </div>
                             </div>
                         </div>
-                        <!--ข้อมูลพนักงาน-->
+                        <!--ข้อมูลส่วนบุคลล-->
                         <div class="col-sm-9">
                             <div class="box box-info">
-                                <div class="box-header with-border">
+                                <div class="box-header">
                                     <h3 class="box-title">ข้อมูลส่วนบุคคล</h3>
                                 </div>
                                 <div class="box-body">
 
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>เลขประจำตัวประชาชน:</label>
+                                            <input class="form-control" name="txtNationId" placeholder="หมายเลข 13 หลัก" maxlength="13">
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>สถานะสมรส :</label>
+                                            <select name="selMarieStatus" class="form-control">
+                                                <option>โสด</option>
+                                                <option>สมรส</option>
+                                                <option>หย่าร้าง</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>&nbsp;</label>
+                                            <textarea name="txtareaAddr1" rows="1" cols="40" class="form-control" placeholder="ที่อยู่ตามทะเบียนบ้าน"></textarea>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>&nbsp;</label>
+                                            <textarea name="txtareaAddr2" rows="1" cols="40" class="form-control" placeholder="ที่อยู่ปัจจุบัน"></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>ข้อมูลการติดต่อ:</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                                <input name="txtTel" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>&nbsp;</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-envelope"></i>
+                                                </div>
+                                                <input name="txtEmail" type="email" class="form-control" placeholder="example@exam.com">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>บุคคลที่ติดต่อได้:</label>
+
+                                            <input name="txtNameFriend" type="text" class="form-control" placeholder="ชื่อบุคคลที่ติดต่อได้">
+
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <label>&nbsp;</label>
+                                            <div class="input-group">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-phone"></i>
+                                                </div>
+                                                <input name="txtEmailFriend" type="email" class="form-control" placeholder="หมายเลขโทรศัพท์">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--ข้อมูลการศึกษา-->
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>ระดับการศึกษา:</label>
+                                            <select class="form-control" name="selGaduLevel">
+                                                <option value="ประถมต้น">ประถมต้น</option>
+                                                <option value="ประถมปลาย">ประถมปลาย</option>
+                                                <option value="มัธยมต้น">มัธยมต้น</option>
+                                                <option value="มัธยมปลาย">มัธยมปลาย</option>
+                                                <option value="ปวช">ปวช</option>
+                                                <option value="ปวส">ปวส</option>
+                                                <option value="ปริญญาตรี">ปริญญาตรี</option>
+                                                <option value="ปริญญาโท">ปริญญาโท</option>
+                                                <option value="ปริญญาเอก">ปริญญาเอก</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-sm-3">
+                                            <label>สาขาที่จบ:</label>
+
+                                            <input name="txtMajor" type="text" class="form-control" placeholder="บัญชี">
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>เกรดเฉลี่ยรวม:</label>
+
+                                            <input name="txtGpa" type="text" class="form-control" placeholder="4.00">
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>สถาบัน:</label>
+
+                                            <input name="txtInstitute" type="text" class="form-control" placeholder="มหาวิทยาลัยเกษตรศาสตร์">
+
+                                        </div>
+                                    </div>
+
+                                    <!--.ข้อมูลการศึกษา-->
+
+                                    <!--ข้อมูลเกี่ยวกับการทำงาน-->
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <label>เริ่มปฏิบัติงาน:</label>
+                                            <div class="input-group ">
+                                                <div class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-th"></span>
+                                                </div>
+                                                <input readonly="" name="datInWork" type="text" class="form-control" placeholder="01/01/2016">
+
+                                            </div>  
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>อัตราเงินเดือน:</label>
+
+                                            <input readonly="" name="txtCoast" type="text" class="form-control" placeholder="อัตราเงินเดือน">
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>ค่าแรงต่อวัน:</label>
+
+                                            <input readonly="" name="txtRateCoast" type="text" class="form-control" placeholder="จำนวนบาทต่อวัน">
+
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <label>จำวนวนวันทำงาน:</label>
+
+                                            <input readonly="" name="txtWorkDay" type="text" class="form-control" placeholder="จำนวนวันต่อเดือน">
+
+                                        </div>
+                                    </div>
+                                    <!--.ข้อมูลเกี่ยวกับการทำงาน-->
+
+                                    <!--เงื่อนไขวันหยุดและสวัสดิการ+หมายเหตุ-->
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label>&nbsp;</label>
+                                            <textarea readonly="" name="txtareaCondition" rows="3" cols="30" class="form-control" placeholder="เงื่อนไขวันหยุดและสวัสดิการ"></textarea>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <label>&nbsp;</label>
+                                            <textarea readonly="" name="txtareaMark" rows="3" cols="30" class="form-control" placeholder="หมายเหตุ"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <!--.เงื่อนไขวันหยุดและสวัสดิการ+หมายเหตุ-->
+
                                 </div>
                                 <!-- /.box-body -->
+
+                                <!--Div Footer-->
+                                <div class="box-footer">
+                                    <button type="reset" class="btn btn-default">ล้างข้อมูล</button>
+                                    <button type="submit" class="btn btn-success pull-right">บันทึก</button>
+                                </div>
+                                <!--.Div Footer-->
+
                             </div>
                         </div>
                         <!-- /.col-sm-9 ข้อมูลพนักงาน -->
@@ -151,7 +309,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </div>
                                     <div class="modal-body">
                                         <div class="row">
-                                           <div class="col-sm-3">
+                                            <div class="col-sm-3">
                                                 <label>หมายเลขพนักงาน:</label>
                                             </div>  
                                             <div class="col-sm-6"> <!---->
@@ -179,7 +337,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                         <br>
                                         <div class="row">
-                                              
+
                                             <div class="col-sm-6 col-sm-offset-3"> <!--รหัสผ่านใหม่-->
                                                 <div class="input-group">
                                                     <div class="input-group-addon">
@@ -189,9 +347,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 </div>
                                             </div>
                                         </div>
-                                         <br>
+                                        <br>
                                         <div class="row">
-                                         
+
                                             <div class="col-sm-6 col-sm-offset-3"> <!--ยืนยันรหัสผ่าน-->
                                                 <div class="input-group">
                                                     <div class="input-group-addon">
@@ -204,7 +362,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-                                        <button type="button" class="btn btn-primary">บันทึก</button>
+                                        <button type="submit" name="btnChangPassWord" class="btn btn-primary">บันทึก</button>
                                     </div>
                                 </div><!-- /.modal-content -->
                             </div><!-- /.modal-dialog -->
