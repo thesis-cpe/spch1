@@ -1,4 +1,7 @@
+
 <!DOCTYPE html>
+
+
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -96,188 +99,193 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="box-header">
                             <h3 class="box-title">ข้อมูลกิจการ</h3>
                         </div>
-                        <div class="box-body">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <label>ชื่อกิจการ</label>
-                                    <input class="form-control" name="txtCusname" placeholder="ชื่อกิจการของลูกค้า"/>
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>สถานะ:</label>
-                                    <select class="form-control" name="selCusStatus">
-                                        <option value="เจ้าของคนเดียว">เจ้าของคนเดียว</option>
-                                        <option value="หสม">หสม</option>
-                                        <option value="คณะบุคคล">คณะบุคคล</option>
-                                        <option value="มูลนิธิ">มูลนิธิ</option>
-                                        <option value="สมาคม">สมาคม</option>
-                                        <option value="หจก">หจก</option>
-                                        <option value="บจก">บจก</option>
-                                        <option value="บมจ">บมจ</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <input class="form-control" name="txtNumTax" placeholder="เลขประจำตัวผู้เสียภาษี" type="number">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <input class="form-control" name="txtNumBand" placeholder="เลขทะเบียนการค้า" type="number">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <textarea name="txtAddrTh" class="form-control" cols="40" rows="1" placeholder="ที่อยู่ภาษาไทย(ขยายช่องกรอกได้)"></textarea>
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <textarea name="txtAddrEn" class="form-control" cols="40" rows="1" placeholder="ที่อยู่ภาษาอังกฤษ(ขยายช่องกรอกได้)"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-phone"></i>
-                                        </div>
-                                        <input name="txtCusTel" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์">
+                        <!--Form-->  
+                        <form action="php_action/insert_customer.php" method="POST" enctype="multipart/form-data">
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-sm-9">
+                                        <label>ชื่อกิจการ</label>
+                                        <input class="form-control" name="txtCusname" placeholder="ชื่อกิจการของลูกค้า" required="" />
                                     </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-fax"></i>
-                                        </div>
-                                        <input name="txtCusFax" type="text" class="form-control" placeholder="หมายเลขโทรสาร">
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa  fa-globe"></i>
-                                        </div>
-                                        <input name="txtCusWeb" type="text" class="form-control" placeholder="www.example.com">
-                                    </div>
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-envelope"></i>
-                                        </div>
-                                        <input name="txtCusMail" type="email" class="form-control" placeholder="exam@example.com">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>
-                                    <div id="olNameCon">
-                                        <input type="text" name="txtNameCon[]" id="txtNameCon" class="form-control" placeholder="ชื่อผู้มีอำนาจลงนาม"/>
-                                    </div>
-
-                                </div>
-
-                                <div class="col-sm-2">
-                                    <label>สถานะ:</label>
-                                    <div id="selStatus">  
-                                        <select class="form-control" name="selStatusCondition[]" id="selStatusCondition">
-                                            <option value="เจ้าของกิจการ">เจ้าของกิจการ</option>
-                                            <option value="หุ้นส่วนผู้จัดการ">หุ้นส่วนผู้จัดการ</option>
-                                            <option value="กรรมการผู้จัดการ">กรรมการผู้จัดการ</option>
+                                    <div class="col-sm-3">
+                                        <label>สถานะ:</label>
+                                        <select class="form-control" name="selCusStatus">
+                                            <option value="เจ้าของคนเดียว">เจ้าของคนเดียว</option>
+                                            <option value="หสม">หสม</option>
+                                            <option value="คณะบุคคล">คณะบุคคล</option>
+                                            <option value="มูลนิธิ">มูลนิธิ</option>
+                                            <option value="สมาคม">สมาคม</option>
+                                            <option value="หจก">หจก</option>
+                                            <option value="บจก">บจก</option>
+                                            <option value="บมจ">บมจ</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                <div class="col-sm-2">
-                                    <label>&nbsp;</label>
-                                    <ul class="list-inline">
-                                        <li><button id="btnAdd" name="btnAdd" class="btn btn-block btn-default btm-sm"><span class="fa fa-plus"></span></button></li>
-                                        <li><button id="btnDel" name="btnDel" class="btn btn-block btn-default btm-sm"><span class="fa fa-minus"></span></button></li>
-                                    </ul> 
-                                </div>
-                                <div class="col-sm-5">
-                                    <label>&nbsp;</label>
-                                    <textarea name="txtConditionNam" class="form-control" cols="1" rows="1" placeholder="เงื่อนไขการลงนาม(ขยายช่องกรอกได้)"></textarea>
-                                </div>
-                            </div>
 
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <label>ผู้ติดต่องาน:</label>
-                                    <input class="form-control" name="txtContractName" type="text" placeholder="ชื่อผู้ที่ติดต่องาน"/>
-                                </div>
-                                <div class="col-md-3"> 
-                                    <label>&nbsp;</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-phone"></i>
-                                        </div>
-                                        <input name="txtContractTel" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์ผู้ติดต่องาน"/>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>
+                                        <input class="form-control" name="txtNumTax" placeholder="เลขประจำตัวผู้เสียภาษี" type="text" required=""/>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>
+                                        <input class="form-control" name="txtNumBand" placeholder="เลขทะเบียนการค้า" type="text">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>
+                                        <textarea name="txtAddrTh" class="form-control" cols="40" rows="1" placeholder="ที่อยู่ภาษาไทย(ขยายช่องกรอกได้)"></textarea>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>
+                                        <textarea name="txtAddrEn" class="form-control" cols="40" rows="1" placeholder="ที่อยู่ภาษาอังกฤษ(ขยายช่องกรอกได้)"></textarea>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                    <label>&nbsp;</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon">
-                                            <i class="fa fa-envelope"></i>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-phone"></i>
+                                            </div>
+                                            <input name="txtCusTel" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์">
                                         </div>
-                                        <input name="txtContractMail" type="email" class="form-control" placeholder="exam@example.com"/>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-fax"></i>
+                                            </div>
+                                            <input name="txtCusFax" type="text" class="form-control" placeholder="หมายเลขโทรสาร">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa  fa-globe"></i>
+                                            </div>
+                                            <input name="txtCusWeb" type="text" class="form-control" placeholder="www.example.com">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-envelope"></i>
+                                            </div>
+                                            <input name="txtCusMail" type="email" class="form-control" placeholder="exam@example.com">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3">
-                                       <label>รูปถ่าย:</label>
-                                       <input type="file" class="form-control" name="fileImgCustomer">
-                                </div>
-                            </div>
-                            
-                            <div class="row">
-                                
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label>  <!--รับค่าจาก GoogleMap-->
-                                    <input name="txtLat" id="lat_value" class="form-control" placeholder="ละติจูด(ค่าอัตโนมัติเมื่อลากหมุด)" />
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>&nbsp;</label><!--รับค่าจาก GoogleMap-->
-                                    <input name="txtLong" id="lon_value" class="form-control" placeholder="ลองติจูด(ค่าอัตโนมัติเมื่อลากหมุด)" />
-                                </div>
-                                <div class="col-sm-6">
-                                    <label>&nbsp;</label>
-                                    <textarea class="form-control" name="txtCustomerMark" cols="40" rows="1" placeholder="หมายเหตุ"></textarea>
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <!--แผนที่-->
-                                <div class="col-sm-6">
-                                    <label>แผนที่:</label>
-                                     <div id="map_canvas"></div>
-                                </div>
-                              <!--รูป-->
-                                <div class="col-sm-6">
-                                    <label>รูปถ่าย:</label>
-                                    <img title="รูปถ่ายสำนักงาน" class="img-responsive" style="height: 350px; width: 100%;" src="dist/img/blank-pfolio.gif">
-                                </div>
-                              
-                            </div>
-                            
-                        </div>
-                        <!--Div Footer-->
-                        <div class="box-footer">
-                            <button type="reset" class="btn btn-default">ล้างข้อมูล</button>
-                            <button type="submit" class="btn btn-success pull-right">บันทึก</button>
-                        </div>
-                        <!--.Div Footer-->
 
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>
+                                        <div id="olNameCon">
+                                            <input type="text" name="txtNameCon[]" id="txtNameCon" class="form-control" placeholder="ชื่อผู้มีอำนาจลงนาม"/>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        <label>สถานะ:</label>
+                                        <div id="selStatus">  
+                                            <select class="form-control" name="selStatusCondition[]" id="selStatusCondition">
+                                                <option value="เจ้าของกิจการ">เจ้าของกิจการ</option>
+                                                <option value="หุ้นส่วนผู้จัดการ">หุ้นส่วนผู้จัดการ</option>
+                                                <option value="กรรมการผู้จัดการ">กรรมการผู้จัดการ</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-2">
+                                        <label>&nbsp;</label>
+                                        <ul class="list-inline">
+                                            <li><button type="button" id="btnAdd" name="btnAdd" class="btn btn-block btn-default btm-sm"><span class="fa fa-plus"></span></button></li>
+                                            <li><button type="button" id="btnDel" name="btnDel" class="btn btn-block btn-default btm-sm"><span class="fa fa-minus"></span></button></li>
+                                        </ul> 
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <label>&nbsp;</label>
+                                        <textarea name="txtConditionNam" class="form-control" cols="1" rows="1" placeholder="เงื่อนไขการลงนาม(ขยายช่องกรอกได้)"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <label>ผู้ติดต่องาน:</label>
+                                        <input class="form-control" name="txtContractName" type="text" placeholder="ชื่อผู้ที่ติดต่องาน"/>
+                                    </div>
+                                    <div class="col-md-3"> 
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-phone"></i>
+                                            </div>
+                                            <input name="txtContractTel" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์ผู้ติดต่องาน"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>&nbsp;</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-envelope"></i>
+                                            </div>
+                                            <input name="txtContractMail" type="email" class="form-control" placeholder="exam@example.com"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label>รูปถ่าย:</label>
+                                        <input type="file" class="form-control" name="fileImgCustomer">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label>  <!--รับค่าจาก GoogleMap-->
+                                        <input name="txtLat" id="lat_value" class="form-control" placeholder="ละติจูด(ค่าอัตโนมัติเมื่อลากหมุด)" />
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <label>&nbsp;</label><!--รับค่าจาก GoogleMap-->
+                                        <input name="txtLong" id="lon_value" class="form-control" placeholder="ลองติจูด(ค่าอัตโนมัติเมื่อลากหมุด)" />
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>&nbsp;</label>
+                                        <textarea class="form-control" name="txtCustomerMark" cols="40" rows="1" placeholder="หมายเหตุ"></textarea>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <!--แผนที่-->
+                                    <div class="col-sm-6">
+                                        <label>แผนที่:</label>
+                                        <div id="map_canvas"></div>
+                                    </div>
+                                    <!--รูป-->
+                                    <div class="col-sm-6">
+                                        <label>รูปถ่าย:</label>
+                                        <img title="รูปถ่ายสำนักงาน" class="img-responsive" style="height: 350px; width: 100%;" src="dist/img/blank-pfolio.gif">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!--Div Footer-->
+                            <div class="box-footer">
+                                <button type="reset" class="btn btn-default">ล้างข้อมูล</button>
+                                <button name="btnSubmit" type="submit" class="btn btn-success pull-right">บันทึก</button>
+
+                            </div>
+                            <!--.Div Footer-->
+                        </form>
+                        <!--./Form-->
                     </div>
                     <!-- /.box-body -->
-                    </
+
 
 
 
@@ -313,16 +321,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
              fixed layout. -->
         <!--Datpicker-->
         <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-       <!--GoogleMap-->
-       <script src="plugins/googleMap/googlemap.js"></script>
-       
+        <!--GoogleMap-->
+        <script src="plugins/googleMap/googlemap.js"></script>
+
 
         <!--add element-->
         <script>
             $(document).ready(function () {
                 $("#btnAdd").click(function () {
                     $("#olNameCon").append("<label>&nbsp;</label><input type='text' name='txtNameCon[]' id='txtNameCon1' class='form-control' placeholder='ชื่อผู้มีอำนาจลงนาม'/>");
-                    $("#selStatus").append("<label>&nbsp;</label><select class='form-control' name='selStatusCondition[]' id='selStatusCondition1'><option value='เจ้าของกิจการ'>เจ้าของกิจการ</option><option value='กรรมการผู้จัดการ'>กรรมการผู้จัดการ</option></select>");
+                    $("#selStatus").append("<label>&nbsp;</label><select class='form-control' name='selStatusCondition[]' id='selStatusCondition1'><option value='เจ้าของกิจการ'>เจ้าของกิจการ</option><option value='หุ้นส่วนผู้จัดการ'>หุ้นส่วนผู้จัดการ</option><option value='กรรมการผู้จัดการ'>กรรมการผู้จัดการ</option></select>");
                 });
             });
         </script>
