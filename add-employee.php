@@ -86,7 +86,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </section>
 
                 <!-- Main content -->
+            <form action="php_action/insert_employee.php" method="POST" enctype="multipart/form-data">
                 <section class="content">
+                    
                     <div class="row">
                         <!--รูปประจำตัว-->
                         <div class="col-sm-3">
@@ -254,7 +256,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="input-group-addon">
                                             <i class="fa fa-phone"></i>
                                         </div>
-                                        <input name="txtEmailFriend" type="email" class="form-control" placeholder="หมายเลขโทรศัพท์">
+                                        <input name="txtTelFriend" type="text" class="form-control" placeholder="หมายเลขโทรศัพท์">
                                     </div>
                                 </div>
                             </div>
@@ -372,6 +374,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <!-- .Your Page Content Here -->
                 </section>
+            </form>
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
