@@ -14,7 +14,7 @@ $txtPassword = md5($_POST['txtPassword'].";bmpkobroTNแท่นทอง@Up#2�
 $txtPassword2 = md5($_POST['txtPassword2'].";bmpkobroTNแท่นทอง@Up#2๐1๕");
 /*ข้อมูลส่วนบุคคล*/
 $txtNationId = $_POST['txtNationId'];
-$selMarieStatus = $_POST['$selMarieStatus'];
+$selMarieStatus = $_POST['selMarieStatus'];
 $txtareaAddr1 = $_POST['txtareaAddr1'];
 $txtareaAddr2 = $_POST['txtareaAddr2'];
 $txtTel = $_POST['txtTel'];    
@@ -75,3 +75,5 @@ elseif($txtPassword != $txtPassword2){
 
 
 $conn->close();
+header( "location: ../main-data.php" );
+ exit(0);

@@ -145,8 +145,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="col-sm-3">
                                             <label>สถานการทำงาน:</label>
                                             <select name="selStatus" class="form-control">
-                                                <option>คงอยู่</option>
-                                                <option>ลาออก</option>
+                                                <option value="คงอยู่">คงอยู่</option>
+                                                <option value="ลาออก">ลาออก</option>
                                             </select>
                                         </div>
                                         <!-- /.col-lg-6 -->
@@ -158,8 +158,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="col-sm-2">
                                             <label>สถานะในระบบ:</label>
                                             <select name="selRole" class="form-control">
-                                                <option>ผู้ดูแลระบบ</option>
-                                                <option>ผู้ใช้งาน</option>
+                                                <option value="ผู้ดูแลระบบ">ผู้ดูแลระบบ</option>
+                                                <option value="ผู้ใช้งาน">ผู้ใช้งาน</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-3">
@@ -210,9 +210,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="col-sm-3">
                                     <label>สถานะสมรส :</label>
                                     <select name="selMarieStatus" class="form-control">
-                                        <option>โสด</option>
-                                        <option>สมรส</option>
-                                        <option>หย่าร้าง</option>
+                                        <option value="โสด">โสด</option>
+                                        <option value="สมรส">สมรส</option>
+                                        <option value="หย่าร้าง">หย่าร้าง</option>
                                     </select>
                                 </div>
                                 <div class="col-sm-3">
