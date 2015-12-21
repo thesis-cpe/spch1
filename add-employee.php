@@ -57,6 +57,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     |---------------------------------------------------------|
     -->
     <body class="hold-transition skin-blue sidebar-mini sidebar-collapse">
+     
         <div class="wrapper">
 
             <!-- Main Header -->
@@ -86,10 +87,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </section>
 
                 <!-- Main content -->
-            <form action="php_action/insert_employee.php" method="POST" enctype="multipart/form-data">
-                <section class="content">
-                    
-                    <div class="row">
+                <form name="formAddEm" action="php_action/insert_employee.php" method="POST" enctype="multipart/form-data" OnSubmit="return fncSubmit();" >
+              <section class ="content">
+
+                      <div class="row">
                         <!--รูปประจำตัว-->
                         <div class="col-sm-3">
                             <div class="box box-info">
@@ -140,7 +141,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <input name="txtEmLastName" type="text" class="form-control " placeholder="นามสกุล">
                                             <!-- /input-group -->
                                         </div>
-                                        
+
                                         <div class="col-sm-3">
                                             <label>สถานการทำงาน:</label>
                                             <select name="selStatus" class="form-control">
@@ -153,7 +154,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <!--.ชื่อ-นามสกุล-->
                                     <br>
                                     <div class="row">
-                                        
+
                                         <div class="col-sm-2">
                                             <label>สถานะในระบบ:</label>
                                             <select name="selRole" class="form-control">
@@ -169,28 +170,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <label>&nbsp;</label>
                                             <input type="text" class="form-control" name="txtAuditId" placeholder="หมายเลขผู้ทำบัญชี" required="">
                                         </div>
-                                        
+
                                         <!--PassWord-->
-                                       <div class="col-sm-2">
+                                        <div class="col-sm-2">
                                             <label>&nbsp;</label>
                                             <input type="password" class="form-control" name="txtPassword" placeholder="รหัสผ่าน" required="">
                                         </div>
-                                        
+
                                         <!--PassWord-->
-                                       <div class="col-sm-2">
+                                        <div class="col-sm-2">
                                             <label>&nbsp;</label>
                                             <input type="password" class="form-control" name="txtPassword2" placeholder="ยืนยันรหัสผ่าน" required="">
-                                       </div>
+                                        </div>
 
                                     </div> 
-                                      <!-- /.class row  สถานการทำงาน-->
+                                    <!-- /.class row  สถานการทำงาน-->
                                 </div>
                                 <!-- /.box-body -->
                             </div>
                         </div>
-                          <!-- /.col-sm-9 ข้อมูลพนักงาน -->
+                        <!-- /.col-sm-9 ข้อมูลพนักงาน -->
                     </div>        
-                 <!-- /.class row -->
+                    <!-- /.class row -->
 
 
 
@@ -373,8 +374,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
                     <!-- .Your Page Content Here -->
-                </section>
-            </form>
+                    </section>
+                </form>
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
@@ -405,9 +406,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
              fixed layout. -->
         <!--Datpicker-->
         <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-        <!-- Check PassWord-->
-        <script>
-        </script>
         
+   <!-- Check PassWord-->
+        <script>
+                            function fncSubmit()
+                            {
+                                if (document.formAddEm.txtPassword.value == "")
+                                {
+                                alert('Please input Password');
+                                        document.formAddEm.txtPassword.focus();
+                                        return false;
+                                }
+                                if (document.formAddEm.txtPassword2.value == "")
+                                {
+                                alert('Please input Password');
+                                        document.formAddEm.txtPassword2.focus();
+                                        return false;
+                                }
+                                if (document.formAddEm.txtPassword.value != document.formAddEm.txtPassword2.value)
+                                {
+                                alert('Confirm Password Not Match');
+                                        document.formAddEm.txtPassword.focus();
+                                        return false;
+                                }
+                                document.formAddEm.submit();
+                                
+                            }
+        </script>
     </body>
 </html>
