@@ -10,7 +10,8 @@
     
     
     //สร้างรหัสงานใหม่
-    $curentYear = date("Y")+543; //ปีปัจจุบัน
+    $curentYear = date("Y")+543; //ปีปัจจุบัน พ.ศ.   
+    
       //นับจำนวนโปรเจคของรหัสลูกค้าคนนี้
      $sqlCountProject = "SELECT COUNT(project_id) AS count_project_id FROM project WHERE customer_id = '$customerIDFromProject' AND project_year = '$curentYear'"; 
      $queryCountProject = $conn->query($sqlCountProject);
@@ -110,8 +111,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </section>
 
                 <!-- Main content -->
+               <form action="php_action/add_project_team.php" method="POST" enctype="multipart/form-data"> 
                 <section class="content">
-                    
+                               
                     <!-- Your Page Content Here -->
                     <div class="row">
                         <div class="col-sm-12">
@@ -206,12 +208,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <select class="form-control" name="selEmName[]" id="selEmName<?php echo $i; ?>" disabled="">
                                                 <option value="" disabled selected>เลือกพนักงาน</option>
                                             <?php
-                                                $sqlSelectEmployeeName = "SELECT em_name FROM employee";
+                                                $sqlSelectEmployeeName = "SELECT em_name,em_id FROM employee";
                                                 $querySelectEmployeeName = $conn->query($sqlSelectEmployeeName);
                                                 while($arrEmployeeName = $querySelectEmployeeName->fetch_array())
                                                 {
                                             ?>
-                                                <option value="<?php echo $arrEmployeeName['em_name']; ?>"><?php echo $arrEmployeeName['em_name']; ?></option>
+                                                <option value="<?php echo $arrEmployeeName['em_id']; ?>"><?php echo $arrEmployeeName['em_name']; ?></option>
                                            <?php }?>
                                             </select>
                                         </td>
@@ -402,7 +404,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="input-group-addon">
                                             <span class="glyphicon glyphicon-th"></span>
                                         </div>
-                                        <input name="datOffersEmploy" type="text" class="form-control" placeholder="วันที่เสนอราคา 01/01/2016">
+                                        <input name="datOffersEmploy" type="text" class="form-control" placeholder="วันที่ทำสัญญา 01/01/2016">
 
                                     </div>
                                 </div>
@@ -414,7 +416,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!--เลขที่สัญญาจ้าง--->  
                                 <div class="col-sm-3">
                                     <label>&nbsp;</label>
-                                    <input class="form-control" name="txtNoEmploy" type="number" placeholder="เลขที่ใบเสนอราคา"/>
+                                    <input class="form-control" name="txtNoEmploy" type="number" placeholder="เลขที่ใบสัญญา"/>
                                 </div>
                                 <!--ไฟล์สัญญาจ้าง--->  
                                 <div class="col-sm-3">
@@ -440,6 +442,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <!-- .Your Page Content Here -->
                 </section>
+                   <input type="hidden" value="<?php echo  $customerIDFromProject;?>" name="hdfCusId"/>
+               </form>
                 <!-- /.content -->
             </div>
             <!-- /.content-wrapper -->
@@ -564,3 +568,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     </body>
 </html>
+<?php
+$conn->close();
