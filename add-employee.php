@@ -405,5 +405,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
              fixed layout. -->
         <!--Datpicker-->
         <script src="plugins/datepicker/bootstrap-datepicker.js"></script>
+        <!-- Check PassWord-->
+        <script>
+        </script>
+        
     </body>
 </html>
