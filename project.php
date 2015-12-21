@@ -140,7 +140,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                             <td><?php echo $arrSelCustomer['customer_tel'];?></td>
                                                                             <td><?php echo $arrSelCustomer['customer_mail'];?></td>
                                                                             
-                                                                            <td><a href="add-project_v3.php?tax_id=<?php echo $arrSelCustomer['customer_id']; ?>" name="btnAddProject" title="เพิ่มโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-suitcase"></span></a>
+                                                                            <td><a href="add-project_v3.php?cus_id=<?php echo $arrSelCustomer['customer_id']; ?>" name="btnAddProject" title="เพิ่มโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-suitcase"></span></a>
                                                                         <!--ปิดโครงการ-->
                                                                         <button name="btnCloseProject" title="ลบลูกค้า" class="btn btn-xs btn-default">ล๊อคทั้งหมด</button></td>
                                                                        

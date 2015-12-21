@@ -1,4 +1,23 @@
 <!DOCTYPE html>
+<?php
+    include_once './include-page/sc-login.php';
+   $customerIDFromProject = $_GET['cus_id'];
+    
+    //ดูข้อมูลลูกค้า
+    $sqlSelectCustomer = "SELECT customer_name, customer_tax_id FROM customer WHERE customer_id = '$customerIDFromProject'";
+    $querySelectCustomer = $conn->query($sqlSelectCustomer);
+    $fetchSelectCustomer = $querySelectCustomer->fetch_assoc();
+    
+    
+    //สร้างรหัสงานใหม่
+    $curentYear = date("Y")+543; //ปีปัจจุบัน
+      //นับจำนวนโปรเจคของรหัสลูกค้าคนนี้
+     $sqlCountProject = "SELECT COUNT(project_id) AS count_project_id FROM project WHERE customer_id = '$customerIDFromProject' AND project_year = '$curentYear'"; 
+     $queryCountProject = $conn->query($sqlCountProject);
+     $fetchCountProject = $queryCountProject->fetch_assoc();
+    $resultCountProject = $fetchCountProject['count_project_id']+1;  //จำนวนที่ + แล้ว
+    $newProjectNumber = $curentYear."-".$fetchSelectCustomer['customer_tax_id']."-".$resultCountProject; //รหัสงานใหม่่
+?>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -92,13 +111,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <!-- Main content -->
                 <section class="content">
-
+                    
                     <!-- Your Page Content Here -->
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="box-body">
                                 <div class="callout callout-info">
-                                    <center>เลขประจำตัวผู้เสียภาษีอากร: <a>112233458</a> หน่วยงาน: <a>absolute</a></center>  
+                                    <center>เลขประจำตัวผู้เสียภาษีอากร: <a><?php echo $fetchSelectCustomer['customer_tax_id']; ?></a> หน่วยงาน: <a><?php echo $fetchSelectCustomer['customer_name'];?></a></center>  
                                 </div>
                             </div>
                         </div>
@@ -113,12 +132,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!--รหัสงานที่ Gen ใหม่-->
                                 <div class="col-sm-3">
                                     <label>รหัสงานใหม่:</label>
-                                    <input type="text" class="form-control" name="txtIdWorkCustomer"  value="58112233458-1" readonly=""/>
+                                    <input type="text" class="form-control" name="txtIdWorkCustomer"  value="<?php echo $newProjectNumber;?>" readonly=""/>
                                 </div>
                                 <div class="col-sm-3">
                                     <!--echo ชื่อหน่วยงานลง value-->
                                     <label>หน่วยงาน:</label>
-                                    <input type="text" class="form-control" name="txtCustomerName" value="absolute" readonly=""/>
+                                    <input type="text" class="form-control" name="txtCustomerName" value="<?php echo $fetchSelectCustomer['customer_name'];?>" readonly=""/>
                                 </div>
                                 <!--รายได้โครงการ-->
                                 <div class="col-sm-3">
@@ -170,7 +189,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </tr>
                                     </thead>
                                     <tbody> 
-                                        <?php for ($i = 1; $i < 11; $i++) { ?>        
+                                        <?php for ($i = 1; $i <= 10; $i++) { ?>        
                                             <tr>
                                                 <!--สถานะ-->
                                                 <td><input type="checkbox" class="checkbox" id="chkBox<?php echo $i; ?>" /></td>
@@ -186,8 +205,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <td>
                                             <select class="form-control" name="selEmName[]" id="selEmName<?php echo $i; ?>" disabled="">
                                                 <option value="" disabled selected>เลือกพนักงาน</option>
-                                                <option value="มงคล ทองอ่อน">มงคล ทองอ่อน</option>
-                                                <option value="ไพรเพชร หิตการุญ">ไพรเพชร หิตการุญ</option>
+                                            <?php
+                                                $sqlSelectEmployeeName = "SELECT em_name FROM employee";
+                                                $querySelectEmployeeName = $conn->query($sqlSelectEmployeeName);
+                                                while($arrEmployeeName = $querySelectEmployeeName->fetch_array())
+                                                {
+                                            ?>
+                                                <option value="<?php echo $arrEmployeeName['em_name']; ?>"><?php echo $arrEmployeeName['em_name']; ?></option>
+                                           <?php }?>
                                             </select>
                                         </td>
                                         <!--จำนวนชั่วโมง-->
