@@ -115,7 +115,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <div class="col-sm-3">
                                     <div class="small-box bg-aqua">
                                         <div class="inner">
-                                            <h4>เปิดงาน</h4>
+                                            <h4>เปิดโครงการ</h4>
 
                                            <p>&nbsp;</p> 
                                         </div>
@@ -123,7 +123,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             <i class="fa fa fa-group"></i>
                                         </div>
                                         <a href="project.php" class="small-box-footer">
-                                            เปิดงานและจัดการทีมงาน <i class="fa fa-arrow-circle-right"></i>
+                                            เปิดโครงการและจัดการทีมงาน <i class="fa fa-arrow-circle-right"></i>
                                         </a>
                                     </div>
                                 </div>

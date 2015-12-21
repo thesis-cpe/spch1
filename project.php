@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?php
+
+    include_once './include-page/sc-login.php';
+    
+?>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -122,20 +127,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
-                                                                <tr>
-                                                                    <!--เลขประจำตัวผู้เสียภาษีอากร-->
-                                                                    <td>112233458</td>
-                                                                    <!--ชื่อกิจการ-->
-                                                                    <td><a href="edit-project.php?customer_id=1">absolute</a></td>
-                                                                    <!--โทรศัพท์-->
-                                                                    <td>0855387928</td>
-                                                                    <!--อีเมล์-->
-                                                                    <td>admin@absolute.com</td>
-                                                                    <!--เพิ่มเติม-->
-                                                                    <td><a href="add-project_v3.php?tax_id=1" name="btnAddProject" title="เพิ่มโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-suitcase"></span></a>
+                                                                
+                                                                
+                                                                <?php //ข้อมูลจริง
+                                                                    $sqlSelCustomer  = "SELECT customer_id, customer_name, customer_tel, customer_mail, customer_tax_id FROM `customer`";
+                                                                    $querySelCustomer = $conn->query($sqlSelCustomer);
+                                                                    while($arrSelCustomer = $querySelCustomer ->fetch_array())
+                                                                    {  ?>
+                                                                          <tr>
+                                                                            <td><?php echo $arrSelCustomer['customer_tax_id'];?></td> <!--เลขประจำตัวผู้เสียภาษีอากร-->
+                                                                            <td><a title="ดูรหัสงานทั้งหมด" href="edit-project.php?customer_id=<?php echo $arrSelCustomer['customer_id']; ?>"><?php echo $arrSelCustomer['customer_name']; ?></a></td>
+                                                                            <td><?php echo $arrSelCustomer['customer_tel'];?></td>
+                                                                            <td><?php echo $arrSelCustomer['customer_mail'];?></td>
+                                                                            
+                                                                            <td><a href="add-project_v3.php?tax_id=<?php echo $arrSelCustomer['customer_id']; ?>" name="btnAddProject" title="เพิ่มโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-suitcase"></span></a>
                                                                         <!--ปิดโครงการ-->
-                                                                        <button name="btnCloseProject" title="ปิดโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-lock"></span></button></td>
-                                                                </tr>
+                                                                        <button name="btnCloseProject" title="ลบลูกค้า" class="btn btn-xs btn-default">ล๊อคทั้งหมด</button></td>
+                                                                       
+                                                                        </tr>
+                                                                        
+                                                             <?php  }
+                                                                
+                                                                ?>
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
