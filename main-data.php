@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+    include_once './include-page/sc-login.php';
+    
+?>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -125,18 +129,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                     <?php
+                                                        /*เรียกดูข้อมูลลูกค้า*/
+                                                        $sqlSelCustomer = "SELECT customer_id, customer_name, customer_tax_id, customer_tel, customer_mail FROM customer";
+                                                        $querySelCustomer = $conn->query($sqlSelCustomer);
+                                                        while($arrSelCustomer = $querySelCustomer->fetch_array())
+                                                        {
+                                                     ?>
                                                                 <tr>
                                                                     <!--เลขประจำตัวผู้เสียภาษีอากร-->
-                                                                    <td>112233458</td>
+                                                                    <td><?php echo $arrSelCustomer['customer_tax_id'];?></td>
                                                                     <!--ชื่อกิจการ-->
-                                                                    <td>absolute</td>
+                                                                    <td><a title="ดูข้อมูลลูกค้าอย่างละเอียด" href="customer_detail.php?cus_id=<?php echo $arrSelCustomer['customer_id']; ?>"><?php echo $arrSelCustomer['customer_name']; ?></a></td>
                                                                     <!--โทรศัพท์-->
-                                                                    <td>0855387928</td>
+                                                                    <td><?php echo $arrSelCustomer['customer_tel'];?></td>
                                                                     <!--อีเมล์-->
-                                                                    <td>admin@absolute.com</td>
+                                                                    <td><?php echo $arrSelCustomer['customer_mail']; ?></td>
                                                                     <!--เพิ่มเติม-->
                                                                     <td></td>
                                                                 </tr>
+                                                      <?php }?>
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
@@ -188,30 +200,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                         <?php
+                                            /*ดูข้อมูลพนักงาน*/    
+                                            $sqlSelEm = "SELECT em_id, em_name, em_number, em_tel, em_mail FROM employee";
+                                            $querysqlSelEm = $conn->query($sqlSelEm);
+                                           while($arrSelEm = $querysqlSelEm->fetch_array())
+                                           {
+                                         ?>   
                                                             <tr>
                                                                 <!--รหัสพนักงาน-->
-                                                                <td>55022857</td>
+                                                                <td><?php echo $arrSelEm['em_number'];?></td>
                                                                 <!--ชื่อ - นามสกุล-->
-                                                                <td>วิทยานิพนธ์ แท่นทอง</td>
+                                                                <td><a title="ข้อมูลพนักงานอย่างระเอียด" href="profile.php?em_id=<?php echo $arrSelEm['em_id'];?>"><?php echo $arrSelEm['em_name'];?></a></td>
                                                                 <!--โทรศัพท์-->
-                                                                <td>0855387928</td>
+                                                                <td><?php echo $arrSelEm['em_tel'];?></td>
                                                                 <!--อีเมล์-->
-                                                                <td>witthayaniphon@hotmail.com</td>
+                                                                <td><?php echo $arrSelEm['em_mail'];?></td>
                                                                 <!--เพิ่มเติม-->
                                                                 <td></td>
                                                             </tr>
-                                                            <tr>
-                                                                <!--รหัสพนักงาน-->
-                                                                <td>55022888</td>
-                                                                <!--ชื่อ - นามสกุล-->
-                                                                <td>มงคล ทองอ่อน</td>
-                                                                <!--โทรศัพท์-->
-                                                                <td>085555555</td>
-                                                                <!--อีเมล์-->
-                                                                <td>mongkol@hotmail.com</td>
-                                                                <!--เพิ่มเติม-->
-                                                                <td></td>
-                                                            </tr>
+                                      <?php }?>                    
                                                         </tbody>
                                                         <tfoot>
                                                             <tr>
@@ -377,3 +385,5 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     </body>
 </html>
+<?php
+    $conn->close();

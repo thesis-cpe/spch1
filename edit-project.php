@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    include_once './include-page/sc-login.php';
+?>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -92,8 +95,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="nav-tabs-custom">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab_1" data-toggle="tab">ข้อมูลโครงการ</a></li>
-                           
-                            <center> <li><a><h5>รหัสนิติบุคคล: 112233458 หน่วยงาน: absolute</h5></a></li></center>
+        <?php
+            $sqlSelCustomer = "SELECT customer_name, customer_tax_id FROM customer WHERE customer_id = '$_GET[customer_id]'";
+            $querySelCustomer = $conn->query($sqlSelCustomer);
+            $fetchSelCustomer = $querySelCustomer->fetch_assoc();
+        ?>                 
+                            <center> <li><a><h5>เลขประจำตัวผู้เสียภาษีอากร: <?php echo $fetchSelCustomer['customer_tax_id'];?> หน่วยงาน: <?php echo $fetchSelCustomer['customer_name'];?></h5></a></li></center>
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tab_1">
@@ -123,9 +130,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                        <?php  
+                                            
+                                        ?>                        
                                                                 <tr>
                                                                     <!--รหัสโครงการ-->
-                                                                    <td>5906112233458</td>
+                                                                    <td><?php echo $arrProject[''] ?></td>
                                                                     <!--วันที่นำเข้า-->
                                                                     <td>10/12/2558</td>
                                                                     <!--วันเริ่มโครงการ-->
@@ -137,21 +147,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                         <!--ปิดโครงการ-->
                                                                         <button name="btnCloseProject" title="ปิดโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-lock"></span></button></td>
                                                                 </tr>
-                                                                
-                                                                <tr>
-                                                                    <!--รหัสโครงการ-->
-                                                                    <td>5907112233458</td>
-                                                                    <!--วันที่นำเข้า-->
-                                                                    <td>10/12/2558</td>
-                                                                    <!--วันเริ่มโครงการ-->
-                                                                    <td>01/05/2559</td>
-                                                                    <!--วันสิ้นสุดโครงการ-->
-                                                                    <td>30/06/2559</td>
-                                                                    <!--เพิ่มเติม-->
-                                                                    <td><button name="btnAddProject" title="ตั้งค่าโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-gear"></span></button>
-                                                                        <!--ปิดโครงการ-->
-                                                                        <button name="btnCloseProject" title="ปิดโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-lock"></span></button></td>
-                                                                </tr>
+                                                
+                                                               
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
