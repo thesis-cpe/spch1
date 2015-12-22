@@ -127,3 +127,5 @@ if (!empty($selEmNameFill)) {  //ถ้าค่าไม่ว่างค่�
  
 
 $conn->close();
+header( "location: ../edit-project.php?customer_id=$hdfCusId");
+ exit(0);
