@@ -1,6 +1,7 @@
 <?php
  /*ส่วนควบคุมการเชื่อมต่อ*/
  include_once './include-page/sc-login.php';
+ include_once './include-page/function_lib.php';
 @session_start();
 
 ?>
@@ -156,32 +157,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                                                             <tbody><!--ตัวตาราง-->
                                                 <?php
-                                                 echo   $sqlSelWorkFromTeam = "SELECT * FROM `team` JOIN project ON team.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id "
+                                                  $i=1;   //วนตัว CheckBox 
+                                                  
+                                                 echo   $sqlSelWorkFromTeam = "SELECT *"
+                                                         . "FROM `team` JOIN project ON team.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id "
                                                    . "WHERE team.em_id = '$_SESSION[em_id]' AND project.project_status = 'เปิดโครงการ'";
-                                                            
+                                                 $querySelWorkFromTeam = $conn->query($sqlSelWorkFromTeam);
+                                                 while($arrSelWorkFromTeam = $querySelWorkFromTeam->fetch_array())
+                                                 { 
                                                 ?>
                                                                 <tr>
-                                                                    <td><input id="chkBox1" name="chkBox1" type="checkbox"/></td>
-                                                                    <td>55022789865</td>
-                                                                    <td>absolute inovative inc.</td>
-                                                                    <td>9/12/2558</td>
+                                                                    <td><input id="chkBox<?php echo $i;?>" name="chkBox1" type="checkbox"/></td>
+                                                                    <td><?php echo $arrSelWorkFromTeam ['project_number'] ;?></td>
+                                                                    <td><?php echo $arrSelWorkFromTeam ['customer_name'];?></td>
+                                                                    <td><?php  ?></td>
                                                                     <td> <div id="basicExample">
-                                                                            <input disabled id="txtStartTime" name="txtStartTime" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
-                                                                            <input disabled id="txtEndTime" name="txtEndTime" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
+                                                                            <input disabled id="txtStartTime<?php echo $i;?>" name="txtStartTime" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
+                                                                            <input disabled id="txtEndTime<?php echo $i;?>" name="txtEndTime" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
                                                                         </div></td>
-                                                                    <td><input disabled id="txtUseTime" name="txtUseTime" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
+                                                                    <td><input disabled id="txtUseTime<?php echo $i;?>" name="txtUseTime" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
                                                                     <td>&nbsp;</td>
-                                                                    <td><input disabled id="txtCountRec" name="txtCountRec" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
+                                                                    <td><input disabled id="txtCountRec<?php echo $i;?>" name="txtCountRec" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
                                                                     <td>&nbsp;</td>
                                                                     <!--CheckBox-->
                                                             <script>
-                                                                document.getElementById('chkBox1').onchange = function () {
-                                                                    document.getElementById('txtStartTime').disabled = !this.checked;
-                                                                    document.getElementById('txtEndTime').disabled = !this.checked;
-                                                                    document.getElementById('txtUseTime').disabled = !this.checked;
-                                                                    document.getElementById('txtCountRec').disabled = !this.checked;
+                                                                document.getElementById('chkBox<?php echo $i;?>').onchange = function () {
+                                                                    document.getElementById('txtStartTime<?php echo $i;?>').disabled = !this.checked;
+                                                                    document.getElementById('txtEndTime<?php echo $i;?>').disabled = !this.checked;
+                                                                    document.getElementById('txtUseTime<?php echo $i;?>').disabled = !this.checked;
+                                                                    document.getElementById('txtCountRec<?php echo $i;?>').disabled = !this.checked;
 
                                                                 };
                                                             </script>
@@ -189,7 +195,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </tr>
 
                                                       
-
+                                            <?php $i++; }?>            
                                                             </tbody>
 
                                                             <tfoot><!--ท้ายตาราง-->
