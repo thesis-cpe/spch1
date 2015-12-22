@@ -52,7 +52,7 @@
                   <a href="profile.php" class="btn btn-default btn-flat">โปรไฟล์</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">ออกจากระบบ</a>
+                  <a href="logout.php" class="btn btn-default btn-flat">ออกจากระบบ</a>
                 </div>
               </li> 
             </ul>

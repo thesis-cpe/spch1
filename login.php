@@ -94,7 +94,7 @@ if (isset($_POST['btnLogin'])) {
          {
              $resultUser = $queryCheckUser->fetch_assoc();
              $_SESSION["em_number"] = $resultUser['em_number'];
-             $_SESSION["user_id"] = $resultUser['em_id'];
+             $_SESSION["em_id"] = $resultUser['em_id'];
              $_SESSION["role"] = $resultUser['em_role'];
               header( "location: index.php" );
                 exit(0);

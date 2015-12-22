@@ -155,11 +155,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </thead>
 
                                                             <tbody><!--ตัวตาราง-->
-                                                <?php
-                                                 echo   $sqlSelWorkFromTeam = "SELECT * FROM `team` JOIN project ON team.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id "
-                                                   . "WHERE team.em_id = '$_SESSION[em_id]' AND project.project_status = 'เปิดโครงการ'";
-                                                            
-                                                ?>
                                                                 <tr>
                                                                     <td><input id="chkBox1" name="chkBox1" type="checkbox"/></td>
                                                                     <td>55022789865</td>
@@ -188,7 +183,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <!--.CheckBox-->
                                                             </tr>
 
-                                                      
+                                                            <tr>
+                                                                <td><input id="chkBox2" name="chkBox2" type="checkbox"/></td>
+                                                                <td>55022789866</td>
+                                                                <td>app inovative inc.</td>
+                                                                <td>10/12/2558</td>
+                                                                <td> <div id="basicExample">
+                                                                        <input disabled id="txtStartTime2" name="txtStartTime2" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
+                                                                        <input disabled id="txtEndTime2" name="txtEndTime2" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
+                                                                    </div></td>
+                                                                <td><input disabled id="txtUseTime2" name="txtUseTime2" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td>&nbsp;</td>
+                                                                <td><input disabled id="txtCountRec2" name="txtCountRec2" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
+                                                                <td>&nbsp;</td>
+                                                                <!--CheckBox-->
+                                                            <script>
+                                                                document.getElementById('chkBox2').onchange = function () {
+                                                                    document.getElementById('txtStartTime2').disabled = !this.checked;
+                                                                    document.getElementById('txtEndTime2').disabled = !this.checked;
+                                                                    document.getElementById('txtUseTime2').disabled = !this.checked;
+                                                                    document.getElementById('txtCountRec2').disabled = !this.checked;
+
+                                                                };
+                                                            </script>
+                                                            <!--.CheckBox-->
+                                                            </tr>
+
 
                                                             </tbody>
 
