@@ -131,24 +131,37 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </thead>
                                                             <tbody>
                                         <?php  
-                                            
+                                            $sqlSelProject = "SELECT project_id, project_number, project_receip, prject_start, project_end, project_status FROM project "
+                                                    . "WHERE customer_id = '$_GET[customer_id]'";
+                                            $querySelProject = $conn->query($sqlSelProject);
+                                            while($arrSelProject = $querySelProject->fetch_array())
+                                            {
                                         ?>                        
                                                                 <tr>
                                                                     <!--รหัสโครงการ-->
-                                                                    <td><?php echo $arrProject[''] ?></td>
+                                                                    <td><?php echo $arrSelProject['project_number'];  ?></td>
                                                                     <!--วันที่นำเข้า-->
-                                                                    <td>10/12/2558</td>
+                                                                    <td><?php echo $arrSelProject['project_receip']; ?></td>
                                                                     <!--วันเริ่มโครงการ-->
-                                                                    <td>01/01/2559</td>
+                                                                    <td><?php echo $arrSelProject['prject_start']; ?></td>
                                                                     <!--วันสิ้นสุดโครงการ-->
-                                                                    <td>31/12/2559</td>
+                                                                    <td><?php echo $arrSelProject['project_end']; ?></td>
+                                                                    
                                                                     <!--เพิ่มเติม-->
                                                                     <td><a href="#" name="btnAddProject" title="ตั้งค่าโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-gear"></span></a>
                                                                         <!--ปิดโครงการ-->
-                                                                        <button name="btnCloseProject" title="ปิดโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-lock"></span></button></td>
+                                                                      <?php
+                                                                        if($arrSelProject['project_status'] == "เปิดโครงการ")
+                                                                        {
+                                                                      ?>
+                                                                        <a href="php_action/update_status_project.php?cus_id=<?php echo $_GET[customer_id];?>&pro_id=<?php echo $arrSelProject['project_id']; ?>&command=close" name="btnCloseProject" title="คลิกปิดโครงการ" class="btn btn-xs btn-default"><span class="fa   fa-unlock"></span></a>
+                                                                  <?php }elseif ($arrSelProject['project_status'] == "ปิดโครงการ") {  ?>
+                                                                         <a href="php_action/update_status_project.php?cus_id=<?php echo $_GET[customer_id];?>&pro_id=<?php echo $arrSelProject['project_id']; ?>&command=open" name="btnCloseProject" title="คลิกเปิดโครงการ" class="btn btn-xs btn-default"><span class="fa  fa-lock"></span></a>   
+                                                                 <?php  }?>
+                                                                    </td>
                                                                 </tr>
                                                 
-                                                               
+                                      <?php }?>                      
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>

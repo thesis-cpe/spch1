@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once './include-page/sc-login.php'; //เชื่อมต่อ DB
 ?>
 
 <!DOCTYPE html>
@@ -47,13 +48,7 @@ session_start();
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">
-                        <div class="col-xs-8">
-                            <!--- <div class="checkbox icheck">
-                               <label>
-                                 <input type="checkbox"> Remember Me
-                               </label>
-                             </div>  -->
-                        </div>
+                        
                         <!-- /.col -->
                         <div class="col-xs-4">
                             <button name="btnLogin" type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
@@ -83,14 +78,38 @@ session_start();
                 });
             });
         </script>
-    </body>
-</html>
-<?php
+        <?php
 /* Login */
 if (isset($_POST['btnLogin'])) {
     
-    echo "username or password is wrong!";
-}
+     if($_POST['user'] == "" || $_POST['pass'] == "")
+     {
+         echo "<center>ไม่ได้กรอกชื่อผู้ใช้งาน หรือ รหัสผ่าน</center>";
+     }  else {
+         $txtPassword = md5($_POST['pass'].";bmpkobroTNแท่นทอง@Up#2๐1๕");
+         $sqlCheckUser = "SELECT em_number, em_password, em_id, em_role FROM employee  WHERE em_number ='$_POST[user]' AND em_password ='$txtPassword' AND em_status = 'คงอยู่'";
+         $queryCheckUser = $conn->query($sqlCheckUser);
+         $numrow = mysqli_num_rows($queryCheckUser);
+         if($numrow>0)
+         {
+             $resultUser = $queryCheckUser->fetch_assoc();
+             $_SESSION["em_number"] = $resultUser['em_number'];
+             $_SESSION["user_id"] = $resultUser['em_id'];
+             $_SESSION["role"] = $resultUser['em_role'];
+              header( "location: index.php" );
+                exit(0);
+         }else{
+             echo "<center>username or password is incorect!</center>";
+         }
+             
+ 
+     }
+    
+} ?>
+        
+    </body>
+</html>
+
 
 
 

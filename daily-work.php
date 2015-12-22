@@ -1,6 +1,7 @@
 <?php
  /*ส่วนควบคุมการเชื่อมต่อ*/
-
+ include_once './include-page/sc-login.php';
+@session_start();
 
 ?>
 <!DOCTYPE html>
@@ -90,11 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <small>บันทึกข้อมูลงานประจำวัน</small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-                        <li class="active">Here</li>  
-
-
-
+                        <li><a href="#"><i class="fa fa-dashboard"></i> งานประจำวัน</a></li>
                     </ol>
                 </section>
 
@@ -137,7 +134,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     </td>
 
                                                                     <td rowspan="2" align="center"><p>cuscode</p>
-                                                                        <p>รหัสบริษัท</p></td>
+                                                                        <p>รหัสงาน</p></td>
                                                                     <td width="200"  rowspan="2" align="center"><p>cusname</p>
                                                                         <p>ชื่อบริษัท</p></td>
                                                                     <td width="50"  rowspan="2" align="center"><p>trndate</p>
@@ -223,7 +220,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                         <p>เลือก</p>
                                                                     </td>
                                                                     <td rowspan="2" align="center"><p>cuscode</p>
-                                                                        <p>รหัสบริษัท</p></td>
+                                                                        <p>รหัสงาน</p></td>
                                                                     <td  rowspan="2" align="center"><p>cusname</p>
                                                                         <p>ชื่อบริษัท</p></td>
                                                                     <td  rowspan="2" align="center"><p>trndate</p>
