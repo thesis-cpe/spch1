@@ -13,11 +13,27 @@
     $curentYear = date("Y")+543; //ปีปัจจุบัน พ.ศ.   
     
       //นับจำนวนโปรเจคของรหัสลูกค้าคนนี้
-     $sqlCountProject = "SELECT COUNT(project_id) AS count_project_id FROM project WHERE customer_id = '$customerIDFromProject' AND project_year = '$curentYear'"; 
+     //$sqlCountProject = "SELECT COUNT(project_id) AS count_project_id FROM project WHERE customer_id = '$customerIDFromProject' AND project_year = '$curentYear'"; 
+     $sqlCountProject = "SELECT MAX(project_number) AS max_project_id FROM project WHERE customer_id = '$customerIDFromProject' AND project_year = '$curentYear'";
      $queryCountProject = $conn->query($sqlCountProject);
      $fetchCountProject = $queryCountProject->fetch_assoc();
-    $resultCountProject = $fetchCountProject['count_project_id']+1;  //จำนวนที่ + แล้ว
-    $newProjectNumber = $curentYear."-".$fetchSelectCustomer['customer_tax_id']."-".$resultCountProject; //รหัสงานใหม่่
+     
+     
+    //$resultCountProject = $fetchCountProject['count_project_id']+1;  //จำนวนที่ + แล้ว
+    /*แบ่งตัวแปร*/
+     $resultCountProject = $fetchCountProject['max_project_id']; 
+     
+    $explodeCountProject = (explode("-",$resultCountProject)); //จะได้มาเป็นตัวอาเรย์
+   
+    /*หาค่า Arr ตัวสุดท้าย*/
+    $sizeCountProject = sizeof($explodeCountProject)-1; //เลือก อาเรย์ตัวสุดท้าย
+    $maxNumberOfProject =  $explodeCountProject[$sizeCountProject];
+    $maxNumberOfProjectAdd1 = $maxNumberOfProject+1;
+   
+   // echo $explodeCountProject[];
+   
+    
+    $newProjectNumber = $curentYear."-".$fetchSelectCustomer['customer_tax_id']."-".$maxNumberOfProjectAdd1; //รหัสงานใหม่่
 ?>
 <!--
 This is a starter template page. Use this page to start your new project from

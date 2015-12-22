@@ -20,7 +20,7 @@ $selRateCoast = $_POST['selRateCoast']; //รายเดือน รายค�
 $txtRevenueAudit = $_POST['txtRevenueAudit']; // ค่าทำบัญชี
 $txtInstallment = $_POST['txtInstallment']; //จำนวนงวดงาน
 
-/* var Tb File */
+/* var Tb project_doc */
 $datOffers = $_POST['datOffers']; // วันที่เสนอราคา ใบเสนอราคา
 $txtSumMoney = $_POST['txtSumMoney']; // ยอดเงินใบเสนอราคา
 $txtNoOffer = $_POST['txtNoOffer']; // เลขที่ใบเสนอราคา
@@ -75,7 +75,55 @@ if (!empty($selEmNameFill)) {  //ถ้าค่าไม่ว่างค่�
  }// .เช็คค่าว่าง
  
  
- /*ไฟล์*/
+/*TB PROJECT DOC*/
+    /*หา project_id จาก prject number*/
+ if(($datOffers!= "") || ($datOffersEmploy!= "")){
+     $sqlSelProjectId = "SELECT project_id FROM project WHERE  project_number = '$txtIdWorkCustomer'";
+     $querySelProjectId = $conn->query($sqlSelProjectId);
+     $fetchSelProjectId = $querySelProjectId->fetch_assoc();
+     
+     
+     
+     /*ไฟล์ ใบเสนอราคา*/
+     /* Random ชื่อ */
+        $randFileName1 = generateRandomString(17);
+        /* upload file */
 
+        if (move_uploaded_file($_FILES["fileDocOfffer"]["tmp_name"], "../store/$randFileName1" . $_FILES["fileDocOfffer"]["name"])) {
+
+            $fileNameUp1 = $randFileName1 . $_FILES["fileDocOfffer"]["name"];
+            $sqlUpfile = "INSERT INTO `project_doc` ( `project_doc_name`, `project_doc_qua_dat`, `project_doc_money`, `project_doc_no`, `project_doc_path`, `project_id`) "
+                    . "VALUES ( 'ใบเสนอราคา', '$datOffers', '$txtSumMoney', '$txtNoOffer', '$fileNameUp1', '$fetchSelProjectId[project_id]')";
+            $queryUpfile = $conn->query($sqlUpfile);
+        }  else {
+            $sqlUpNofile = "INSERT INTO `project_doc` ( `project_doc_name`, `project_doc_qua_dat`, `project_doc_money`, `project_doc_no`, `project_id`) "
+                    . "VALUES ( 'ใบเสนอราคา', '$datOffers', '$txtSumMoney', '$txtNoOffer', '$fetchSelProjectId[project_id]')";
+            $queryUpNofile = $conn->query($sqlUpNofile);
+            
+        }//อััพไฟล์สััญญา
+        
+     /*ไฟล์ สัญญาจ้าง*/
+        $randFileName2 = generateRandomString(17);
+        if (move_uploaded_file($_FILES["fileDocEmploy"]["tmp_name"], "../store/$randFileName2" . $_FILES["fileDocEmploy"]["name"])) {
+
+            $fileNameUp2 = $randFileName2 . $_FILES["fileDocEmploy"]["name"];
+            $sqlUpfile2 = "INSERT INTO `project_doc` ( `project_doc_name`, `project_doc_qua_dat`, `project_doc_money`, `project_doc_no`, `project_doc_path`, `project_id`) "
+                    . "VALUES ( 'สัญญาจ้าง', '$datOffersEmploy', '$txtSumMoneyEmploy', '$txtNoEmploy', '$fileNameUp2', '$fetchSelProjectId[project_id]')";
+            $queryUpfile2 = $conn->query($sqlUpfile2);
+        }else{
+            $sqlUpNofile2 = "INSERT INTO `project_doc` ( `project_doc_name`, `project_doc_qua_dat`, `project_doc_money`, `project_doc_no`, `project_id`) "
+                    . "VALUES ( 'สัญญาจ้าง', '$datOffersEmploy', '$txtSumMoneyEmploy', '$txtNoEmploy', '$fetchSelProjectId[project_id]')";
+            $queryUpNofile2 = $conn->query($sqlUpNofile2);
+        }
+            
+        
+ 
+     
+     
+ }//เช็คค่าฟิวว่าง
+  
+        
+
+ 
 
 $conn->close();
