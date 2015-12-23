@@ -157,8 +157,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                 <tbody><!--ตัวตาราง-->
                                                                     <?php
                                                                     $i = 1;   //วนตัว CheckBox 
-
-                                                                    echo $sqlSelWorkFromTeam = "SELECT *"
+                                                                    /*วันที่*/
+                                                                    $today =  date("d-m-Y ");
+                                                                      $todayExplode = explode("-", $today);
+                                                                    $yearThaiBank =   $todayExplode[2]+543; //ได้เป็นปีพ.ศ.
+                                                                    $curentDay =  date("d-m")."-".$yearThaiBank; //วันที่ปัจจุบัน
+                                                                  
+                                                                    $sqlSelWorkFromTeam = "SELECT *"
                                                                     . "FROM `team` JOIN project ON team.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id "
                                                                     . "WHERE team.em_id = '$_SESSION[em_id]' AND project.project_status = 'เปิดโครงการ'";
                                                                     $querySelWorkFromTeam = $conn->query($sqlSelWorkFromTeam);
@@ -168,7 +173,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                             <td><input id="chkBox<?php echo $i; ?>" name="chkBox1" type="checkbox"/></td>
                                                                             <td><?php echo $projectNumber = $arrSelWorkFromTeam['project_number']; ?></td>
                                                                             <td><?php echo $arrSelWorkFromTeam ['customer_name']; ?></td>
-                                                                            <td><?php ?></td>
+                                                                            <td><?php echo $curentDay; ?></td>
                                                                             <td> <div id="basicExample">
                                                                                     <input disabled id="txtStartTime<?php echo $i; ?>" name="txtStartTime" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
                                                                                     <input disabled id="txtEndTime<?php echo $i; ?>" name="txtEndTime" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
