@@ -134,11 +134,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                         <p>เลือก</p>
                                                                     </td>
 
-                                                                    <td rowspan="2" align="center"><p>cuscode</p>
+                                                                    <td width="130" rowspan="2" align="center"><p>cuscode</p>
                                                                         <p>รหัสงาน</p></td>
                                                                     <td width="200"  rowspan="2" align="center"><p>cusname</p>
                                                                         <p>ชื่อบริษัท</p></td>
-                                                                    <td width="50"  rowspan="2" align="center"><p>trndate</p>
+                                                                    <td width="100"  rowspan="2" align="center"><p>trndate</p>
                                                                         <p>วันที่</p></td>
                                                                     <td  width="139" rowspan="2" align="center"><p>trntime</p>
                                                                         <p>ช่วงเวลา</p></td>
