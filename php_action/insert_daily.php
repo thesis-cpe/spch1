@@ -15,25 +15,28 @@ $hdfSumUseTime = $_POST['hdfSumUseTime']; //รวมเวลาที่ใช
 $hdfSumrec = $_POST['hdfSumrec']; //รวมเรคคอร์ดล่าสุด
 
 
+/* วันที่ */
+$today = date("d-m-Y ");
+$todayExplode = explode("-", $today);
+$yearThaiBank = $todayExplode[2] + 543; //ได้เป็นปีพ.ศ.
+$curentDay = date("d-m") . "-" . $yearThaiBank; //วันที่ปัจจุบัน
 
+/*INSERT DB*/
 
-
-/* Insert to DB */
-
-for ($i = 0; $i < sizeof($txtStartTime); $i++) {
-    $daySumTime = 0;
-    $daySumRec = 0;
-
-    $daySumTime = $hdfSumUseTime[$i] + $txtUseTime[$i]; //รวมเวลา
-    $daySumRec = $hdfSumrec[$i] + $txtCountRec[$i];
-
-  echo $sqlInsertDw = "INSERT INTO `daily` (`daily_dat`, `daily_start_time`, `daily_end_time`, `daily_use_time`, `daily_sum_time`, `daily_rec_insert`, `daily_sum_rec`, `em_id`, `project_id`) "
-    . "VALUES ('$hdfCurentDay[$i]', '$txtStartTime[$i]', '$txtEndTime[$i]', '$txtUseTime[$i]', '$daySumTime', '$txtCountRec[$i]', '$daySumRec', '$em_id', '$hdfProjectNumber[$i]')";
-    echo "<br>";
-  
-   
-}
-  
+    for($i=0;$i<sizeof($hdfProjectNumber);$i++){
+       $sqlInsertDr = "INSERT INTO `daily` (`daily_dat`, `daily_start_time`, `daily_end_time`, `daily_use_time`, `daily_rec_insert`, `em_id`, `project_id`)"
+            . " VALUES (  '$curentDay', '$txtStartTime[$i]', '$txtEndTime[$i]', '$txtUseTime[$i]', '$txtCountRec[$i]', '$em_id', '$hdfProjectNumber[$i]')";
+        
+       $queryInsertDr = $conn->query($sqlInsertDr);
+    }
     
+    
+
+
+
+$conn->close();
+
+header('Location: ' . $_SERVER['HTTP_REFERER']);
+exit(0);   
 
 
