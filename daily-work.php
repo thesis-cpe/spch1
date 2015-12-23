@@ -97,7 +97,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                 <!-- Main content -->
 
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">  <!--Form-->
+                <form action="php_action/insert_daily.php" method="POST">  <!--Form-->
                     <section class="content">
 
                         <!-- Your Page Content Here -->
@@ -170,39 +170,46 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     while ($arrSelWorkFromTeam = $querySelWorkFromTeam->fetch_array()) {
                                                                         ?>
                                                                         <tr>
-                                                                            <td><input id="chkBox<?php echo $i; ?>" name="chkBox1" type="checkbox"/></td>
-                                                                            <td><?php echo $projectNumber = $arrSelWorkFromTeam['project_number']; ?></td>
+                                                                            <td><input id="chkBox<?php echo $i; ?>" name="chkBox1[]" type="checkbox"/></td>
+                                                                            <td>
+                                                                                <?php echo $projectNumber = $arrSelWorkFromTeam['project_number']; ?>
+                                                                                <input disabled="" id="hdfProjectNumber<?php echo $i;?>" type="hidden" name="hdfProjectNumber[]" value="<?php echo $arrSelWorkFromTeam[project_id]; ?>">
+                                                                            </td>
                                                                             <td><?php echo $arrSelWorkFromTeam ['customer_name']; ?></td>
-                                                                            <td><?php echo $curentDay; ?></td>
+                                                                            <td>
+                                                                                <?php echo $curentDay; ?>
+                                                                                <input type="hidden" name="hdfCurentDay[]" value="<?php echo $curentDay; ?>"/>
+                                                                            </td>
                                                                             <td> <div id="basicExample">
-                                                                                    <input disabled id="txtStartTime<?php echo $i; ?>" name="txtStartTime" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
-                                                                                    <input disabled id="txtEndTime<?php echo $i; ?>" name="txtEndTime" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
+                                                                                    <input required="" disabled id="txtStartTime<?php echo $i; ?>" name="txtStartTime[]" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
+                                                                                    <input required="" disabled id="txtEndTime<?php echo $i; ?>" name="txtEndTime[]" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
                                                                                 </div></td>
-                                                                            <td><input disabled id="txtUseTime<?php echo $i; ?>" name="txtUseTime" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
+                                                                                <td><input required="" disabled id="txtUseTime<?php echo $i; ?>" name="txtUseTime[]" class="form-control input-sm" type="text" placeholder="นาที" size="5"/></td>
                                                                             <!--เวลายกมา-->
                                                                         <?php
-                                                                        $sqlSumDaily = "SELECT MAX(daily_id), daily_sum_time, daily_sum_rec, daily_rec_insert FROM daily  WHERE project_id = '$projectNumber' ";
+                                                                     echo  $sqlSumDaily = "SELECT MAX(daily_id), daily_sum_time, daily_sum_rec, daily_rec_insert FROM daily  WHERE project_id = '$arrSelWorkFromTeam[project_id];' ";
                                                                         $querySumDaily = $conn->query($sqlSumDaily);
                                                                         $fetchSumDaily = $querySumDaily->fetch_assoc();
                                                                         ?>
                                                                             <td> <?php
-                                                                                if ($fetchSumDaily['daily_sum_time'] == "") {
-                                                                                    echo "<div align='right'>0</div>";
-                                                                                }elseif($fetchSumDaily['daily_sum_time'] != ""){
+                                                                                
                                                                                     echo "<div align='right'>".number_format($fetchSumDaily['daily_sum_time'])."</div>";
-                                                                                }
+                                                                               
                                                                                 ?>
                                                                             </td>
                                                                             <!--เวลาคงเหลือ-->
                                                                             <td><?php
                                                                                  $sumUseTime = $arrSelWorkFromTeam['team_hour'] - $fetchSumDaily['daily_sum_time'];
                                                                                 echo "<div align='right'>".number_format($sumUseTime)."</div>";
-                                                                            ?></td>
+                                                                                 ?>
+                                                                                <input disabled="" id="hdfSumUseTime<?php echo $i; ?>" type="hidden" name="hdfSumUseTime[]" value="$sumUseTime">   
+                                                                            </td>
                                                                             <!--รายการบันทึก ยกมา-->
                                                                             <td>
                                                                                 <div align="right"><?php echo number_format($fetchSumDaily['daily_sum_rec']);?></div>
+                                                                                <input disabled="" id="hdfSumrec<?php echo $i; ?>" type="hidden" name="hdfSumrec[]" value="<?php echo $fetchSumDaily['daily_sum_rec']; ?>">
                                                                             </td>
-                                                                            <td><input disabled id="txtCountRec<?php echo $i; ?>" name="txtCountRec" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
+                                                                            <td><input required="" disabled id="txtCountRec<?php echo $i; ?>" name="txtCountRec[]" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/></td>
                                                                             <!--รายการบันทึก ยกไป-->
                                                                             <td>
                                                                                 <div align="right"><?php echo number_format($fetchSumDaily['daily_sum_rec'] + $fetchSumDaily['daily_rec_insert'])?></div>
@@ -214,8 +221,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                             document.getElementById('txtEndTime<?php echo $i; ?>').disabled = !this.checked;
                                                                             document.getElementById('txtUseTime<?php echo $i; ?>').disabled = !this.checked;
                                                                             document.getElementById('txtCountRec<?php echo $i; ?>').disabled = !this.checked;
-
-                                                                        };
+                                                                            
+                                                                            document.getElementById('hdfProjectNumber<?php echo $i; ?>').disabled = !this.checked;
+                                                                             document.getElementById('hdfSumUseTime<?php echo $i; ?>').disabled = !this.checked;
+                                                                             document.getElementById('hdfSumrec<?php echo $i; ?>').disabled = !this.checked;
+                                                                     };
                                                                     </script>
                                                                     <!--.CheckBox-->
                                                                     </tr>
