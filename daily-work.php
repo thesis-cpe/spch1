@@ -150,7 +150,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                         <td  align="center">คงเหลือ</td>
                                                                         <td  align="center">ยกมา</td>
                                                                         <td width="20"  align="center">คีย์เข้า</td>
-                                                                        <td  align="center">รวม</td>
+                                                                        <td  align="center">โน้ต</td>
                                                                     </tr>
                                                                 </thead>
 
@@ -234,9 +234,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                             <td>
                                                                                 <input required="" disabled id="txtCountRec<?php echo $i; ?>" name="txtCountRec[]" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/>
                                                                             </td>
-                                                                            <!--รายการบันทึก ยกไป-->
+                                                                            <!--โน้ต-->
                                                                             <td>
+                                                                                <button disabled="" id="buttonNote<?php echo $i; ?>" data-toggle="modal" data-target="#pnlNote<?php echo $i; ?>" type="button" class="btn btn-xs btn-default"><span class="fa fa-pencil-square-o"></span></button>
                                                                                 
+                                                                                <!--Modal-->
+                                                                                    <div class="modal fade" id="pnlNote<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                                                        <div class="modal-dialog" role="document">
+                                                                                          <div class="modal-content">
+                                                                                            <div class="modal-header">
+                                                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                                                                            </div>
+                                                                                            <div class="modal-body">
+                                                                                                <textarea name="areaNote"></textarea>
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                              <button type="button" class="btn btn-primary" data-dismiss="modal">ปิด</button>
+                                                                                             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                                                            </div>
+                                                                                          </div>
+                                                                                        </div>
+                                                                                      </div>
+                                                                                    
+                                                                                <!--.Modal-->
                                                                             </td>
                                                                             <!--CheckBox-->
                                                                     <script>
@@ -247,6 +268,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                             document.getElementById('txtCountRec<?php echo $i; ?>').disabled = !this.checked;
                                                                             
                                                                             document.getElementById('hdfProjectNumber<?php echo $i; ?>').disabled = !this.checked;
+                                                                            document.getElementById('buttonNote<?php echo $i; ?>').disabled = !this.checked;
                                                                              
                                                                      };
                                                                     </script>
@@ -280,7 +302,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                         <td  align="center">คงเหลือ</td>
                                                                         <td  align="center">ยกมา</td>
                                                                         <td  align="center">คีย์เข้า</td>
-                                                                        <td  align="center">รวม</td>
+                                                                        <td  align="center">โน้ต</td>
                                                                     </tr>
                                                                 </tfoot>
                                                             </table>
