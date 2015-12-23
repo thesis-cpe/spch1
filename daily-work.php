@@ -247,7 +247,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                                               <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                                                                                             </div>
                                                                                             <div class="modal-body">
-                                                                                                <textarea name="areaNote"></textarea>
+                                                                                                <textarea disabled="" id="noteArea<?php echo $i;?>" name="areaNote[]"></textarea>
                                                                                             </div>
                                                                                             <div class="modal-footer">
                                                                                               <button type="button" class="btn btn-primary" data-dismiss="modal">ปิด</button>
@@ -269,6 +269,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                             
                                                                             document.getElementById('hdfProjectNumber<?php echo $i; ?>').disabled = !this.checked;
                                                                             document.getElementById('buttonNote<?php echo $i; ?>').disabled = !this.checked;
+                                                                            document.getElementById('noteArea<?php echo $i;?>').disabled = !this.checked;
                                                                              
                                                                      };
                                                                     </script>
