@@ -168,6 +168,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                     . "WHERE team.em_id = '$_SESSION[em_id]' AND project.project_status = 'เปิดโครงการ'";
                                                                     $querySelWorkFromTeam = $conn->query($sqlSelWorkFromTeam);
                                                                     while ($arrSelWorkFromTeam = $querySelWorkFromTeam->fetch_array()) {
+                                                                         
+                                                                        /*SUM ค่าจาก Dr มาแสดง*/
+                                                                          $sqlSumDr = "SELECT SUM(daily_use_time) AS sum_time, SUM(daily_rec_insert) AS sum_rec "
+                                                                                    . "FROM daily WHERE project_id = '$arrSelWorkFromTeam[project_id]' AND em_id = '$_SESSION[em_id]'";
+                                                                          $querySumDr = $conn->query($sqlSumDr);
+                                                                          $fetchSumDr = $querySumDr->fetch_assoc();
+                                                                        /*.SUM ค่าจาก Dr มาแสดง*/
+                                                                        
+                                                                        
                                                                         ?>
                                                                         <tr>
                                                                             <td>
@@ -201,17 +210,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                             
                                                                             <!--เวลายกมา-->
                                                                             <td>
+                                                                                <div align="right">
+                                                                                     <?php echo number_format($fetchSumDr['sum_time']);?>
+                                                                                </div>
                                                                                 
+                                                                               
                                                                             </td>
                                                                             
                                                                             <!--เวลาคงเหลือ-->
                                                                             <td>
-                                                                                
+                                                                                <div align="right">
+                                                                                     <?php echo number_format($arrSelWorkFromTeam['team_hour'] - $fetchSumDr['sum_time']); ?>
+                                                                                </div>
                                                                             </td>
                                                                             
                                                                             <!--รายการบันทึก ยกมา-->
                                                                             <td>
-                                                                                
+                                                                                 <div align="right">
+                                                                                    <?php echo number_format($fetchSumDr['sum_rec']); ?>
+                                                                                </div>
                                                                             </td>
                                                                            
                                                                             <td>
