@@ -23,18 +23,19 @@ $curentDay = date("d-m") . "-" . $yearThaiBank; //วันที่ปัจจ
 
 /*INSERT DB*/
 
-   for($i=0;$i<sizeof($hdfProjectNumber);$i++){
-        $sqlInsertDr = "INSERT INTO `daily` (`daily_dat`, `daily_start_time`, `daily_end_time`, `daily_use_time`, `daily_rec_insert`, daily_note,`em_id`, `project_id`)"
+  for($i=0;$i<sizeof($hdfProjectNumber);$i++){
+      echo  $sqlInsertDr = "INSERT INTO `daily` (`daily_dat`, `daily_start_time`, `daily_end_time`, `daily_use_time`, `daily_rec_insert`, daily_note,`em_id`, `project_id`)"
             . " VALUES (  '$curentDay', '$txtStartTime[$i]', '$txtEndTime[$i]', '$txtUseTime[$i]', '$txtCountRec[$i]', '$areaNote[$i]' ,'$em_id', '$hdfProjectNumber[$i]')";
         
        $queryInsertDr = $conn->query($sqlInsertDr);
-   
+       
     }  
 
 
 $conn->close();
 
 header('Location: ' . $_SERVER['HTTP_REFERER']);
-exit(0);  
+exit(0); 
+
 
 

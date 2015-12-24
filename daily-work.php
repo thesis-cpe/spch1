@@ -46,6 +46,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!--css timepicker for timepiar-->
         <link rel="stylesheet" type="text/css" href="plugins/datepair-this/jquery.timepicker.css" /> 
 
+        
+
+
+        
     </head>
     <!--
     BODY TAG OPTIONS:
@@ -157,128 +161,142 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                                 <tbody><!--ตัวตาราง-->
                                                                     <?php
                                                                     $i = 1;   //วนตัว CheckBox 
-                                                                    /*วันที่*/
-                                                                    $today =  date("d-m-Y ");
-                                                                      $todayExplode = explode("-", $today);
-                                                                    $yearThaiBank =   $todayExplode[2]+543; //ได้เป็นปีพ.ศ.
-                                                                    $curentDay =  date("d-m")."-".$yearThaiBank; //วันที่ปัจจุบัน
-                                                                  
+                                                                    /* วันที่ */
+                                                                    $today = date("d-m-Y ");
+                                                                    $todayExplode = explode("-", $today);
+                                                                    $yearThaiBank = $todayExplode[2] + 543; //ได้เป็นปีพ.ศ.
+                                                                    $curentDay = date("d-m") . "-" . $yearThaiBank; //วันที่ปัจจุบัน
+
                                                                     $sqlSelWorkFromTeam = "SELECT *"
-                                                                    . "FROM `team` JOIN project ON team.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id "
-                                                                    . "WHERE team.em_id = '$_SESSION[em_id]' AND project.project_status = 'เปิดโครงการ'";
+                                                                            . "FROM `team` JOIN project ON team.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id "
+                                                                            . "WHERE team.em_id = '$_SESSION[em_id]' AND project.project_status = 'เปิดโครงการ'";
                                                                     $querySelWorkFromTeam = $conn->query($sqlSelWorkFromTeam);
                                                                     while ($arrSelWorkFromTeam = $querySelWorkFromTeam->fetch_array()) {
-                                                                         
-                                                                        /*SUM ค่าจาก Dr มาแสดง*/
-                                                                          $sqlSumDr = "SELECT SUM(daily_use_time) AS sum_time, SUM(daily_rec_insert) AS sum_rec "
-                                                                                    . "FROM daily WHERE project_id = '$arrSelWorkFromTeam[project_id]' AND em_id = '$_SESSION[em_id]'";
-                                                                          $querySumDr = $conn->query($sqlSumDr);
-                                                                          $fetchSumDr = $querySumDr->fetch_assoc();
-                                                                        /*.SUM ค่าจาก Dr มาแสดง*/
-                                                                        
-                                                                        
+
+                                                                        /* SUM ค่าจาก Dr มาแสดง */
+                                                                        $sqlSumDr = "SELECT SUM(daily_use_time) AS sum_time, SUM(daily_rec_insert) AS sum_rec "
+                                                                                . "FROM daily WHERE project_id = '$arrSelWorkFromTeam[project_id]' AND em_id = '$_SESSION[em_id]'";
+                                                                        $querySumDr = $conn->query($sqlSumDr);
+                                                                        $fetchSumDr = $querySumDr->fetch_assoc();
+                                                                        /* .SUM ค่าจาก Dr มาแสดง */
                                                                         ?>
                                                                         <tr>
                                                                             <td>
                                                                                 <input id="chkBox<?php echo $i; ?>" name="chkBox1[]" type="checkbox"/>
                                                                             </td>
-                                                                            
+
                                                                             <td>
                                                                                 <?php echo $projectNumber = $arrSelWorkFromTeam['project_number']; ?>
-                                                                                <input disabled="" id="hdfProjectNumber<?php echo $i;?>" type="hidden" name="hdfProjectNumber[]" value="<?php echo $arrSelWorkFromTeam[project_id]; ?>">
+                                                                                <input disabled="" id="hdfProjectNumber<?php echo $i; ?>" type="hidden" name="hdfProjectNumber[]" value="<?php echo $arrSelWorkFromTeam[project_id]; ?>">
                                                                             </td>
-                                                                            
+
                                                                             <td>
                                                                                 <?php echo $arrSelWorkFromTeam ['customer_name']; ?>
                                                                             </td>
-                                                                            
+
                                                                             <td>
                                                                                 <?php echo $curentDay; ?>
-                                                                                
+
                                                                             </td>
-                                                                            
+
                                                                             <td> 
                                                                                 <div id="basicExample">
                                                                                     <input required="" disabled id="txtStartTime<?php echo $i; ?>" name="txtStartTime[]" size="7" placeholder="เริ่ม"  type="text" class="time start form-control input-sm" />
                                                                                     <input required="" disabled id="txtEndTime<?php echo $i; ?>" name="txtEndTime[]" size="7" placeholder="สิ้นสุด" type="text" class="time end form-control input-sm" />
                                                                                 </div>
                                                                             </td>
-                                                                            
+
                                                                             <td>
                                                                                 <input required="" disabled id="txtUseTime<?php echo $i; ?>" name="txtUseTime[]" class="form-control input-sm" type="text" placeholder="นาที" size="5"/>
                                                                             </td>
-                                                                            
+
                                                                             <!--เวลายกมา-->
                                                                             <td>
                                                                                 <div align="right">
-                                                                                     <?php echo number_format($fetchSumDr['sum_time']);?>
+                                                                                    <?php echo number_format($fetchSumDr['sum_time']); ?>
                                                                                 </div>
-                                                                                
-                                                                               
+
+
                                                                             </td>
-                                                                            
+
                                                                             <!--เวลาคงเหลือ-->
                                                                             <td>
                                                                                 <div align="right">
-                                                                                     <?php echo number_format($arrSelWorkFromTeam['team_hour'] - $fetchSumDr['sum_time']); ?>
+                                                                                    <?php echo number_format($arrSelWorkFromTeam['team_hour'] - $fetchSumDr['sum_time']); ?>
                                                                                 </div>
                                                                             </td>
-                                                                            
+
                                                                             <!--รายการบันทึก ยกมา-->
                                                                             <td>
-                                                                                 <div align="right">
+                                                                                <div align="right">
                                                                                     <?php echo number_format($fetchSumDr['sum_rec']); ?>
                                                                                 </div>
                                                                             </td>
-                                                                           
+
                                                                             <td>
                                                                                 <input required="" disabled id="txtCountRec<?php echo $i; ?>" name="txtCountRec[]" class="form-control input-sm" type="text" placeholder="จำนวน" size="5"/>
                                                                             </td>
                                                                             <!--โน้ต-->
                                                                             <td>
                                                                                 <button disabled="" id="buttonNote<?php echo $i; ?>" data-toggle="modal" data-target="#pnlNote<?php echo $i; ?>" type="button" class="btn btn-xs btn-default"><span class="fa fa-pencil-square-o"></span></button>
-                                                                                
+
                                                                                 <!--Modal-->
-                                                                                    <div class="modal fade" id="pnlNote<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                                                                        <div class="modal-dialog" role="document">
-                                                                                          <div class="modal-content">
+                                                                                <div class="modal fade" id="pnlNote<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                                                    <div class="modal-dialog" role="document">
+                                                                                        <div class="modal-content">
                                                                                             <div class="modal-header">
-                                                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                                                              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                                <h4 class="modal-title" id="myModalLabel">บันทึกข้อความ</h4>
                                                                                             </div>
                                                                                             <div class="modal-body">
-                                                                                                <textarea disabled="" id="noteArea<?php echo $i;?>" name="areaNote[]"></textarea>
+                                                                                                <!--Editor-->
+
+                                                                                                <textarea placeholder="แทรกข้อความ...ข้อความจะถูกเก็บเมื่อกดบันทึก" disabled=""   name="areaNote[]" id="noteArea<?php echo $i; ?>" rows="5" cols="90"></textarea>
+
+
+                                                                                                <!--.Editor-->
                                                                                             </div>
                                                                                             <div class="modal-footer">
-                                                                                              <button type="button" class="btn btn-primary" data-dismiss="modal">ปิด</button>
-                                                                                             <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                                                                                                <button type="button" class="btn btn-primary" data-dismiss="modal">ปิด</button>
+                                                                                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
                                                                                             </div>
-                                                                                          </div>
                                                                                         </div>
-                                                                                      </div>
-                                                                                    
+                                                                                    </div>
+                                                                                </div>
+
                                                                                 <!--.Modal-->
                                                                             </td>
                                                                             <!--CheckBox-->
                                                                     <script>
+                                                                        
                                                                         document.getElementById('chkBox<?php echo $i; ?>').onchange = function () {
                                                                             document.getElementById('txtStartTime<?php echo $i; ?>').disabled = !this.checked;
                                                                             document.getElementById('txtEndTime<?php echo $i; ?>').disabled = !this.checked;
                                                                             document.getElementById('txtUseTime<?php echo $i; ?>').disabled = !this.checked;
                                                                             document.getElementById('txtCountRec<?php echo $i; ?>').disabled = !this.checked;
-                                                                            
+
                                                                             document.getElementById('hdfProjectNumber<?php echo $i; ?>').disabled = !this.checked;
                                                                             document.getElementById('buttonNote<?php echo $i; ?>').disabled = !this.checked;
-                                                                            document.getElementById('noteArea<?php echo $i;?>').disabled = !this.checked;
-                                                                             
-                                                                     };
+                                                                            document.getElementById('noteArea<?php echo $i; ?>').disabled = !this.checked;
+
+                                                                        };
+                                                                               
+   
+    
+  
                                                                     </script>
-                                                                    <!--.CheckBox-->
+                                                                   
+                                                                    
+                                                                    
+                                                                   
+                                                                    <!--.CK EDITOR-->
                                                                     </tr>
 
 
-    <?php $i++;
-} ?>            
+                                                                    <?php
+                                                                    $i++;
+                                                                }
+                                                                ?>            
                                                                 </tbody>
 
                                                                 <tfoot><!--ท้ายตาราง-->
@@ -333,7 +351,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.content-wrapper -->
 
             <!-- Main Footer -->
-<?php include_once './include-page/footer.php'; ?>
+            <?php include_once './include-page/footer.php'; ?>
             <!-- .Main Footer -->
 
 
@@ -347,6 +365,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- jQuery 2.1.4 -->
         <script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        
         <!-- Bootstrap 3.3.5 -->
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <!-- AdminLTE App -->
@@ -372,19 +391,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="plugins/datepair-this/bootstrap-datepicker.js"></script>
         <script src="plugins/datepair-this/datepair.js"></script>
         <script src="plugins/datepair-this/jquery.datepair.js"></script>
+
+
+        <!-- CK Editor -->
+
+
+
+
         <!--Data Table1-->
         <script>
-                                                                $(function () {
-                                                                    $("#example1").DataTable();
-                                                                    $('#example2').DataTable({
-                                                                        "paging": true,
-                                                                        "lengthChange": false,
-                                                                        "searching": false,
-                                                                        "ordering": true,
-                                                                        "info": true,
-                                                                        "autoWidth": false
+                                                                    $(function () {
+                                                                        $("#example1").DataTable();
+                                                                        $('#example2').DataTable({
+                                                                            "paging": true,
+                                                                            "lengthChange": false,
+                                                                            "searching": false,
+                                                                            "ordering": true,
+                                                                            "info": true,
+                                                                            "autoWidth": false
+                                                                        });
                                                                     });
-                                                                });
 
         </script>
 
