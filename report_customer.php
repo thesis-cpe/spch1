@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+@session_start();
+include_once './include-page/sc-login.php';
+?>
 <!--
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
@@ -102,9 +106,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <!--ส่วนค้นหาตามบริษัท-->
                                     <form name="formCustomer" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                         <div class="row">
-
-                                            <div class="col-sm-2"><input name="txtKeyWorkCustomer" type="text" class="form-control input-sm" placeholder="รหัสงานบริษัท" /></div>
-                                            <div class="col-sm-2"><input name="txtCustomerName" type="text" class="form-control input-sm" placeholder="ชื่อบริษัท" /></div>
+                                         
+                                            <div class="col-sm-2">
+                                                <select class="form-control" name="selProjectNumber">
+                                                    <option value="" disabled="" selected>รหัสงานบริษัท</option>
+                                                    <?php
+                                                    if($_SESSION['role']=="ผู้ดูแลระบบ")
+                                                    {
+                                                       $sqlSelProjectNumber = "SELECT project_id, project_number FROM project";
+                                                    }elseif($_SESSION['role']=="ผู้ใช้งาน")
+                                                    {
+                                                        echo "SQL ผู้ใช้งาน";
+                                                    }
+                                                    $queySelProjectNumber = $conn->query($sqlSelProjectNumber);
+                                                    while($arrSelProjectNumber = $queySelProjectNumber->fetch_array())
+                                                    { ?>
+                                                    <option value="<?php echo $arrSelProjectNumber['project_id'];  ?>"><?php echo $arrSelProjectNumber['project_number'];  ?></option>
+                                                        
+                                                        
+                                            <?php   }  ?>
+                                                        
+                                                   
+                                                    
+                                                </select>
+                                            </div>
+                                          
+                                            
+                                           
+                                           <!--เลือกชื่อบริษัทลูกค้า--> 
+                                            <div class="col-sm-2"><input name="selCustomerName" type="text" class="form-control input-sm" placeholder="ชื่อบริษัท" /></div>
+                                           
+                                            
+                                            
+                                            
                                             <div class="col-sm-2">
                                                 <select class="form-control input-sm" name="selYear">
                                                     <option value="" disabled="" selected="">ปี</option>
