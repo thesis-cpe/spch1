@@ -22,17 +22,17 @@
         <li><a href="main-data.php"><i class="fa fa-database"></i> <span>ข้อมูลหลัก</span></a></li>
         <li><a href="project.php"><i class="fa fa-group"></i> <span>เปิดงาน</span></a></li>
         <li><a href="daily-work.php"><i class="fa fa-tasks"></i> <span>งานประจำวัน</span></a></li>
-        <li><a href="report.php"><i class="fa fa-line-chart"></i> <span>รายงาน</span></a></li>
+      <!--  <li><a href="report.php"><i class="fa fa-line-chart"></i> <span>รายงาน</span></a></li>  -->
        
         
         
-      <!--  <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
+       <li class="treeview">
+          <a href="#"><i class="fa fa-line-chart"></i> <span>รายงาน</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
+              <li><a href="report_customer.php">ลูกค้า</a></li>
+              <li><a href="report_employee.php">พนักงาน</a></li>
           </ul>
-        </li>  -->
+        </li>  
       </ul>  
       <!-- /.sidebar-menu -->
     </section>
