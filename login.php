@@ -87,7 +87,7 @@ if (isset($_POST['btnLogin'])) {
          echo "<center>ไม่ได้กรอกชื่อผู้ใช้งาน หรือ รหัสผ่าน</center>";
      }  else {
          $txtPassword = md5($_POST['pass'].";bmpkobroTNแท่นทอง@Up#2๐1๕");
-         $sqlCheckUser = "SELECT em_number, em_password, em_id, em_role FROM employee  WHERE em_number ='$_POST[user]' AND em_password ='$txtPassword' AND em_status = 'คงอยู่'";
+         $sqlCheckUser = "SELECT em_number, em_password, em_id, em_role, em_name, em_start_work FROM employee  WHERE em_number ='$_POST[user]' AND em_password ='$txtPassword' AND em_status = 'คงอยู่'";
          $queryCheckUser = $conn->query($sqlCheckUser);
          $numrow = mysqli_num_rows($queryCheckUser);
          if($numrow>0)
@@ -96,6 +96,16 @@ if (isset($_POST['btnLogin'])) {
              $_SESSION["em_number"] = $resultUser['em_number'];
              $_SESSION["em_id"] = $resultUser['em_id'];
              $_SESSION["role"] = $resultUser['em_role'];
+             $_SESSION["name"] = $resultUser['em_name'];
+             $_SESSION["start_work"] = $resultUser['em_start_work']; //วันเริ่มทำงาน
+            //ไฟล์รูป
+             
+             $sqlSelFile = "SELECT file_path FROM file WHERE em_id = '$resultUser[em_id]'";
+             $querySelFile = $conn->query($sqlSelFile);
+             $fetchFile = $querySelFile->fetch_assoc();
+            
+             $_SESSION["em_photo"] =  $fetchFile['file_path'];
+              
               header( "location: index.php" );
                 exit(0);
          }else{

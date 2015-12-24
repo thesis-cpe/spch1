@@ -180,6 +180,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <?php 
                                     if(isset($_POST['btnSubmitCustomer']))
                                     {
+                                 /*ส่วนกำหนดเนื้อหาการค้น*/       
+                                 $sqlSerach = "SELECT * FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id ";
+                                
+                                 /*กำหนด สิทธ์ User ตรงนี้*/
+                              
+                                 if($_POST['selProjectNumber'] != "")   //ถ้าค่า selProjectNumber  มีค่าให้ต่อ
+                                  {
+                                   $sqlSerach = $sqlSerach." AND project.project_id = '$_POST[selProjectNumber]'";
+                                  }
+                                  
+                                  if($_POST['selCustomerName'] != "")   //ถ้าค่า selProjectNumber  มีค่าให้ต่อ
+                                  {
+                                    $sqlSerach = $sqlSerach." AND customer.customer_id = '$_POST[selCustomerName]'";
+                                  }
+                                  
+                                  if($_POST['selYear'] != "")   //ถ้าค่า selProjectNumber  มีค่าให้ต่อ
+                                  {
+                                   $sqlSerach = $sqlSerach." AND project.project_year = '$_POST[selYear]'";
+                                  }
+                                  
+                                  $querySerach = $conn->query($sqlSerach);
+                                  
+                                        
                                 ?>    
                                     <div class="row">
                                         <div class="col-xs-12">
@@ -204,9 +227,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     </tr>
                                                     </thead>
                                                     <tbody>
+                            <?php
+                                /*แสดงผล*/
+                                while ($arrSerach = $querySerach->fetch_array())
+                                {
+                            ?>            
                                                         <tr>
                                                             <!--รหัสพนักงาน-->
-                                                            <td>&nbsp;</td>
+                                                            <td>
+                                                                <?php echo $arrSerach['em_number']; ?>
+                                                            </td>
+                                                            
                                                             <!--ชื่อพนักงาน-->
                                                             <td>&nbsp;</td>
                                                             <!--เวลาใช้ไป-->
@@ -223,6 +254,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <td>&nbsp;</td>
 
                                                         </tr>
+                                <?php }?>
                                                     </tbody>
                                                
                                                 </table>
@@ -386,3 +418,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     </body>
 </html>
+<?php
+
+$conn->close();
