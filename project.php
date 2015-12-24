@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
 
-    include_once './include-page/sc-login.php';
+   @session_start();
+include_once './include-page/sc-login.php';
     
 ?>
 <!--
