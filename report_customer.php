@@ -108,15 +108,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <div class="row">
                                          
                                             <div class="col-sm-2">
-                                                <select class="form-control" name="selProjectNumber">
+                                                <select class="form-control input-sm" name="selProjectNumber">
                                                     <option value="" disabled="" selected>รหัสงานบริษัท</option>
                                                     <?php
                                                     if($_SESSION['role']=="ผู้ดูแลระบบ")
                                                     {
-                                                       $sqlSelProjectNumber = "SELECT project_id, project_number FROM project";
-                                                    }elseif($_SESSION['role']=="ผู้ใช้งาน")
+                                                       $sqlSelProjectNumber = "SELECT * FROM project";
+                                                    }
+                                                    elseif($_SESSION['role']=="ผู้ใช้งาน")
                                                     {
-                                                        echo "SQL ผู้ใช้งาน";
+                                                      $sqlSelProjectNumber =  "SELECT  * FROM `team` JOIN project ON team.project_id = project.project_id WHERE em_id = '$_SESSION[em_id]'";
                                                     }
                                                     $queySelProjectNumber = $conn->query($sqlSelProjectNumber);
                                                     while($arrSelProjectNumber = $queySelProjectNumber->fetch_array())
@@ -125,16 +126,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         
                                                         
                                             <?php   }  ?>
-                                                        
-                                                   
-                                                    
-                                                </select>
+                                                 </select>
                                             </div>
                                           
                                             
                                            
                                            <!--เลือกชื่อบริษัทลูกค้า--> 
-                                            <div class="col-sm-2"><input name="selCustomerName" type="text" class="form-control input-sm" placeholder="ชื่อบริษัท" /></div>
+                                            <div class="col-sm-2">
+                                                <select name="selCustomerName" class="form-control input-sm">
+                                                    <option value="" selected="" disabled="">ชื่อบริษัท</option>
+                                                    <?php
+                                                        if($_SESSION['role']=="ผู้ดูแลระบบ")
+                                                        {
+                                                            $sqlSelCustomerName = "SELECT * FROM customer";
+                                                        }
+                                                        elseif($_SESSION['role']=="ผู้ใช้งาน")
+                                                        {
+                                                            $sqlSelCustomerName = "SELECT * FROM `team` JOIN project ON team.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id WHERE em_id = '$_SESSION[em_id]' GROUP BY(customer_name)";
+                                                        }
+                                                        $querySelCustomerName = $conn->query($sqlSelCustomerName);
+                                                        while($arrSelCustomerName = $querySelCustomerName->fetch_array())
+                                                        {
+                                                    ?>
+                                                    <option value="<?php echo $arrSelCustomerName['customer_id']; ?>" ><?php echo $arrSelCustomerName['customer_name']; ?></option>   
+                                                  <?php }?>
+                                                </select>
+                                            
+                                            </div>
                                            
                                             
                                             
@@ -159,7 +177,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <br>
                                     
                                     
-                                    
+                                <?php 
+                                    if(isset($_POST['btnSubmitCustomer']))
+                                    {
+                                ?>    
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="table-responsive">
@@ -209,6 +230,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         </div>
                                         <!-- /.col -->
                                     </div>
+                                    
+                            <?php
+                               }elseif(!isset($_POST['btnSubmitCustomer']))
+                               {
+                                   include_once './include-page/table_customer.php';
+                               }
+                            ?>
                                     <!-- /.row -->
                                 </section>
 
