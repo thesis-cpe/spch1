@@ -171,41 +171,51 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <button title="ค้นหา"  name="btnSubmitCustomer" type="submit"  class="btn btn-sm btn-default"><span class="fa fa-search"></span></button>
                                             </div>
 
-
+                                            </form>
+                                               
+                                            
                                         </div>
-                                    </form>
+                                    
                                     <br>
                                     
                                     
                                 <?php 
-                                    if(isset($_POST['btnSubmitCustomer']))
+                                    if(isset($_POST['btnSubmitCustomer']) && ($_POST['selProjectNumber'] || $_POST['selCustomerName'] || $_POST['selYear'] ))
                                     {
                                  /*ส่วนกำหนดเนื้อหาการค้น*/       
-                                 $sqlSerach = "SELECT * FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id ";
+                                 //$sqlSerach = "SELECT * FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id ";
+                              $sqlSerach = "SELECT SUM(daily_use_time) AS sum_use_time, em_number, em_name, employee.em_id AS employee_id, SUM(daily.daily_rec_insert) AS sum_rec FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id ";
                                 
                                  /*กำหนด สิทธ์ User ตรงนี้*/
                               
                                  if($_POST['selProjectNumber'] != "")   //ถ้าค่า selProjectNumber  มีค่าให้ต่อ
                                   {
-                                   $sqlSerach = $sqlSerach." AND project.project_id = '$_POST[selProjectNumber]'";
+                                 $sqlSerach = $sqlSerach." AND project.project_id = '$_POST[selProjectNumber]'";
+                                        
                                   }
                                   
                                   if($_POST['selCustomerName'] != "")   //ถ้าค่า selProjectNumber  มีค่าให้ต่อ
                                   {
-                                    $sqlSerach = $sqlSerach." AND customer.customer_id = '$_POST[selCustomerName]'";
+                                   $sqlSerach = $sqlSerach." AND customer.customer_id = '$_POST[selCustomerName]'";
+                                    
                                   }
                                   
                                   if($_POST['selYear'] != "")   //ถ้าค่า selProjectNumber  มีค่าให้ต่อ
                                   {
                                    $sqlSerach = $sqlSerach." AND project.project_year = '$_POST[selYear]'";
+                                  
                                   }
-                                  
+                                  /*ห้อยท้ายด้วย GROUP BY*/
+                                  echo  $sqlSerach = $sqlSerach." GROUP BY(daily.em_id)";
                                   $querySerach = $conn->query($sqlSerach);
-                                  
-                                        
-                                ?>    
+                                    /*แสดงสิ่งที่เลือก*/
+                                      // echo $_POST['selProjectNumber']."&nbsp;".$_POST['selCustomerName']."&nbsp;".$_POST['selYear'] ;
+                                       
+                                ?> 
+                                    
                                     <div class="row">
                                         <div class="col-xs-12">
+                                       
                                             <div class="table-responsive">
                                                 <table id="example1" class="table table-bordered table-striped">
                                                     <thead>
@@ -219,10 +229,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <th>รหัสพนักงาน</th>
                                                         <th>ชื่อพนักงาน</th>
                                                         <th>ใช้ไป</th>
-                                                        <th>ยกมา</th>
+                                                        <th>เวลาตั้งต้น</th>
                                                         <th>คงเหลือ</th>
-                                                        <th>ยกมา</th>
-                                                        <th>คีย์เข้า</th>
+                                                        <th>วันนี้</th>
+                                                        <th>รวม</th>
                                                         <th>โน้ต</th>
                                                     </tr>
                                                     </thead>
@@ -230,7 +240,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <?php
                                 /*แสดงผล*/
                                 while ($arrSerach = $querySerach->fetch_array())
-                                {
+                                {   
+                                   //$em_id = $arrSerach['employee_id'];
+                                    /*ค้นหาเวลาตั้งต้น*/
+                                    $sqlSelProjectTime = "SELECT SUM(team_hour) AS team_hour FROM `team`JOIN project ON team.project_id = project.project_id";
+                                    if($_POST['selProjectNumber'] != "")
+                                    {
+                                         $sqlSelProjectTime = $sqlSelProjectTime." AND project.project_id = '$_POST[selProjectNumber]'";
+                                    }
+                                    if($_POST['selCustomerName'] != "")
+                                    {
+                                        $sqlSelProjectTime = $sqlSelProjectTime." AND project.customer_id = '$_POST[selCustomerName]'";
+                                    }
+                                     
+                                    $sqlSelProjectTime = $sqlSelProjectTime." AND team.em_id = '$arrSerach[employee_id]'";
+                                    
+                                    if($_POST['selYear'] != ""){
+                                       $sqlSelProjectTime = $sqlSelProjectTime." AND project.project_year = '$_POST[selYear]'";
+                                    }
+                                    $querySelProjectTime = $conn->query($sqlSelProjectTime);
+                                    $fetchSelProjectTime = $querySelProjectTime->fetch_assoc();
+                                 
                             ?>            
                                                         <tr>
                                                             <!--รหัสพนักงาน-->
@@ -239,17 +269,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </td>
                                                             
                                                             <!--ชื่อพนักงาน-->
-                                                            <td>&nbsp;</td>
+                                                            <td><?php echo $arrSerach['em_name']; ?></td>
                                                             <!--เวลาใช้ไป-->
-                                                            <td>&nbsp;</td>
-                                                            <!--เวลายกมา-->
-                                                            <td>&nbsp;</td>
+                                                            <td><div style="float: right"><?php echo number_format($arrSerach['sum_use_time']) ;  ?></div></td>
+                                                            <!--เวลาตั้-งต้น-->
+                                                            <td><div style="float: right"><?php echo number_format($fetchSelProjectTime['team_hour']) ;  ?></div></td>
                                                             <!--คงเหลือ-->
+                                                            <td><div style="float: right"><?php echo number_format($fetchSelProjectTime['team_hour'] - $arrSerach['sum_use_time'])?></div></td>
+                                                            <!--วันนี้-->
                                                             <td>&nbsp;</td>
-                                                            <!--ยกมา-->
-                                                            <td>&nbsp;</td>
-                                                            <!--คีย์เข้า-->
-                                                            <td>&nbsp;</td>
+                                                            <!--รวม-->
+                                                            <td><div style="float: right"><?php echo number_format($arrSerach['sum_rec']);?></div></td>
                                                             <!--ยกไป-->
                                                             <td>&nbsp;</td>
 
@@ -264,7 +294,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </div>
                                     
                             <?php
-                               }elseif(!isset($_POST['btnSubmitCustomer']))
+                               }else
                                {
                                    include_once './include-page/table_customer.php';
                                }
