@@ -137,7 +137,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     
                                     
                                     
-                                    
+                            <?php 
+                                if(isset($_POST['btnSubmitEmployee']) && ($_POST['txtEmName'] != "" || $_POST['selProjectStatus'] != "" || $_POST['selYear']) != "" )
+                                {
+                              ?>        
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div class="table-responsive">
@@ -154,10 +157,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <th>รหัสงานบริษัท</th>
                                                         <th>ชื่อบริษัท</th>
                                                         <th>ใช้ไป</th>
-                                                        <th>ยกมา</th>
+                                                        <th>เวลาตั้งต้น</th>
                                                         <th>คงเหลือ</th>
-                                                        <th>ยกมา</th>
-                                                        <th>คีย์เข้า</th>
+                                                        <th>วันนี้</th>
+                                                        <th>รวม</th>
                                                         <th>โน้ต</th>
 
                                                     </tr>
@@ -189,6 +192,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <!-- /.col -->
                                     </div>
                                     <!-- /.row -->
+                              
+                                        
+                                        
+                           <?php
+                                }else{  
+                                    include_once './include-page/table_employee.php';
+                                } 
+                              ?>
                                 </section>
 
                                 <!--.Conten Tab1-->
