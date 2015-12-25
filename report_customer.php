@@ -206,7 +206,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   
                                   }
                                   /*ห้อยท้ายด้วย GROUP BY*/
-                                  echo  $sqlSerach = $sqlSerach." GROUP BY(daily.em_id)";
+                                    $sqlSerach = $sqlSerach." GROUP BY(daily.em_id)";
                                   $querySerach = $conn->query($sqlSerach);
                                     /*แสดงสิ่งที่เลือก*/
                                       // echo $_POST['selProjectNumber']."&nbsp;".$_POST['selCustomerName']."&nbsp;".$_POST['selYear'] ;
@@ -276,15 +276,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <td><div style="float: right"><?php echo number_format($fetchSelProjectTime['team_hour']) ;  ?></div></td>
                                                             <!--คงเหลือ-->
                                                             <td><div style="float: right"><?php echo number_format($fetchSelProjectTime['team_hour'] - $arrSerach['sum_use_time'])?></div></td>
+                                                            
                                                             <!--วันนี้-->
-                                                            <td>&nbsp;</td>
+                                        <?php
+                                            $sqlSelRecToday = "SELECT * FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id AND employee.em_number = '$arrSerach[em_number]' AND daily.daily_dat = '$_SESSION[date]'";
+                                            if($_POST['selProjectNumber'] != "")
+                                            {
+                                                $sqlSelRecToday = $sqlSelRecToday." AND project.project_id = '$_POST[selProjectNumber]'";
+                                            }
+                                            if($_POST['selCustomerName'] != "")
+                                            {
+                                                $sqlSelRecToday = $sqlSelRecToday." AND customer.customer_id = '$_POST[selCustomerName]'";
+                                            }
+                                            if($_POST['selYear'] != ""){
+                                                $sqlSelRecToday = $sqlSelRecToday." AND project.project_year = '$_POST[selYear]'";
+                                            }
+                                            $queySelRecToday = $conn->query($sqlSelRecToday);
+                                            $fetchSelRecToday = $queySelRecToday->fetch_assoc();
+                                         ?>                    
+                                                            <td><div style="float: right"><?php echo number_format($fetchSelRecToday['daily_use_time']); ?></div></td>
                                                             <!--รวม-->
                                                             <td><div style="float: right"><?php echo number_format($arrSerach['sum_rec']);?></div></td>
-                                                            <!--ยกไป-->
+                                                            <!--โน้ต-->
                                                             <td>&nbsp;</td>
 
                                                         </tr>
-                                <?php }?>
+                                <?php } //while1?>
                                                     </tbody>
                                                
                                                 </table>
