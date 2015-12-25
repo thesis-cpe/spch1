@@ -29,8 +29,8 @@
        <li class="treeview">
           <a href="#"><i class="fa fa-line-chart"></i> <span>รายงาน</span> <i class="fa fa-angle-left pull-right"></i></a>
           <ul class="treeview-menu">
-              <li><a href="report_customer.php">ลูกค้า</a></li>
-              <li><a href="report_employee.php">พนักงาน</a></li>
+              <li><a href="report_customer.php"><i class="fa fa-circle-o"></i>ลูกค้า</a></li>
+              <li><a href="report_employee.php"><i class="fa fa-circle-o"></i>พนักงาน</a></li>
           </ul>
         </li>  
       </ul>  
