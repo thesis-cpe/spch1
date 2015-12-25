@@ -291,14 +291,47 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             if($_POST['selYear'] != ""){
                                                 $sqlSelRecToday = $sqlSelRecToday." AND project.project_year = '$_POST[selYear]'";
                                             }
-                                            $queySelRecToday = $conn->query($sqlSelRecToday);
+                                       // echo   $sqlSelRecToday2 = $sqlSelRecToday;
+                                            
+                                           $queySelRecToday = $conn->query($sqlSelRecToday);
                                             $fetchSelRecToday = $queySelRecToday->fetch_assoc();
                                          ?>                    
                                                             <td><div style="float: right"><?php echo number_format($fetchSelRecToday['daily_use_time']); ?></div></td>
                                                             <!--รวม-->
                                                             <td><div style="float: right"><?php echo number_format($arrSerach['sum_rec']);?></div></td>
                                                             <!--โน้ต-->
-                                                            <td>&nbsp;</td>
+                                                            <td>
+                                                                <a title="เพิ่มเติม" href="#" class="btn btn-xs btn-default"><span class="fa fa-bars"></span></a>
+                                                                <?php 
+                                                                    if($fetchSelRecToday['daily_note'] != "")
+                                                                    {  
+                                                                ?>
+                                                                <button title="ข้อความวันนี้" data-toggle="modal" data-target="#pnlMsn<?php echo $fetchSelRecToday['daily_id'] ?>" class="btn btn-xs btn-default"><span class="fa fa-envelope"></button>
+                                                                <!--ดูแบบระเอียด-->
+                                                                
+                                                                <!--MODAL ข้อความ-->
+                                                                    <div class="modal fade" tabindex="-1" role="dialog" id="pnlMsn<?php echo $fetchSelRecToday['daily_id'] ?>">
+                                                                            <div class="modal-dialog">
+                                                                              <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                  <h4 class="modal-title">ข้อความ</h4>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                  <a><?php echo $fetchSelRecToday['daily_note']; ?></a>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">ปิด</button>
+                                                                                  
+                                                                                </div>
+                                                                              </div><!-- /.modal-content -->
+                                                                            </div><!-- /.modal-dialog -->
+                                                                          </div><!-- /.modal -->
+                                                                <!--.MODAL ข้อความ-->
+                                                                
+                                                                    
+                                                            <?php }?>
+                                                            </td>
 
                                                         </tr>
                                 <?php } //while1?>
