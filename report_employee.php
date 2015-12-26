@@ -106,11 +106,32 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     <form name="formEmployee" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                         <div class="row">
 
-                                            <div class="col-sm-2"><input name="txtEmName" type="text" class="form-control input-sm" placeholder="ชื่อพนักงาน" /></div>
+                                            <div class="col-sm-2">
+                                                <select name="selName" class="form-control input-sm">
+                                                    <option value="" disabled="" selected="">พนักงาน</option>
+                                                 <?php
+                                                  $selEmployee = "SELECT em_name, em_id, em_status FROM employee";
+                                                  $queryEmployee = $conn->query($selEmployee);
+                                                  while($arrEmployee = $queryEmployee->fetch_array())
+                                                  { 
+                                                      if($arrEmployee['em_status'] == "ลาออก")
+                                                      { ?>
+                                                    
+                                                    <option style="color: blueviolet;" value="<?php echo $arrEmployee['em_id'] ?>"><?php echo $arrEmployee['em_name']; ?></option>
+                                             <?php    }else{
+                                                 ?>
+                                                         <option value="<?php echo $arrEmployee['em_id'] ?>"><?php echo $arrEmployee['em_name']; ?></option>
+                                             <?php    }
+                                         
+                                                   }
+                                                 ?>
+                                                </select>
+                                            </div>
+                                            
                                             <div class="col-sm-2">
                                                 <select class="form-control input-sm" name="selProjectStatus">
                                                     <option value="" disabled="" selected="">สถานะโครงการ</option>
-                                                    <option value="กำลังดำเนินการ">กำลังดำเนินการ</option>
+                                                    <option value="เปิดโครงการ">กำลังดำเนินการ</option>
                                                     <option value="ปิดโครงการ">ปิดโครงการ</option>
                                                     <option value="ทั้งหมด">ทั้งหมด</option>
 

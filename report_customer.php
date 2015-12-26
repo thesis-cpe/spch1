@@ -206,7 +206,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   
                                   }
                                   /*ห้อยท้ายด้วย GROUP BY*/
-                                    $sqlSerach = $sqlSerach." GROUP BY(daily.em_id)";
+                                  echo   $sqlSerach = $sqlSerach." GROUP BY(daily.em_id)";
                                   $querySerach = $conn->query($sqlSerach);
                                     /*แสดงสิ่งที่เลือก*/
                                       // echo $_POST['selProjectNumber']."&nbsp;".$_POST['selCustomerName']."&nbsp;".$_POST['selYear'] ;
