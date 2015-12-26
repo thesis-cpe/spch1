@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <section class="content-header">
                     <h1>
                         รายงาน
-                        <small>แสดงข้อมูลรายงานพนักงาน</small>
+                        <small>แสดงข้อมูลรายงานพนักงาน <?php echo $_SESSION['date'];?></small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> รายงาน</a></li>
@@ -255,7 +255,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                              }
                                             echo "<br>";
                                             echo $sqlToday;
-                                            
+                                            $queryToday = $conn->query($sqlToday);
+                                            $fetchToday = $queryToday->fetch_assoc();
                                             ?>                     
                                                         <tr>
                                                             <!--รหัสงานบริษัท-->
@@ -279,14 +280,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </td>
                                                             
                                                             <!--วันนี้-->
-                                                            <td>&nbsp;</td>
+                                                            <td><div style="float: right"><?php echo number_format($fetchToday['daily_rec_insert']) ; ?></div></td>
                                                             
                                                             <!--รวม-->
                                                             <td>
                                                                  <div style="float: right"><?php echo number_format($arrSelCustomer['sum_rec']);?></div>
                                                             </td>
+                                                            
                                                             <!--โน้ต-->
-                                                            <td>&nbsp;</td>
+                                                            <td>
+                                                                <a title="เพิ่มเติม" href="#" class="btn btn-xs btn-default"><span class="fa fa-bars"></span></a>
+                                                                 <?php 
+                                                                    if($fetchToday['daily_note'] != "")
+                                                                    {  
+                                                                ?>
+                                                                     <button title="ข้อความวันนี้" data-toggle="modal" data-target="#pnlMsn<?php echo $fetchToday['daily_id'] ?>" class="btn btn-xs btn-default"><span class="fa fa-envelope"></button>   
+                                                                     
+                                                                     <!--Modal ข้อความ-->
+                                                                          <div class="modal fade" tabindex="-1" role="dialog" id="pnlMsn<?php echo $fetchToday['daily_id'] ?>">
+                                                                            <div class="modal-dialog">
+                                                                              <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                  <h4 class="modal-title">ข้อความ</h4>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                  <a><?php echo $fetchToday['daily_note']; ?></a>
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">ปิด</button>
+                                                                                  
+                                                                                </div>
+                                                                              </div><!-- /.modal-content -->
+                                                                            </div><!-- /.modal-dialog -->
+                                                                          </div>
+                                                                     <!--.Modal ข้อความ-->
+                                                               <?php }?>
+                                                            </td>
                                                         </tr>
                                <?php } //.whileหลัก?>
                                                     </tbody>

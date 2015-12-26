@@ -80,7 +80,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <section class="content-header">
                     <h1>
                         รายงาน
-                        <small>แสดงข้อมูลรายงานลูกค้า</small>
+                        <small>แสดงข้อมูลรายงานลูกค้า <?php echo $_SESSION['date'];?></small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> รายงาน</a></li>
