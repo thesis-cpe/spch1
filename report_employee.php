@@ -159,7 +159,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     
                                     
                             <?php 
-                                if(isset($_POST['btnSubmitEmployee']) && ($_POST['txtEmName'] != "" || $_POST['selProjectStatus'] != "" || $_POST['selYear']) != "" )
+                                if(isset($_POST['btnSubmitEmployee']) && ($_POST['selName'] != "" || $_POST['selProjectStatus'] != "" || $_POST['selYear'] != "")  )
                                 {
                               ?>        
                                     <div class="row">
@@ -187,9 +187,33 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     </tr>
                                                     </thead>
                                                     <tbody>
+                                   <?php
+                                        $sqlSelCustomer = "SELECT * FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id";
+                                        /*ควบคุมการค้นหา*/
+                                        if($_POST['selName'] != ""){
+                                            $sqlSelCustomer = $sqlSelCustomer." AND employee.em_id = '$_POST[selName]'";
+                                        }
+                                        if($_POST['selProjectStatus'] != ""){
+                                            
+                                            /*สถานะทั้งหมด*/
+                                            if($_POST['selProjectStatus'] == "ทั้งหมด"){
+                                                $sqlSelCustomer = $sqlSelCustomer;
+                                            }else{
+                                                $sqlSelCustomer = $sqlSelCustomer." AND project.project_status = '$_POST[selProjectStatus]'";
+                                            }
+                                        }
+                                        if($_POST['selYear'] != ""){
+                                            $sqlSelCustomer = $sqlSelCustomer." AND project.project_year = '$_POST[selYear]'";
+                                        }
+                                        echo $sqlSelCustomer;
+                                        
+                                        $querySelCustomer  = $conn->query($sqlSelCustomer);
+                                        while($arrSelCustomer = $querySelCustomer->fetch_array())
+                                        {
+                                    ?>                     
                                                         <tr>
                                                             <!--รหัสงานบริษัท-->
-                                                            <td>&nbsp;</td>
+                                                            <td><?php echo $arrSelCustomer['project_number']; ?></td>
                                                             <!--ชื่อบริษัท-->
                                                             <td>&nbsp;</td>
                                                             <!--เวลาใช้ไป-->
@@ -205,6 +229,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             <!--ยกไป-->
                                                             <td>&nbsp;</td>
                                                         </tr>
+                               <?php } //.whileหลัก?>
                                                     </tbody>
 
                                                 </table>
