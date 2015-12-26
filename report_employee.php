@@ -188,7 +188,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     </thead>
                                                     <tbody>
                                    <?php
-                                        $sqlSelCustomer = "SELECT project_number, customer_name, SUM(daily_use_time) AS sum_use_time, SUM(daily_rec_insert) AS sum_rec  FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id";
+                                        $sqlSelCustomer = "SELECT project.project_id AS pro_id, project_number, customer_name, SUM(daily_use_time) AS sum_use_time, SUM(daily_rec_insert) AS sum_rec  FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id";
                                         /*ควบคุมการค้นหา*/
                                         if($_POST['selName'] != ""){
                                             $sqlSelCustomer = $sqlSelCustomer." AND employee.em_id = '$_POST[selName]'";
@@ -206,12 +206,57 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             $sqlSelCustomer = $sqlSelCustomer." AND project.project_year = '$_POST[selYear]'";
                                         }
                                         /*ต่อท้ายด้วย GROUP BY*/
-                                        echo $sqlSelCustomer = $sqlSelCustomer." GROUP BY(project.project_id)";
+                                      echo   $sqlSelCustomer = $sqlSelCustomer." GROUP BY(project.project_id)";
                                         
                                         $querySelCustomer  = $conn->query($sqlSelCustomer);
                                         while($arrSelCustomer = $querySelCustomer->fetch_array())
                                         {
-                                    ?>                     
+                                            /*หาเวลาตั้งต้น*/
+                                            $sqlSelTimeProect = "SELECT SUM(team_hour) AS team_hour FROM `team`JOIN project ON team.project_id = project.project_id";
+                                            
+                                            if($_POST['selName'] != ""){
+                                                $sqlSelTimeProect = $sqlSelTimeProect." AND em_id = '$_POST[selName]'";
+                                            }
+                                            
+                                            if($_POST['selProjectStatus'] != ""){
+                                                /*สถานะทั้งหมด*/
+                                                if($_POST['selProjectStatus'] == "ทั้งหมด"){
+                                                    $sqlSelTimeProect = $sqlSelTimeProect;
+                                                }else{
+                                                    $sqlSelTimeProect = $sqlSelTimeProect." AND project_status = '$_POST[selProjectStatus]'";
+                                                }
+                                            }
+                                            
+                                            if($_POST['selYear'] != ""){
+                                                $sqlSelTimeProect = $sqlSelTimeProect." AND project_year = '$_POST[selYear]'";
+                                            }
+                                            echo "<br>";
+                                            echo $sqlSelTimeProect = $sqlSelTimeProect." AND team.project_id = '$arrSelCustomer[pro_id]'" ;
+                                            $querySelTimeProect = $conn->query($sqlSelTimeProect);
+                                            $fetchSelTimeProect = $querySelTimeProect->fetch_assoc();
+                                            
+                                            /*รายการบันทึกวันนี้*/  
+                                            $sqlToday = "SELECT * FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id AND daily.project_id = '$arrSelCustomer[pro_id]' AND daily_dat = '$_SESSION[date]'";
+                                            
+                                            if($_POST['selName'] != ""){
+                                                $sqlToday = $sqlToday." AND daily.em_id = '$_POST[selName]'";
+                                            }
+                                            
+                                            if($_POST['selProjectStatus'] != ""){
+                                                if($_POST['selProjectStatus'] == "ทั้งหมด"){
+                                                  $sqlToday = $sqlToday;
+                                                }else{
+                                                    $sqlToday = $sqlToday." AND project_status = '$_POST[selProjectStatus]'";
+                                                }
+                                             }
+                                             
+                                             if($_POST['selYear'] != ""){
+                                                 $sqlToday = $sqlToday." AND project_year = '$_POST[selYear]'";
+                                             }
+                                            echo "<br>";
+                                            echo $sqlToday;
+                                            
+                                            ?>                     
                                                         <tr>
                                                             <!--รหัสงานบริษัท-->
                                                             <td><?php echo $arrSelCustomer['project_number']; ?></td>
@@ -225,9 +270,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                             </td>
                                                             
                                                             <!--เวลาตั้งต้น-->
-                                                            <td>&nbsp;</td>
+                                                            <td>
+                                                                <div style="float: right"><?php echo number_format($fetchSelTimeProect['team_hour']);?></div>
+                                                            </td>
                                                             <!--คงเหลือ-->
-                                                            <td>&nbsp;</td>
+                                                            <td>
+                                                                <div style="float: right"><?php echo number_format($fetchSelTimeProect['team_hour'] - $arrSelCustomer['sum_use_time']);?></div>
+                                                            </td>
                                                             
                                                             <!--วันนี้-->
                                                             <td>&nbsp;</td>

@@ -206,7 +206,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                   
                                   }
                                   /*ห้อยท้ายด้วย GROUP BY*/
-                                  echo   $sqlSerach = $sqlSerach." GROUP BY(daily.em_id)";
+                                  $sqlSerach = $sqlSerach." GROUP BY(daily.em_id)";
                                   $querySerach = $conn->query($sqlSerach);
                                     /*แสดงสิ่งที่เลือก*/
                                       // echo $_POST['selProjectNumber']."&nbsp;".$_POST['selCustomerName']."&nbsp;".$_POST['selYear'] ;
@@ -295,7 +295,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                             
                                            $queySelRecToday = $conn->query($sqlSelRecToday);
                                             $fetchSelRecToday = $queySelRecToday->fetch_assoc();
-                                         ?>                    
+                                          
+                                            
+                                            
+                                         ?>  
+                                                            
                                                             <td><div style="float: right"><?php echo number_format($fetchSelRecToday['daily_use_time']); ?></div></td>
                                                             <!--รวม-->
                                                             <td><div style="float: right"><?php echo number_format($arrSerach['sum_rec']);?></div></td>
