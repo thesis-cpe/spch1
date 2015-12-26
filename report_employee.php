@@ -188,7 +188,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                     </thead>
                                                     <tbody>
                                    <?php
-                                        $sqlSelCustomer = "SELECT * FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id";
+                                        $sqlSelCustomer = "SELECT project_number, customer_name, SUM(daily_use_time) AS sum_use_time, SUM(daily_rec_insert) AS sum_rec  FROM `daily` JOIN employee ON daily.em_id = employee.em_id JOIN project ON daily.project_id = project.project_id JOIN customer ON project.customer_id = customer.customer_id";
                                         /*ควบคุมการค้นหา*/
                                         if($_POST['selName'] != ""){
                                             $sqlSelCustomer = $sqlSelCustomer." AND employee.em_id = '$_POST[selName]'";
@@ -205,7 +205,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         if($_POST['selYear'] != ""){
                                             $sqlSelCustomer = $sqlSelCustomer." AND project.project_year = '$_POST[selYear]'";
                                         }
-                                        echo $sqlSelCustomer;
+                                        /*ต่อท้ายด้วย GROUP BY*/
+                                        echo $sqlSelCustomer = $sqlSelCustomer." GROUP BY(project.project_id)";
                                         
                                         $querySelCustomer  = $conn->query($sqlSelCustomer);
                                         while($arrSelCustomer = $querySelCustomer->fetch_array())
@@ -214,19 +215,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                         <tr>
                                                             <!--รหัสงานบริษัท-->
                                                             <td><?php echo $arrSelCustomer['project_number']; ?></td>
+                                                            
                                                             <!--ชื่อบริษัท-->
-                                                            <td>&nbsp;</td>
+                                                            <td><?php echo $arrSelCustomer['customer_name']; ?></td>
+                                                           
                                                             <!--เวลาใช้ไป-->
-                                                            <td>&nbsp;</td>
-                                                            <!--เวลายกมา-->
+                                                            <td>
+                                                                <div style="float: right"><?php echo number_format($arrSelCustomer['sum_use_time']);?></div>
+                                                            </td>
+                                                            
+                                                            <!--เวลาตั้งต้น-->
                                                             <td>&nbsp;</td>
                                                             <!--คงเหลือ-->
                                                             <td>&nbsp;</td>
-                                                            <!--ยกมา-->
+                                                            
+                                                            <!--วันนี้-->
                                                             <td>&nbsp;</td>
-                                                            <!--คีย์เข้า-->
-                                                            <td>&nbsp;</td>
-                                                            <!--ยกไป-->
+                                                            
+                                                            <!--รวม-->
+                                                            <td>
+                                                                 <div style="float: right"><?php echo number_format($arrSelCustomer['sum_rec']);?></div>
+                                                            </td>
+                                                            <!--โน้ต-->
                                                             <td>&nbsp;</td>
                                                         </tr>
                                <?php } //.whileหลัก?>
