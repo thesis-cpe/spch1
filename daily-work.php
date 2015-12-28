@@ -3,6 +3,9 @@
 include_once './include-page/sc-login.php';
 include_once './include-page/function_lib.php';
 @session_start();
+
+ if($_SESSION["em_number"] != "")
+    {
 ?>
 <!DOCTYPE html>
 <!--
@@ -437,4 +440,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </html>
 <?php
 $conn->close();
-
+ }else
+    {
+         header("location: index.php");
+            exit(0);
+    }
+    

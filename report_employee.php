@@ -2,6 +2,8 @@
 <?php
     @session_start();
 include_once './include-page/sc-login.php';
+ if($_SESSION["em_number"] != "")
+    {
 ?>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -484,3 +486,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     </body>
 </html>
+  <?php 
+$conn->close();
+    }else
+    {
+         header("location: index.php");
+            exit(0);
+    }

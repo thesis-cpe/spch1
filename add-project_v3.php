@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <?php
     include_once './include-page/sc-login.php';
+    @session_start();
+     if($_SESSION["em_number"] != "")
+    {
+       
    $customerIDFromProject = $_GET['cus_id'];
     
     //ดูข้อมูลลูกค้า
@@ -586,3 +590,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </html>
 <?php
 $conn->close();
+}else
+    {
+         header("location: index.php");
+            exit(0);
+    }
+    
