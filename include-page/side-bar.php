@@ -3,10 +3,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/default-user.png" class="img-circle" alt="User Image">
+          <img src="store/<?php echo $_SESSION["em_photo"];?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Anonymous</p>
+          <p><?php echo $_SESSION['name']; ?></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
